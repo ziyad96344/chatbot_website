@@ -92,7 +92,7 @@ const GetAccessPage: React.FC = () => {
                     </div>
 
                     <div>
-                        <label className="text-[10px] uppercase tracking-widest text-white/40 mb-2 block">How do you plan to use Ottobots?</label>
+                        <label className="text-[10px] uppercase tracking-widest text-white/40 mb-2 block">How do you plan to use Xotbot?</label>
                         <textarea
                             rows={3}
                             value={formData.useCase}
@@ -106,8 +106,8 @@ const GetAccessPage: React.FC = () => {
                         type="submit"
                         disabled={isSubmitting}
                         className={`w-full py-4 font-bold uppercase tracking-widest rounded-lg transition-all duration-300 ${isSubmitting
-                                ? 'bg-emerald-400/50 text-black/50 cursor-not-allowed'
-                                : 'bg-emerald-400 text-black hover:bg-emerald-300'
+                            ? 'bg-emerald-400/50 text-black/50 cursor-not-allowed'
+                            : 'bg-emerald-400 text-black hover:bg-emerald-300'
                             }`}
                     >
                         {isSubmitting ? (

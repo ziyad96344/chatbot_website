@@ -240,7 +240,7 @@ const Hero: React.FC = () => {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,#050505_70%)] pointer-events-none z-10" />
 
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
-          <h1 ref={textRef} className="text-[28vw] md:text-[24vw] lg:text-[20vw] font-black leading-none tracking-[-0.04em] text-white/[0.03] select-none whitespace-nowrap uppercase" style={{ fontFamily: "'Syne', sans-serif", willChange: 'transform' }}>OTTOBOTS</h1>
+          <h1 ref={textRef} className="text-[28vw] md:text-[24vw] lg:text-[20vw] font-black leading-none tracking-[-0.04em] text-white/[0.03] select-none whitespace-nowrap uppercase" style={{ fontFamily: "'Syne', sans-serif", willChange: 'transform' }}>XOTBOT</h1>
         </div>
 
         <div ref={botCardRef} className="absolute left-[3%] md:left-[6%] lg:left-[8%] top-[22%] md:top-[26%] z-30" style={{ willChange: 'transform', boxShadow: isAudioPlaying ? '0 0 60px rgba(16,185,129,0.35), 0 0 120px rgba(16,185,129,0.15)' : '0 0 30px rgba(16,185,129,0.15), 0 0 60px rgba(16,185,129,0.08)' }}>
@@ -248,7 +248,7 @@ const Hero: React.FC = () => {
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-2">
                 <div className={`w-2 h-2 rounded-full bg-emerald-400 ${isAudioPlaying ? 'animate-pulse' : ''}`} style={{ boxShadow: '0 0 10px rgba(52,211,153,0.8)' }} />
-                <span className="text-[10px] uppercase tracking-[0.25em] text-emerald-400 font-semibold">Otto Speaking</span>
+                <span className="text-[10px] uppercase tracking-[0.25em] text-emerald-400 font-semibold">Xot Speaking</span>
               </div>
               <svg ref={soundWaveRef} viewBox="0 0 72 20" className="w-[72px] h-5">
                 {[...Array(14)].map((_, i) => (<rect key={i} className="wave-bar" x={i * 5 + 1} y="8" width="3" height="4" rx="1.5" fill="#10b981" style={{ transformOrigin: 'center', transform: 'scaleY(0.1)', filter: 'drop-shadow(0 0 6px rgba(16,185,129,0.8))' }} />))}
@@ -268,7 +268,7 @@ const Hero: React.FC = () => {
             <div className="mb-3"><span className={`text-[9px] uppercase tracking-[0.25em] font-medium ${showUserPrompt ? 'text-emerald-400/70' : 'text-white/50'}`}>Your Message</span></div>
             <div className="relative">
               <div className={`w-full h-11 rounded-xl flex items-center px-4 ${showUserPrompt ? 'bg-emerald-500/5 border-emerald-500/20' : 'bg-white/5 border-white/10'} border`}>
-                <span className={`text-[11px] uppercase tracking-wider ${showUserPrompt ? 'text-emerald-400/50' : 'text-white/30'}`}>Ask Otto anything...</span>
+                <span className={`text-[11px] uppercase tracking-wider ${showUserPrompt ? 'text-emerald-400/50' : 'text-white/30'}`}>Ask Xot anything...</span>
               </div>
               <div ref={micIconRef} className="absolute right-3 top-1/2 -translate-y-1/2 w-7 h-7 flex items-center justify-center cursor-pointer group" onMouseMove={handleMicHover} onMouseLeave={handleMicLeave}>
                 <svg viewBox="0 0 24 24" className={`w-4 h-4 ${showUserPrompt ? 'text-emerald-400' : 'text-white/40 group-hover:text-emerald-400'}`} fill="currentColor">
@@ -290,7 +290,7 @@ const Hero: React.FC = () => {
                 pointerEvents: isHeroVisible ? 'auto' : 'none',
               }}
             >
-              <iframe src="https://my.spline.design/nexbotrobotcharacterconcept-SBwuKfTaYpl7fPn5dfSBifkb/" frameBorder="0" width="100%" className={`w-full transition-opacity duration-700 ${splineLoaded ? 'opacity-100' : 'opacity-0'}`} style={{ background: 'transparent', border: 'none', height: 'calc(100% + 60px)' }} title="Ottobot" loading="lazy" onLoad={() => setSplineLoaded(true)} />
+              <iframe src="https://my.spline.design/nexbotrobotcharacterconcept-SBwuKfTaYpl7fPn5dfSBifkb/" frameBorder="0" width="100%" className={`w-full transition-opacity duration-700 ${splineLoaded ? 'opacity-100' : 'opacity-0'}`} style={{ background: 'transparent', border: 'none', height: 'calc(100% + 60px)' }} title="Xotbot" loading="lazy" onLoad={() => setSplineLoaded(true)} />
             </div>
             {!splineLoaded && <div className="absolute inset-0 flex items-center justify-center"><div className="w-10 h-10 border-2 border-white/10 border-t-emerald-400/60 rounded-full animate-spin" /></div>}
             <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 w-[50%] h-[50%] blur-[120px] rounded-full ${isAudioPlaying ? 'opacity-25' : 'opacity-10'}`} style={{ background: 'radial-gradient(circle, rgba(16,185,129,1) 0%, transparent 70%)' }} />

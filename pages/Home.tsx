@@ -8,6 +8,7 @@ import CommandCenter from '../components/CommandCenter';
 import ScraperVoid from '../components/ScraperVoid';
 import InteractionHub from '../components/InteractionHub';
 import FloatingMatrix from '../components/FloatingMatrix';
+import Footer from '../components/Footer';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -108,14 +109,7 @@ const HomePage: React.FC = () => {
                 <FloatingMatrix />
             </section>
 
-            <footer className="py-16 px-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-[10px] text-white/40 tracking-widest font-light uppercase">
-                <div>© 2024 OTTOBOTS AI SYSTEMS</div>
-                <div className="flex gap-8 mt-4 md:mt-0">
-                    <a href="#" className="hover:text-white transition-colors duration-300">Terms</a>
-                    <a href="#" className="hover:text-white transition-colors duration-300">Privacy</a>
-                    <a href="#" className="hover:text-white transition-colors duration-300">Docs</a>
-                </div>
-            </footer>
+            <Footer />
         </>
     );
 };

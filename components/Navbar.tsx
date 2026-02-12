@@ -1,8 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+const MenuIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <line x1="3" y1="12" x2="21" y2="12"></line>
+    <line x1="3" y1="6" x2="21" y2="6"></line>
+    <line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+);
+const XIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <line x1="18" y1="6" x2="6" y2="18"></line>
+    <line x1="6" y1="6" x2="18" y2="18"></line>
+  </svg>
+);
 
 const Navbar: React.FC = () => {
   const location = useLocation();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navLinks = [
     { label: 'About', to: '/about' },
@@ -26,10 +40,7 @@ const Navbar: React.FC = () => {
       <div className="flex items-center justify-between max-w-[1800px] mx-auto relative z-10">
         {/* Logo */}
         <Link to="/" className="group flex items-center gap-3">
-          <div className="w-2 h-2 bg-white rounded-full group-hover:bg-emerald-400 transition-colors duration-300" />
-          <span className="text-[10px] md:text-[11px] uppercase tracking-[0.4em] font-semibold text-white/80 group-hover:text-white transition-colors duration-300">
-            Ottobots
-          </span>
+          <img src="/logo/logo1.png" alt="Xotbot" className="h-20 md:h-28 w-auto object-contain group-hover:brightness-110 transition-all duration-300 -mt-2 md:-mt-6" />
         </Link>
 
         {/* Center Navigation Links */}
@@ -52,7 +63,7 @@ const Navbar: React.FC = () => {
         </div>
 
         {/* Right Side - CTA */}
-        <div className="flex items-center gap-6">
+        <div className="hidden md:flex items-center gap-6 -mt-6">
           <a
             href="http://localhost:3000"
             className="group relative px-5 py-2.5 rounded-full overflow-hidden transition-colors duration-300 border border-white/20 hover:border-white/40"
@@ -63,6 +74,38 @@ const Navbar: React.FC = () => {
             <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
           </a>
         </div>
+
+        {/* Mobile Hamburger Button */}
+        <button
+          className="md:hidden text-white p-2 z-50 relative"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          {isMobileMenuOpen ? <XIcon /> : <MenuIcon />}
+        </button>
+      </div>
+
+      {/* Mobile Menu Overlay */}
+      <div
+        className={`fixed inset-0 bg-black/95 backdrop-blur-xl z-40 transition-all duration-500 flex flex-col items-center justify-center gap-8 ${isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+          }`}
+      >
+        {navLinks.map((link) => (
+          <Link
+            key={link.label}
+            to={link.to}
+            onClick={() => setIsMobileMenuOpen(false)}
+            className={`text-2xl uppercase tracking-[0.2em] font-light transition-colors duration-300 ${isActive(link.to) ? 'text-emerald-400' : 'text-white/60 hover:text-white'
+              }`}
+          >
+            {link.label}
+          </Link>
+        ))}
+        <a
+          href="http://localhost:3000"
+          className="mt-4 px-8 py-3 rounded-full border border-white/20 text-white text-xs uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-all duration-300"
+        >
+          Get Access
+        </a>
       </div>
     </nav>
   );

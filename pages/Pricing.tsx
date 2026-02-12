@@ -150,17 +150,16 @@ const PricingPage: React.FC = () => {
     };
 
     return (
-        <div className="h-screen bg-[#050505] overflow-hidden flex flex-col justify-center relative font-sans">
+        <div className="min-h-screen bg-[#050505] overflow-x-hidden overflow-y-auto flex flex-col relative font-sans">
             {/* Ambient Background Glows */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
                 <div className="absolute top-[-20%] left-[20%] w-[400px] h-[400px] bg-purple-900/10 rounded-full blur-[100px]" />
                 <div className="absolute bottom-[-20%] right-[20%] w-[400px] h-[400px] bg-[#00ff00]/5 rounded-full blur-[100px]" />
             </div>
 
-            <div className="w-full max-w-[1400px] mx-auto px-6 relative z-10 flex flex-col h-full justify-center">
-
+            <div className="w-full max-w-[1400px] mx-auto px-6 relative z-10 flex flex-col pt-24 md:pt-36 pb-20">
                 {/* Header - Very Compact */}
-                <div className="flex flex-col items-center mb-8 md:mb-12 mt-12">
+                <div className="flex flex-col items-center mb-8 md:mb-12">
                     <motion.div
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -347,10 +346,18 @@ const PricingPage: React.FC = () => {
                 )}
 
                 {/* Footer Info - Absolute bottom */}
-                <div className="absolute bottom-6 left-0 w-full text-center">
+                <div className="absolute bottom-6 left-0 w-full text-center pointer-events-auto">
                     <p className="text-white/20 text-[10px] tracking-widest uppercase">
                         Secure 256-bit Encryption • Global CDN • 99.99% Uptime
                     </p>
+                    <div className="flex items-center justify-center gap-3 mt-1.5 opacity-40 hover:opacity-100 transition-opacity duration-500">
+                        <span className="text-[9px] font-mono text-white/30 tracking-widest uppercase">
+                            A Product by
+                        </span>
+                        <a href="https://ottomern.com" target="_blank" rel="noopener noreferrer" className="text-[9px] font-mono text-white/50 tracking-widest uppercase hover:text-emerald-400 transition-colors border-b border-white/10 hover:border-emerald-400 pb-px">
+                            Ottomern Technologies
+                        </a>
+                    </div>
                 </div>
             </div>
 

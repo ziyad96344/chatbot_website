@@ -2,6 +2,47 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import gsap from 'gsap';
 
+const InputField = ({ label, name, type = 'text', placeholder, value, onChange, focusedField, setFocusedField }: any) => (
+    <div className="relative group">
+        <label className="text-[10px] uppercase tracking-widest text-gray-400 mb-2 block font-mono font-bold">
+            {label}
+        </label>
+        <div className={`relative transition-colors duration-300 ${focusedField === name ? 'bg-white/[0.08]' : 'bg-white/[0.03]'} rounded-lg`}>
+            {type === 'textarea' ? (
+                <textarea
+                    value={value}
+                    onChange={onChange}
+                    onFocus={() => setFocusedField(name)}
+                    onBlur={() => setFocusedField(null)}
+                    rows={4}
+                    className="w-full bg-transparent border-none text-white placeholder-white/30 focus:outline-none resize-none text-sm px-4 py-3.5"
+                    placeholder={placeholder}
+                    style={{ fontFamily: "'Syne', sans-serif" }}
+                />
+            ) : (
+                <input
+                    type={type}
+                    value={value}
+                    onChange={onChange}
+                    onFocus={() => setFocusedField(name)}
+                    onBlur={() => setFocusedField(null)}
+                    className="w-full bg-transparent border-none text-white placeholder-white/30 focus:outline-none text-sm px-4 py-3.5"
+                    placeholder={placeholder}
+                    style={{ fontFamily: "'Syne', sans-serif" }}
+                />
+            )}
+
+            {/* Active Glowing Line at Bottom */}
+            <motion.div
+                initial={{ width: '0%' }}
+                animate={{ width: focusedField === name ? '100%' : '0%' }}
+                transition={{ duration: 0.4, ease: "circOut" }}
+                className="absolute bottom-0 left-0 h-[2px] bg-[#00ff00] shadow-[0_0_10px_#00ff00] rounded-full"
+            />
+        </div>
+    </div>
+);
+
 const ContactPage: React.FC = () => {
     const [formData, setFormData] = useState({
         name: '',
@@ -10,6 +51,8 @@ const ContactPage: React.FC = () => {
         message: '',
     });
     const [submitted, setSubmitted] = useState(false);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState<string | null>(null);
     const [focusedField, setFocusedField] = useState<string | null>(null);
     const containerRef = useRef<HTMLDivElement>(null);
     const leftNodeRef = useRef<HTMLDivElement>(null);
@@ -58,51 +101,57 @@ const ContactPage: React.FC = () => {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        // Simulate transmission delay
-        await new Promise(resolve => setTimeout(resolve, 1500));
-        setSubmitted(true);
+        setError(null);
+
+        // Validate required fields
+        if (!formData.name || !formData.email || !formData.message) {
+            setError('Please fill in all required fields');
+            return;
+        }
+
+        // Validate email format
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(formData.email)) {
+            setError('Please enter a valid email address');
+            return;
+        }
+
+        setLoading(true);
+
+        try {
+            // Get API base URL - use localhost for development
+            const apiUrl = 'http://localhost:8000';
+
+            const response = await fetch(`${apiUrl}/api/website/contact`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(data.message || 'Failed to submit form');
+            }
+
+            // Success - show success animation
+            setSubmitted(true);
+
+            // Reset form after 5 seconds
+            setTimeout(() => {
+                setFormData({ name: '', email: '', company: '', message: '' });
+                setSubmitted(false);
+            }, 5000);
+
+        } catch (err: any) {
+            setError(err.message || 'Something went wrong. Please try again.');
+            console.error('Contact form error:', err);
+        } finally {
+            setLoading(false);
+        }
     };
-
-    const InputField = ({ label, name, type = 'text', placeholder, value, onChange }: any) => (
-        <div className="relative group">
-            <label className="text-[10px] uppercase tracking-widest text-gray-400 mb-2 block font-mono font-bold">
-                {label}
-            </label>
-            <div className={`relative transition-colors duration-300 ${focusedField === name ? 'bg-white/[0.08]' : 'bg-white/[0.03]'} rounded-lg`}>
-                {type === 'textarea' ? (
-                    <textarea
-                        value={value}
-                        onChange={onChange}
-                        onFocus={() => setFocusedField(name)}
-                        onBlur={() => setFocusedField(null)}
-                        rows={4}
-                        className="w-full bg-transparent border-none text-white placeholder-white/30 focus:outline-none resize-none text-sm px-4 py-3"
-                        placeholder={placeholder}
-                        style={{ fontFamily: "'Syne', sans-serif" }}
-                    />
-                ) : (
-                    <input
-                        type={type}
-                        value={value}
-                        onChange={onChange}
-                        onFocus={() => setFocusedField(name)}
-                        onBlur={() => setFocusedField(null)}
-                        className="w-full bg-transparent border-none text-white placeholder-white/30 focus:outline-none text-sm px-4 py-3"
-                        placeholder={placeholder}
-                        style={{ fontFamily: "'Syne', sans-serif" }}
-                    />
-                )}
-
-                {/* Active Glowing Line at Bottom */}
-                <motion.div
-                    initial={{ width: '0%' }}
-                    animate={{ width: focusedField === name ? '100%' : '0%' }}
-                    transition={{ duration: 0.4, ease: "circOut" }}
-                    className="absolute bottom-0 left-0 h-[2px] bg-[#00ff00] shadow-[0_0_10px_#00ff00] rounded-full"
-                />
-            </div>
-        </div>
-    );
 
     return (
         <div className="h-screen bg-[#050505] relative overflow-hidden flex flex-col items-center justify-center">
@@ -182,46 +231,61 @@ const ContactPage: React.FC = () => {
                                 >
                                     <div className="grid grid-cols-2 gap-6">
                                         <InputField
-                                            label="IDENTIFIER (NAME)"
+                                            label="NAME"
                                             name="name"
-                                            placeholder="Enter ID"
+                                            placeholder="Enter your name"
                                             value={formData.name}
                                             onChange={(e: any) => setFormData({ ...formData, name: e.target.value })}
+                                            focusedField={focusedField}
+                                            setFocusedField={setFocusedField}
                                         />
                                         <InputField
-                                            label="FREQUENCY (EMAIL)"
+                                            label="EMAIL ADDRESS"
                                             name="email"
                                             type="email"
-                                            placeholder="Enter Frequency"
+                                            placeholder="name@example.com"
                                             value={formData.email}
                                             onChange={(e: any) => setFormData({ ...formData, email: e.target.value })}
+                                            focusedField={focusedField}
+                                            setFocusedField={setFocusedField}
                                         />
                                     </div>
                                     <InputField
-                                        label="AFFILIATION (COMPANY)"
+                                        label="COMPANY"
                                         name="company"
-                                        placeholder="Enter Affiliation"
+                                        placeholder="Company name"
                                         value={formData.company}
                                         onChange={(e: any) => setFormData({ ...formData, company: e.target.value })}
+                                        focusedField={focusedField}
+                                        setFocusedField={setFocusedField}
                                     />
                                     <InputField
-                                        label="DATA_PACKET (MESSAGE)"
+                                        label="MESSAGE"
                                         name="message"
                                         type="textarea"
-                                        placeholder="Enter Message Content..."
+                                        placeholder="How can we help you?"
                                         value={formData.message}
                                         onChange={(e: any) => setFormData({ ...formData, message: e.target.value })}
+                                        focusedField={focusedField}
+                                        setFocusedField={setFocusedField}
                                     />
 
+                                    {error && (
+                                        <div className="text-red-500 text-xs font-mono mb-4 bg-red-500/10 p-3 rounded border border-red-500/20">
+                                            ERROR: {error}
+                                        </div>
+                                    )}
+
                                     <motion.button
-                                        whileHover={{ scale: 1.02 }}
-                                        whileTap={{ scale: 0.98 }}
+                                        whileHover={{ scale: loading ? 1 : 1.02 }}
+                                        whileTap={{ scale: loading ? 1 : 0.98 }}
                                         type="submit"
-                                        className="w-full py-4 mt-2 bg-[#00ff00] text-black font-bold uppercase tracking-[0.2em] text-xs relative overflow-hidden group shadow-[0_0_20px_rgba(0,255,0,0.3)] hover:shadow-[0_0_40px_rgba(0,255,0,0.5)] transition-shadow duration-300 rounded-sm"
+                                        disabled={loading}
+                                        className={`w-full py-4 mt-2 bg-[#00ff00] text-black font-bold uppercase tracking-[0.2em] text-xs relative overflow-hidden group shadow-[0_0_20px_rgba(0,255,0,0.3)] hover:shadow-[0_0_40px_rgba(0,255,0,0.5)] transition-shadow duration-300 rounded-sm ${loading ? 'opacity-70 cursor-wait' : ''}`}
                                     >
-                                        <span className="relative z-10">Initiate Uplink</span>
+                                        <span className="relative z-10">{loading ? 'TRANSMITTING...' : 'Send Message'}</span>
                                         {/* Shine Effect */}
-                                        <div className="absolute inset-0 bg-white/40 skew-x-[-20deg] translate-x-[-200%] group-hover:animate-shine pointer-events-none" />
+                                        {!loading && <div className="absolute inset-0 bg-white/40 skew-x-[-20deg] translate-x-[-200%] group-hover:animate-shine pointer-events-none" />}
                                     </motion.button>
                                 </motion.form>
                             )}
@@ -253,22 +317,22 @@ const ContactPage: React.FC = () => {
                         <div className="space-y-6">
                             <div>
                                 <p className="text-[10px] uppercase tracking-widest text-[#00ff00]/60 mb-1">Email_Relay</p>
-                                <a href="mailto:hello@ottobots.ai" className="text-xl text-white hover:text-[#00ff00] transition-colors font-light">
-                                    hello@ottobots.ai
+                                <a href="mailto:sales@xotbot.com" className="text-xl text-white hover:text-[#00ff00] transition-colors font-light">
+                                    sales@xotbot.com
                                 </a>
                             </div>
                             <div>
                                 <p className="text-[10px] uppercase tracking-widest text-purple-400/60 mb-1">Base_Station</p>
                                 <p className="text-white/60 text-sm leading-relaxed font-light">
-                                    123 Neural Blvd, Sector 7<br />
-                                    San Francisco, CA 94105
+                                    Tech Hub,<br />
+                                    India
                                 </p>
                             </div>
                         </div>
 
                         {/* Decor Code */}
                         <div className="absolute bottom-4 right-4 text-[8px] text-white/10 font-mono text-right">
-                            COORD: 37.7749° N, 122.4194° W<br />
+                            COORD: 20.5937° N, 78.9629° E<br />
                             STATUS: ACTIVE<br />
                             PING: 12ms
                         </div>

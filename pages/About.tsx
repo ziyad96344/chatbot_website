@@ -101,9 +101,9 @@ const processSteps = [
 
 // Terminal lines for the live extraction visualization
 const terminalLines = [
-    { type: 'comment' as const, text: '// Ottobots Neural Extraction Engine v4.2' },
+    { type: 'comment' as const, text: '// Xotbot Neural Extraction Engine v4.2' },
     { type: 'blank' as const, text: '' },
-    { type: 'keyword' as const, text: 'const', rest: ' cortex = await OttoCortex.init({' },
+    { type: 'keyword' as const, text: 'const', rest: ' cortex = await XotCortex.init({' },
     { type: 'property' as const, text: '  target:', rest: ' "https://your-domain.com",' },
     { type: 'property' as const, text: '  depth:', rest: ' "full-recursive",' },
     { type: 'property' as const, text: '  mode:', rest: ' "cognitive-extraction",' },
@@ -114,6 +114,8 @@ const terminalLines = [
     { type: 'output' as const, text: '✓ Neural pathways optimized — 99.2% confidence' },
     { type: 'active' as const, text: '⟳ Deploying cognitive model...' },
 ];
+
+import Footer from '../components/Footer';
 
 const AboutPage: React.FC = () => {
     const heroRef = useRef<HTMLDivElement>(null);
@@ -545,7 +547,7 @@ const AboutPage: React.FC = () => {
                                         <div className="w-3 h-3 rounded-full bg-yellow-500/70" />
                                         <div className="w-3 h-3 rounded-full bg-emerald-500/70" />
                                     </div>
-                                    <span className="text-[10px] font-mono text-white/25 tracking-wider">otto_cortex — neural_extraction</span>
+                                    <span className="text-[10px] font-mono text-white/25 tracking-wider">xot_cortex — neural_extraction</span>
                                     <div className="flex items-center gap-1.5">
                                         <div className="w-1.5 h-1.5 rounded-full bg-emerald-400/80" style={{ animation: 'about-float 2s ease-in-out infinite' }} />
                                         <span className="text-[9px] font-mono text-emerald-400/60">LIVE</span>
@@ -775,29 +777,7 @@ const AboutPage: React.FC = () => {
             </section>
 
             {/* ============ FOOTER ============ */}
-            <footer className="relative z-10 py-12 px-8 border-t border-white/[0.05] bg-[#08080a]">
-                <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-                    {/* Brand */}
-                    <div className="flex items-center gap-2">
-                        <div className="w-2 h-2 rounded-full bg-emerald-500" />
-                        <span className="text-xs font-mono text-white/40 tracking-[0.2em] uppercase">
-                            Ottobots AI Systems
-                        </span>
-                    </div>
-
-                    {/* Links */}
-                    <div className="flex gap-8 text-[10px] font-mono text-white/30 tracking-widest uppercase">
-                        <a href="#" className="hover:text-emerald-400 transition-colors duration-300">Terms</a>
-                        <a href="#" className="hover:text-emerald-400 transition-colors duration-300">Privacy</a>
-                        <a href="#" className="hover:text-emerald-400 transition-colors duration-300">Docs</a>
-                    </div>
-
-                    {/* Copyright */}
-                    <div className="text-[10px] font-mono text-white/20">
-                        &copy; 2024
-                    </div>
-                </div>
-            </footer>
+            <Footer />
         </div>
     );
 };

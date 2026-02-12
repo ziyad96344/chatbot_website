@@ -175,7 +175,7 @@ const CommandCenter: React.FC<CommandCenterProps> = ({ onInitialize }) => {
                     <div className="w-3 h-3 rounded-full bg-red-500/60" />
                     <div className="w-3 h-3 rounded-full bg-yellow-500/60" />
                     <div className="w-3 h-3 rounded-full bg-emerald-500/60" />
-                    <span className="ml-4 text-white/30 text-xs uppercase tracking-widest">OTTOBOTS COMMAND CENTER</span>
+                    <span className="ml-4 text-white/30 text-xs uppercase tracking-widest">XOTBOT COMMAND CENTER</span>
                 </div>
 
                 {/* Phase 1: Identity */}

@@ -155,7 +155,7 @@ const ScraperVoid: React.FC = () => {
               <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/60" />
               <div className="w-2.5 h-2.5 rounded-full bg-green-500/60" />
               <div className="ml-4 flex-1 h-5 bg-white/[0.03] rounded-md flex items-center px-3">
-                <span className="text-[9px] text-white/30 font-mono">ottosystems.ai</span>
+                <span className="text-[9px] text-white/30 font-mono">xotbot.ai</span>
               </div>
             </div>
 
@@ -197,7 +197,7 @@ const ScraperVoid: React.FC = () => {
           </div>
 
           <p className="absolute -bottom-8 left-0 text-[9px] uppercase tracking-[0.3em] text-white/25">
-            Targeting Domain: ottosystems.ai
+            Targeting Domain: xotbot.ai
           </p>
 
           {/* Sand-like data particles flowing to text */}

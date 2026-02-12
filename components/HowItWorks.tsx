@@ -122,7 +122,7 @@ const HowItWorks: React.FC = () => {
                 <div ref={headingRef} className="text-center mb-20">
                     <p className="text-[10px] uppercase tracking-[0.4em] text-emerald-400/60 mb-4">Process</p>
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4" style={{ fontFamily: "'Syne', sans-serif" }}>
-                        How Ottobots Works<span className="text-emerald-400">.</span>
+                        How Xotbot Works<span className="text-emerald-400">.</span>
                     </h2>
                     <p className="text-white/40 text-sm md:text-base max-w-md mx-auto">
                         From your website to a fully trained AI assistant in minutes.
