@@ -120,7 +120,7 @@ const ContactPage: React.FC = () => {
 
         try {
             // Get API base URL - use localhost for development
-            const apiUrl = 'http://localhost:8000';
+            const apiUrl = 'https://server.xotbot.com';
 
             const response = await fetch(`${apiUrl}/api/website/contact`, {
                 method: 'POST',

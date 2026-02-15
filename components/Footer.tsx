@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
 
                 {/* Copyright */}
                 <div className="text-[10px] font-mono text-white/20">
-                    &copy; 2024
+                    &copy; 2026
                 </div>
             </div>
         </footer>

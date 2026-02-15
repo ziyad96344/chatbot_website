@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import ComingSoonModal from './ComingSoonModal';
 
 const MenuIcon = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -19,7 +18,6 @@ const XIcon = () => (
 const Navbar: React.FC = () => {
   const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const navLinks = [
     { label: 'About', to: '/about' },
@@ -67,16 +65,23 @@ const Navbar: React.FC = () => {
           </div>
 
           {/* Right Side - CTA */}
-          <div className="hidden md:flex items-center gap-6 -mt-6">
-            <button
-              onClick={() => setIsModalOpen(true)}
+          <div className="hidden md:flex items-center gap-8 -mt-6">
+            <a
+              href="https://app.xotbot.com/"
+              className="text-[9px] uppercase tracking-[0.3em] font-medium text-white/60 hover:text-white transition-colors duration-300"
+            >
+              Login
+            </a>
+
+            <a
+              href="https://app.xotbot.com/"
               className="group relative px-5 py-2.5 rounded-full overflow-hidden transition-colors duration-300 border border-white/20 hover:border-white/40"
             >
               <span className="relative z-10 text-[9px] uppercase tracking-[0.3em] font-semibold transition-colors duration-300 text-white/80 group-hover:text-black">
                 Get Access
               </span>
               <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
-            </button>
+            </a>
           </div>
 
           {/* Mobile Hamburger Button */}
@@ -104,19 +109,22 @@ const Navbar: React.FC = () => {
               {link.label}
             </Link>
           ))}
-          <button
-            onClick={() => {
-              setIsMobileMenuOpen(false);
-              setIsModalOpen(true);
-            }}
-            className="mt-4 px-8 py-3 rounded-full border border-white/20 text-white text-xs uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-all duration-300"
+
+          <a
+            href="https://app.xotbot.com/login"
+            className="text-lg uppercase tracking-[0.2em] font-light text-white/60 hover:text-white transition-colors duration-300 mt-4"
+          >
+            Login
+          </a>
+
+          <a
+            href="https://app.xotbot.com/register"
+            className="px-8 py-3 rounded-full border border-white/20 text-white text-xs uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-all duration-300"
           >
             Get Access
-          </button>
+          </a>
         </div>
       </nav>
-
-      <ComingSoonModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </>
   );
 };

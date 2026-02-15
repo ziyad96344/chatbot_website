@@ -23,10 +23,10 @@ interface SubscriptionPlan {
 }
 
 // Backend API URL
-const API_BASE_URL = 'http://localhost:8000/api';
+const API_BASE_URL = 'https://server.xotbot.com/api';
 
 // Chatbot Frontend URL (for registration redirect)
-const CHATBOT_FRONTEND_URL = 'http://localhost:3000';
+const CHATBOT_FRONTEND_URL = 'https://app.xotbot.com';
 
 const PricingPage: React.FC = () => {
     const navigate = useNavigate();
