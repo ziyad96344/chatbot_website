@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import gsap from 'gsap';
+import config from '../config/api';
 
 const InputField = ({ label, name, type = 'text', placeholder, value, onChange, focusedField, setFocusedField }: any) => (
     <div className="relative group">
@@ -119,10 +120,7 @@ const ContactPage: React.FC = () => {
         setLoading(true);
 
         try {
-            // Get API base URL - use localhost for development
-            const apiUrl = 'https://server.xotbot.com';
-
-            const response = await fetch(`${apiUrl}/api/website/contact`, {
+            const response = await fetch(`${config.API_BASE_URL}/website/contact`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

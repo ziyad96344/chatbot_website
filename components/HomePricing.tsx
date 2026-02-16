@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import config from '../config/api';
 
 interface Plan {
     id: number;
@@ -16,13 +17,11 @@ const HomePricing: React.FC = () => {
     const [plans, setPlans] = useState<Plan[]>([]);
     const [loading, setLoading] = useState(true);
 
-    const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-    const API_BASE_URL = isLocal ? 'http://127.0.0.1:8000/api' : 'https://server.xotbot.com/api';
 
     useEffect(() => {
         const fetchPlans = async () => {
             try {
-                const res = await fetch(`${API_BASE_URL}/plans`);
+                const res = await fetch(`${config.API_BASE_URL}/plans`);
                 const data = await res.json();
                 if (data.success && data.data) {
                     const parsed = data.data.map((p: any) => ({

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import gsap from 'gsap';
+import config from '../config/api';
 
 interface SubscriptionPlan {
     id: number;
@@ -33,9 +34,7 @@ const PricingPage: React.FC = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
-    // Dynamic API URL based on environment
-    const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-    const API_BASE_URL = isLocal ? 'http://127.0.0.1:8000/api' : 'https://server.xotbot.com/api';
+
 
     // Fetch plans from backend (NO HARDCODED FALLBACK)
     useEffect(() => {
@@ -43,9 +42,9 @@ const PricingPage: React.FC = () => {
             try {
                 setLoading(true);
                 setError(null);
-                console.log(`Fetching pricing from: ${API_BASE_URL}/plans`);
+                console.log(`Fetching pricing from: ${config.API_BASE_URL}/plans`);
 
-                const response = await fetch(`${API_BASE_URL}/plans`);
+                const response = await fetch(`${config.API_BASE_URL}/plans`);
                 const data = await response.json();
 
                 if (data.success && data.data) {
@@ -63,7 +62,7 @@ const PricingPage: React.FC = () => {
                 }
             } catch (err) {
                 console.error('Network Error fetching plans:', err);
-                setError(`Unable to connect to server at ${API_BASE_URL}`);
+                setError(`Unable to connect to server at ${config.API_BASE_URL}`);
             } finally {
                 setLoading(false);
             }

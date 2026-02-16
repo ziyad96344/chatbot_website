@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Play, Calendar, MessageSquare, Zap, Shield, Globe } from 'lucide-react';
 import Footer from '../components/Footer';
+import config from '../config/api';
 
 const fadeUp = {
     hidden: { opacity: 0, y: 30 },
@@ -21,15 +22,14 @@ const DemoPage: React.FC = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
 
-    const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-    const API_BASE_URL = isLocal ? 'http://127.0.0.1:8000/api' : 'https://server.xotbot.com/api';
+
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setLoading(true);
         setError('');
         try {
-            const res = await fetch(`${API_BASE_URL}/website/demo-request`, {
+            const res = await fetch(`${config.API_BASE_URL}/website/demo-request`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
                 body: JSON.stringify(formData),
