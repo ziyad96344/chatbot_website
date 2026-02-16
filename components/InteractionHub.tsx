@@ -53,12 +53,12 @@ const InteractionHub: React.FC = () => {
       <div ref={chatRef} className="min-h-screen flex items-center justify-center py-20 px-6 md:px-12">
         <div className="max-w-[1100px] w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="animate-in">
-            <span className="text-[10px] tracking-[0.4em] uppercase text-white/40 mb-4 block">Deployment 01</span>
+            <span className="text-[10px] tracking-[0.4em] uppercase text-emerald-400/70 mb-4 block font-mono">AI Chat Interface</span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tighter mb-5 uppercase">
-              NEURAL<br />CHAT
+              Instant AI<br />Chat Support
             </h2>
             <p className="text-white/50 text-base leading-relaxed max-w-md font-light">
-              Experience logic-driven conversation. High-fidelity responses derived from your specific data source.
+              Your customers get accurate answers 24/7, trained on YOUR website data. No more generic FAQ pages — every response is specific to your business.
             </p>
           </div>
 
@@ -132,12 +132,12 @@ const InteractionHub: React.FC = () => {
           </div>
 
           <div className="animate-in order-1 md:order-2">
-            <span className="text-[10px] tracking-[0.4em] uppercase text-white/40 mb-4 block">Deployment 02</span>
+            <span className="text-[10px] tracking-[0.4em] uppercase text-emerald-400/70 mb-4 block font-mono">Voice AI Agent</span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tighter mb-5 uppercase">
-              NATIVE<br />VOICE
+              Human-Like<br />Voice Agent
             </h2>
             <p className="text-white/50 text-base leading-relaxed max-w-md font-light">
-              Real-time low latency auditory response. Humanoid cadence with instantaneous retrieval capabilities.
+              Let customers talk to your business. Real-time voice AI with natural conversation, instant answers, and multiple voice personas to match your brand.
             </p>
           </div>
         </div>

@@ -298,7 +298,8 @@ const Hero: React.FC = () => {
         </div>
 
         <div ref={subtitleRef} className="absolute inset-x-0 bottom-0 flex flex-col items-center pb-[10vh] pointer-events-none z-30">
-          <p className="hero-subtitle text-[10px] md:text-[11px] uppercase tracking-[0.5em] text-white/50 font-medium mb-3">Intelligence Unchained</p>
+          <p className="hero-subtitle text-[10px] md:text-[11px] uppercase tracking-[0.5em] text-white/50 font-medium mb-3">AI-Powered Chatbot & Voice Agent</p>
+          <p className="hero-subtitle text-[10px] md:text-[11px] tracking-[0.15em] text-white/30 font-light mb-3 normal-case">Turn your website into an intelligent assistant — in minutes, not months</p>
           <div className="hero-subtitle flex items-center gap-2">
             <div className="w-1.5 h-1.5 rounded-full bg-emerald-400" style={{ boxShadow: '0 0 10px rgba(52,211,153,0.7)' }} />
             <span className="text-[9px] uppercase tracking-[0.35em] text-white/40 font-light">Systems Online</span>

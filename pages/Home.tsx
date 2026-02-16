@@ -4,10 +4,17 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Lenis from 'lenis';
 import Hero from '../components/Hero';
-import CommandCenter from '../components/CommandCenter';
+import HowItWorksRedesign from '../components/HowItWorksRedesign';
+import FeaturesGrid from '../components/FeaturesGrid';
 import ScraperVoid from '../components/ScraperVoid';
 import InteractionHub from '../components/InteractionHub';
+import UseCases from '../components/UseCases';
+import SocialProof from '../components/SocialProof';
+import WhyChooseUs from '../components/WhyChooseUs';
+import HomePricing from '../components/HomePricing';
 import FloatingMatrix from '../components/FloatingMatrix';
+import FAQ from '../components/FAQ';
+import CTABanner from '../components/CTABanner';
 import Footer from '../components/Footer';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -34,54 +41,25 @@ const HomePage: React.FC = () => {
 
         lenis.on('scroll', ScrollTrigger.update);
 
+        let rafId: number;
+
         const raf = (time: number) => {
             lenis.raf(time);
-            requestAnimationFrame(raf);
+            rafId = requestAnimationFrame(raf);
         };
 
-        requestAnimationFrame(raf);
+        rafId = requestAnimationFrame(raf);
 
         ScrollTrigger.defaults({
             scroller: document.body,
         });
-
-        // Section snap — snap to the TOP of each section
-        const sections = gsap.utils.toArray<HTMLElement>('.snap-section');
-        if (sections.length > 1) {
-            const getSnapPositions = () => {
-                const totalScroll = document.body.scrollHeight - window.innerHeight;
-                return sections.map((s) => s.offsetTop / totalScroll);
-            };
-
-            ScrollTrigger.create({
-                snap: {
-                    snapTo: (progress) => {
-                        const positions = getSnapPositions();
-                        // Find closest position in the scroll direction
-                        let closest = positions[0];
-                        let minDist = Math.abs(progress - closest);
-                        for (const pos of positions) {
-                            const dist = Math.abs(progress - pos);
-                            if (dist < minDist) {
-                                minDist = dist;
-                                closest = pos;
-                            }
-                        }
-                        return closest;
-                    },
-                    duration: { min: 0.25, max: 0.8 },
-                    delay: 0.1,
-                    ease: 'power2.inOut',
-                    directional: true,
-                },
-            });
-        }
 
         setTimeout(() => {
             ScrollTrigger.refresh();
         }, 100);
 
         return () => {
+            cancelAnimationFrame(rafId);
             lenis.destroy();
             ScrollTrigger.killAll();
         };
@@ -93,20 +71,48 @@ const HomePage: React.FC = () => {
                 <Hero />
             </section>
 
-            <section id="command-center" className="snap-section w-full">
-                <CommandCenter onInitialize={() => navigate('/thank-you')} />
+            <section id="how-it-works" className="w-full">
+                <HowItWorksRedesign />
             </section>
 
-            <section id="scraper" className="snap-section w-full">
+            <section id="features" className="w-full">
+                <FeaturesGrid />
+            </section>
+
+            <section id="scraper" className="w-full">
                 <ScraperVoid />
             </section>
 
-            <section id="hub" className="snap-section w-full">
+            <section id="hub" className="w-full">
                 <InteractionHub />
             </section>
 
-            <section id="matrix" className="snap-section w-full">
+            <section id="use-cases" className="w-full">
+                <UseCases />
+            </section>
+
+            <section id="social-proof" className="w-full">
+                <SocialProof />
+            </section>
+
+            <section id="why-choose-us" className="w-full">
+                <WhyChooseUs />
+            </section>
+
+            <section id="pricing" className="w-full">
+                <HomePricing />
+            </section>
+
+            <section id="matrix" className="w-full">
                 <FloatingMatrix />
+            </section>
+
+            <section id="faq" className="w-full">
+                <FAQ />
+            </section>
+
+            <section id="cta" className="w-full">
+                <CTABanner />
             </section>
 
             <Footer />

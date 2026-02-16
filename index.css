@@ -117,10 +117,7 @@ h3 {
     color: #050505;
 }
 
-/* Smooth scroll behavior */
-html {
-    scroll-behavior: smooth;
-}
+/* Scroll behavior managed by Lenis — do not add scroll-behavior: smooth here */
 
 /* Body base styles */
 body {
@@ -165,25 +162,8 @@ video {
     pointer-events: none;
 }
 
-/* GPU acceleration for all animated sections */
-section {
-    transform: translateZ(0);
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-}
-
-/* Force GPU compositing on key elements */
-[style*="will-change"] {
-    transform: translateZ(0);
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    perspective: 1000px;
-}
-
-/* Smooth transition between sections */
-section>div {
-    will-change: transform, opacity;
-}
+/* GPU acceleration — applied only via utility class, not blanket */
+/* Use .gpu-accelerate class on specific elements that need it */
 
 /* Iframe isolation - critical for smooth scroll */
 iframe {

@@ -21,8 +21,9 @@ const FloatingMatrix: React.FC = () => {
         <div className="absolute bottom-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-indigo-500/[0.03] blur-[100px]" />
       </div>
       <div className="z-10 text-center mb-12 max-w-2xl">
-        <h2 className="text-3xl md:text-5xl lg:text-6xl font-black tracking-tighter mb-6 uppercase">OMNICHANNEL<br />SYNCHRONY</h2>
-        <p className="text-white/40 text-sm tracking-widest uppercase">Integration across the entire web ecosystem.</p>
+        <span className="text-[10px] tracking-[0.4em] uppercase text-emerald-400/70 mb-3 block font-mono">Integrations</span>
+        <h2 className="text-3xl md:text-5xl lg:text-6xl font-black tracking-tighter mb-6 uppercase">Works Everywhere<br />You Do</h2>
+        <p className="text-white/40 text-sm md:text-base max-w-lg mx-auto font-light leading-relaxed">One bot. Every platform. Deploy your AI assistant on any website builder with a single line of code.</p>
       </div>
 
       <div className="relative w-full max-w-3xl grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">

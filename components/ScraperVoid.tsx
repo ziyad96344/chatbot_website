@@ -235,11 +235,12 @@ const ScraperVoid: React.FC = () => {
           </div>
 
           <div className="-mt-48 text-center relative z-20">
+            <span className="animate-in text-[10px] tracking-[0.4em] uppercase text-emerald-400/70 mb-3 block font-mono">Knowledge Engine</span>
             <h2 className="animate-in text-2xl md:text-3xl lg:text-4xl font-black mb-4 tracking-tighter uppercase">
-              DATA EXTRACTION
+              Your Website<br />Becomes the Brain
             </h2>
-            <p className="animate-in text-white/40 text-sm max-w-xs leading-relaxed font-light mx-auto">
-              Autonomous agents scrape, parse, and synchronize web data into a single neural network.
+            <p className="animate-in text-white/40 text-sm max-w-sm leading-relaxed font-light mx-auto">
+              Xotbot reads every page of your site — products, pricing, policies — and turns it into an AI knowledge base. Always up-to-date, always accurate.
             </p>
           </div>
         </div>

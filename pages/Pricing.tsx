@@ -22,9 +22,6 @@ interface SubscriptionPlan {
     branding_removable: boolean;
 }
 
-// Backend API URL
-const API_BASE_URL = 'https://server.xotbot.com/api';
-
 // Chatbot Frontend URL (for registration redirect)
 const CHATBOT_FRONTEND_URL = 'https://app.xotbot.com';
 
@@ -36,12 +33,18 @@ const PricingPage: React.FC = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
-    // Fetch plans from backend
+    // Dynamic API URL based on environment
+    const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    const API_BASE_URL = isLocal ? 'http://127.0.0.1:8000/api' : 'https://server.xotbot.com/api';
+
+    // Fetch plans from backend (NO HARDCODED FALLBACK)
     useEffect(() => {
         const fetchPlans = async () => {
             try {
                 setLoading(true);
                 setError(null);
+                console.log(`Fetching pricing from: ${API_BASE_URL}/plans`);
+
                 const response = await fetch(`${API_BASE_URL}/plans`);
                 const data = await response.json();
 
@@ -55,11 +58,12 @@ const PricingPage: React.FC = () => {
                     }));
                     setPlans(parsedPlans);
                 } else {
-                    setError('Failed to load pricing plans');
+                    setError('Failed to load pricing plans from server');
+                    console.error('API Error:', data.message || 'Unknown error');
                 }
             } catch (err) {
-                console.error('Error fetching plans:', err);
-                setError('Unable to connect to server');
+                console.error('Network Error fetching plans:', err);
+                setError(`Unable to connect to server at ${API_BASE_URL}`);
             } finally {
                 setLoading(false);
             }

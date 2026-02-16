@@ -20,8 +20,11 @@ const Navbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navLinks = [
+    { label: 'Features', to: '/features' },
     { label: 'About', to: '/about' },
     { label: 'Pricing', to: '/pricing' },
+    { label: 'Demo', to: '/demo' },
+    { label: 'Docs', to: '/docs' },
     { label: 'Contact', to: '/contact' },
   ];
 
@@ -42,7 +45,7 @@ const Navbar: React.FC = () => {
         <div className="flex items-center justify-between max-w-[1800px] mx-auto relative z-10">
           {/* Logo */}
           <Link to="/" className="group flex items-center gap-3">
-            <img src="/logo/logo1.png" alt="Xotbot" className="h-20 md:h-28 w-auto object-contain group-hover:brightness-110 transition-all duration-300 -mt-2 md:-mt-6" />
+            <img src="/logo/logo1.png" alt="Xotbot" className="h-8 md:h-10 w-auto object-contain group-hover:brightness-110 transition-all duration-300" />
           </Link>
 
           {/* Center Navigation Links */}
