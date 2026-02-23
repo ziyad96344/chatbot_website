@@ -409,3 +409,69 @@ iframe {
 .contain-paint {
     contain: paint layout;
 }
+
+/* ========================================
+   MOBILE PERFORMANCE OPTIMIZATIONS
+   ======================================== */
+@media (max-width: 767px) {
+
+    /* Disable grain overlay on mobile — SVG filter is extremely expensive */
+    .grain-overlay {
+        display: none !important;
+    }
+
+    /* Kill continuous float animations on mobile */
+    .animate-float {
+        animation: none !important;
+    }
+
+    /* Reduce backdrop-blur everywhere on mobile */
+    .backdrop-blur-xl {
+        backdrop-filter: blur(8px) !important;
+        -webkit-backdrop-filter: blur(8px) !important;
+    }
+
+    .backdrop-blur-md {
+        backdrop-filter: blur(4px) !important;
+        -webkit-backdrop-filter: blur(4px) !important;
+    }
+
+    /* Reduce large ambient blur glows */
+    .blur-\[120px\] {
+        filter: blur(40px) !important;
+    }
+
+    .blur-\[100px\] {
+        filter: blur(30px) !important;
+    }
+
+    /* Disable will-change on mobile to reduce memory usage */
+    .will-change-transform {
+        will-change: auto !important;
+    }
+
+    .hero-card {
+        will-change: auto !important;
+    }
+
+    /* Reduce bot card glow animation intensity */
+    .bot-card-active {
+        animation: none !important;
+    }
+
+    /* Simplify glass cards on mobile */
+    .glass-card-premium,
+    .glass-card-bot {
+        backdrop-filter: blur(8px) !important;
+        -webkit-backdrop-filter: blur(8px) !important;
+    }
+
+    /* Reduce wave bar filter on mobile */
+    .wave-bar {
+        filter: none !important;
+    }
+
+    .wave-bar-active {
+        filter: none !important;
+    }
+}

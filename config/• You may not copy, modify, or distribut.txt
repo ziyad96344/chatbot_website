@@ -1,0 +1,13 @@
+• You may not copy, modify, or distribute any part of the Service without written permission.
+• The "Xotbot" name, logo, and branding are trademarks of Ottomern Technologies.
+• Your use of the Service does not grant you any IP rights in the platform itself.`},{title:"7. Service Availability",content:`• We strive for 99.9% uptime but do not guarantee uninterrupted service.
+• Scheduled maintenance windows will be communicated in advance when possible.
+• We are not liable for downtime caused by factors beyond our control (force majeure).
+• We may modify, suspend, or discontinue features with reasonable notice.`},{title:"8. Limitation of Liability",content:`• The Service is provided "as is" without warranties of any kind.
+• We are not liable for AI-generated responses that may be inaccurate or incomplete.
+• Our total liability is limited to the amount you paid in the 12 months preceding the claim.
+• We are not responsible for any indirect, incidental, or consequential damages.
+• You acknowledge that AI responses should not substitute professional advice (legal, medical, financial).`},{title:"9. Termination",content:`• You may cancel your subscription at any time from your account settings.
+• We may suspend or terminate accounts that violate these Terms.
+• Upon termination, your access to the platform will cease immediately.
+• Your data will be retained for 30 days post-termination, then permanently deleted.

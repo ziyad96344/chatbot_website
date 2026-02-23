@@ -30,7 +30,7 @@ const FloatingMatrix: React.FC = () => {
         {platforms.map((p, i) => (
           <div
             key={p.name}
-            className="group relative h-28 md:h-36 bg-white/[0.02] border border-white/5 rounded-2xl backdrop-blur-md flex flex-col items-center justify-center hover:bg-white/[0.05] transition-all duration-700 cursor-pointer animate-float"
+            className="group relative h-28 md:h-36 bg-white/[0.03] border border-white/5 rounded-2xl flex flex-col items-center justify-center hover:bg-white/[0.05] transition-all duration-700 cursor-pointer md:animate-float"
             style={{
               animationDelay: `${i * 0.2}s`,
               animationDuration: `${3 + (i % 3) * 0.5}s`

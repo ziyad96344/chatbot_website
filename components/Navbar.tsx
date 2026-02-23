@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 const MenuIcon = () => (
@@ -18,6 +18,19 @@ const XIcon = () => (
 const Navbar: React.FC = () => {
   const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // Lock body scroll when mobile menu is open — prevents background GPU work
+  // Also dispatch events so Hero can pause the Spline 3D iframe
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+      window.dispatchEvent(new Event('mobile-menu-open'));
+    } else {
+      document.body.style.overflow = '';
+      window.dispatchEvent(new Event('mobile-menu-close'));
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [isMobileMenuOpen]);
 
   const navLinks = [
     { label: 'Features', to: '/features' },
@@ -42,7 +55,7 @@ const Navbar: React.FC = () => {
           }}
         />
 
-        <div className="flex items-center justify-between max-w-[1800px] mx-auto relative z-10">
+        <div className="flex items-center justify-between max-w-[1800px] mx-auto relative z-50">
           {/* Logo */}
           <Link to="/" className="group flex items-center gap-3">
             <img src="/logo/logo1.png" alt="Xotbot" className="h-8 md:h-10 w-auto object-contain group-hover:brightness-110 transition-all duration-300" />
@@ -98,7 +111,7 @@ const Navbar: React.FC = () => {
 
         {/* Mobile Menu Overlay */}
         <div
-          className={`fixed inset-0 bg-black/95 backdrop-blur-xl z-40 transition-all duration-500 flex flex-col items-center justify-center gap-8 ${isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+          className={`fixed inset-0 bg-black/95 backdrop-blur-md z-40 transition-all duration-300 flex flex-col items-center justify-center gap-8 ${isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
             }`}
         >
           {navLinks.map((link) => (

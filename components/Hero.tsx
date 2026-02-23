@@ -1,8 +1,13 @@
-import React, { useEffect, useRef, useState, useCallback } from 'react';
+import React, { useEffect, useRef, useState, useCallback, useMemo } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
+
+const isMobileDevice = () => {
+  if (typeof window === 'undefined') return false;
+  return window.innerWidth < 768 || /Android|iPhone|iPad|iPod|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+};
 
 const Hero: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -20,7 +25,10 @@ const Hero: React.FC = () => {
   const hasTriggeredRef = useRef(false);
   const audioPlayedRef = useRef(false);
 
+  const isMobile = useMemo(() => isMobileDevice(), []);
   const [splineLoaded, setSplineLoaded] = useState(false);
+  const [splineReady, setSplineReady] = useState(!isMobile); // Desktop: load immediately, Mobile: defer
+  const [menuOpen, setMenuOpen] = useState(false);
   const [displayedText, setDisplayedText] = useState('');
   const [isAudioPlaying, setIsAudioPlaying] = useState(false);
   const [isTypingComplete, setIsTypingComplete] = useState(false);
@@ -196,6 +204,22 @@ const Hero: React.FC = () => {
     return () => ctx.revert();
   }, []);
 
+  // Defer Spline load on mobile by 3s, and listen for menu open/close events
+  useEffect(() => {
+    if (isMobile) {
+      const timer = setTimeout(() => setSplineReady(true), 3000);
+      const handleMenuOpen = () => setMenuOpen(true);
+      const handleMenuClose = () => setMenuOpen(false);
+      window.addEventListener('mobile-menu-open', handleMenuOpen);
+      window.addEventListener('mobile-menu-close', handleMenuClose);
+      return () => {
+        clearTimeout(timer);
+        window.removeEventListener('mobile-menu-open', handleMenuOpen);
+        window.removeEventListener('mobile-menu-close', handleMenuClose);
+      };
+    }
+  }, [isMobile]);
+
   // Main animations
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -280,20 +304,22 @@ const Hero: React.FC = () => {
           </div>
         </div>
 
-        <div ref={robotContainerRef} className="absolute inset-0 flex items-center justify-center z-20" style={{ willChange: 'transform' }}>
+        <div ref={robotContainerRef} className="absolute inset-0 flex items-center justify-center z-20" style={{ willChange: isMobile ? 'auto' : 'transform' }}>
           <div className="relative w-[95vw] md:w-[70vw] lg:w-[60vw] max-w-[900px]" style={{ aspectRatio: '1/1' }}>
-            <div
-              className="spline-wrapper absolute inset-0 overflow-hidden"
-              style={{
-                clipPath: 'inset(0 0 60px 0)',
-                visibility: isHeroVisible ? 'visible' : 'hidden',
-                pointerEvents: isHeroVisible ? 'auto' : 'none',
-              }}
-            >
-              <iframe src="https://my.spline.design/nexbotrobotcharacterconcept-SBwuKfTaYpl7fPn5dfSBifkb/" frameBorder="0" width="100%" className={`w-full transition-opacity duration-700 ${splineLoaded ? 'opacity-100' : 'opacity-0'}`} style={{ background: 'transparent', border: 'none', height: 'calc(100% + 60px)' }} title="Xotbot" loading="lazy" onLoad={() => setSplineLoaded(true)} />
-            </div>
+            {splineReady && (
+              <div
+                className="spline-wrapper absolute inset-0 overflow-hidden"
+                style={{
+                  clipPath: 'inset(0 0 60px 0)',
+                  visibility: (isHeroVisible && !menuOpen) ? 'visible' : 'hidden',
+                  pointerEvents: (isHeroVisible && !menuOpen) ? 'auto' : 'none',
+                }}
+              >
+                <iframe src="https://my.spline.design/nexbotrobotcharacterconcept-SBwuKfTaYpl7fPn5dfSBifkb/" frameBorder="0" width="100%" className={`w-full transition-opacity duration-700 ${splineLoaded ? 'opacity-100' : 'opacity-0'}`} style={{ background: 'transparent', border: 'none', height: 'calc(100% + 60px)' }} title="Xotbot" loading="lazy" onLoad={() => setSplineLoaded(true)} />
+              </div>
+            )}
             {!splineLoaded && <div className="absolute inset-0 flex items-center justify-center"><div className="w-10 h-10 border-2 border-white/10 border-t-emerald-400/60 rounded-full animate-spin" /></div>}
-            <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 w-[50%] h-[50%] blur-[120px] rounded-full ${isAudioPlaying ? 'opacity-25' : 'opacity-10'}`} style={{ background: 'radial-gradient(circle, rgba(16,185,129,1) 0%, transparent 70%)' }} />
+            <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 w-[50%] h-[50%] ${isMobile ? 'blur-[40px]' : 'blur-[120px]'} rounded-full ${isAudioPlaying ? 'opacity-25' : 'opacity-10'}`} style={{ background: 'radial-gradient(circle, rgba(16,185,129,1) 0%, transparent 70%)' }} />
           </div>
         </div>
 
