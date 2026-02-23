@@ -59,7 +59,7 @@ const FeaturesPage: React.FC = () => {
             <SEO
                 title="AI Chatbot Features — Voice AI, WhatsApp, Multilingual"
                 description="Explore XotBot's powerful AI chatbot features: voice AI calls, WhatsApp integration, multilingual support, lead capture, custom knowledge bases, analytics dashboard, and instant deployment."
-                keywords="AI chatbot features, voice AI chatbot, WhatsApp chatbot integration, multilingual chatbot, lead capture chatbot, chatbot analytics, knowledge base chatbot, custom chatbot branding"
+                keywords="AI chatbot features, voice AI chatbot, WhatsApp chatbot integration, multilingual chatbot, lead capture chatbot, chatbot analytics, knowledge base AI, custom branding chatbot, no-code chatbot builder"
                 canonicalUrl="https://xotbot.com/features"
             />
             {/* Background */}

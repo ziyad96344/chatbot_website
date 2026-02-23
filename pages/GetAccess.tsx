@@ -26,7 +26,7 @@ const GetAccessPage: React.FC = () => {
         <div className="pt-20 pb-20 px-6 md:px-12 max-w-2xl mx-auto relative">
             <SEO
                 title="Get Early Access — XotBot AI Chatbot"
-                description="Join the XotBot waitlist for early access to India's most powerful AI chatbot platform."
+                description="Join the XotBot waitlist for early access to the most powerful AI chatbot platform."
                 canonicalUrl="https://xotbot.com/get-access"
                 noindex={true}
             />

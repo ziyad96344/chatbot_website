@@ -71,7 +71,7 @@ const HomePage: React.FC = () => {
         '@type': 'Organization',
         name: 'XotBot',
         url: 'https://xotbot.com',
-        description: 'AI-powered chatbot platform for businesses in India',
+        description: 'AI-powered chatbot platform for businesses worldwide',
         sameAs: [],
         offers: {
             '@type': 'AggregateOffer',
@@ -84,9 +84,9 @@ const HomePage: React.FC = () => {
     return (
         <>
             <SEO
-                title="XotBot — AI Chatbot Platform for Business | India"
-                description="Build & deploy AI chatbots with voice calls, WhatsApp integration, and intelligent lead generation. Custom knowledge bases, multilingual support, and real-time analytics. Made for Indian businesses."
-                keywords="AI chatbot platform India, AI chatbot for business, voice AI chatbot, WhatsApp chatbot, lead generation chatbot, customer support AI, chatbot builder India, multilingual chatbot"
+                title="XotBot — AI Chatbot Platform for Business"
+                description="Build & deploy AI chatbots with voice calls, WhatsApp integration, and intelligent lead generation. Custom knowledge bases, multilingual support, and real-time analytics for businesses worldwide."
+                keywords="AI chatbot platform, AI chatbot for business, voice AI chatbot, WhatsApp chatbot, lead generation chatbot, customer support AI, best chatbot builder, multilingual chatbot, no-code chatbot"
                 canonicalUrl="https://xotbot.com/"
                 structuredData={organizationSchema}
             />

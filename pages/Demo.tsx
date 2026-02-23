@@ -53,7 +53,7 @@ const DemoPage: React.FC = () => {
             <SEO
                 title="Try XotBot Demo — See AI Chatbot in Action"
                 description="Book a personalized demo and see how XotBot's AI chatbot can transform your customer engagement. Live setup in 5 minutes, multi-channel preview, no commitment."
-                keywords="AI chatbot demo, try AI chatbot, chatbot demo India, XotBot demo, book AI demo"
+                keywords="AI chatbot demo, try AI chatbot, chatbot live demo, XotBot demo, book AI chatbot demo"
                 canonicalUrl="https://xotbot.com/demo"
             />
             <div className="fixed inset-0 pointer-events-none opacity-[0.03]"

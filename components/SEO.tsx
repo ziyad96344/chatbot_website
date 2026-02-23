@@ -44,7 +44,7 @@ const SEO: React.FC<SEOProps> = ({
             <meta property="og:description" content={description} />
             <meta property="og:image" content={ogImage} />
             <meta property="og:site_name" content="XotBot" />
-            <meta property="og:locale" content="en_IN" />
+            <meta property="og:locale" content="en_US" />
 
             {/* Twitter */}
             <meta name="twitter:card" content={twitterCard} />

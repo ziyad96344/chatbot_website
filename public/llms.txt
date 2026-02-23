@@ -1,6 +1,6 @@
 # XotBot — AI Chatbot Platform for Business
 
-> Build, deploy, and scale AI-powered chatbots with voice calls, WhatsApp integration, and intelligent lead generation. Made for Indian businesses.
+> Build, deploy, and scale AI-powered chatbots with voice calls, WhatsApp integration, and intelligent lead generation.
 
 ## What is XotBot?
 
@@ -13,7 +13,7 @@ XotBot is an AI chatbot SaaS platform that helps businesses automate customer su
 - **WhatsApp Business Integration** — Connect chatbot to WhatsApp Business API
 - **Custom Knowledge Base** — Train chatbots on your website content, PDFs, and documents
 - **Lead Capture & CRM Export** — Automatically capture visitor information during chats
-- **Multilingual Support** — Hindi, English, Tamil, Bengali, and 20+ Indian languages
+- **Multilingual Support** — Hindi, English, Spanish, French, Arabic, and 20+ languages
 - **Analytics Dashboard** — Track chat sessions, response quality, and customer insights
 - **Multiple AI Models** — Choose between Gemini 2.0, Groq Llama 70B, and more
 
@@ -35,7 +35,7 @@ XotBot is an AI chatbot SaaS platform that helps businesses automate customer su
 
 ## Target Audience
 
-Small and medium businesses in India, startups, e-commerce companies, SaaS companies, healthcare providers, educational institutions, real estate agencies, and enterprise organizations looking for AI-powered customer engagement solutions.
+Small and medium businesses, startups, e-commerce companies, SaaS companies, healthcare providers, educational institutions, real estate agencies, and enterprise organizations looking for AI-powered customer engagement solutions.
 
 ## Technology Stack
 

@@ -156,9 +156,9 @@ const PricingPage: React.FC = () => {
     return (
         <div className="min-h-screen bg-[#050505] overflow-x-hidden overflow-y-auto flex flex-col relative font-sans">
             <SEO
-                title="XotBot Pricing — Affordable AI Chatbot Plans for India"
-                description="Choose from Free, Pro, Ultra & Enterprise AI chatbot plans. Starting at ₹0/month. Voice AI calls, WhatsApp integration, unlimited messages, and more. No credit card required."
-                keywords="AI chatbot pricing India, chatbot plans, affordable AI chatbot, free AI chatbot trial, enterprise chatbot pricing, XotBot pricing"
+                title="XotBot Pricing — Affordable AI Chatbot Plans"
+                description="Choose from Free, Pro, Ultra & Enterprise AI chatbot plans. Voice AI calls, WhatsApp integration, unlimited messages, and more. Start free — no credit card required."
+                keywords="AI chatbot pricing, chatbot plans, affordable AI chatbot, free AI chatbot trial, enterprise chatbot pricing, XotBot pricing, best chatbot pricing"
                 canonicalUrl="https://xotbot.com/pricing"
             />
             {/* Ambient Background Glows */}

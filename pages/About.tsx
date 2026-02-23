@@ -233,9 +233,9 @@ const AboutPage: React.FC = () => {
     return (
         <div className="relative bg-[#0a0a0c] min-h-screen overflow-x-hidden">
             <SEO
-                title="About XotBot — India's AI Chatbot Platform"
-                description="XotBot transforms raw website data into intelligent AI chatbot assistants. Built for Indian businesses — from knowledge extraction to cognitive AI deployment in under 5 minutes."
-                keywords="about XotBot, AI chatbot company India, chatbot platform origin, intelligent conversation AI, cognitive AI assistant"
+                title="About XotBot — AI Chatbot Platform"
+                description="XotBot transforms raw website data into intelligent AI chatbot assistants. From knowledge extraction to cognitive AI deployment in under 5 minutes — for businesses worldwide."
+                keywords="about XotBot, AI chatbot company, chatbot platform, intelligent conversation AI, cognitive AI assistant"
                 canonicalUrl="https://xotbot.com/about"
             />
             {/* Background Pattern */}
