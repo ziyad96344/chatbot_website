@@ -18,7 +18,7 @@ const InputField = ({ label, name, type = 'text', placeholder, value, onChange, 
                     rows={4}
                     className="w-full bg-transparent border-none text-white placeholder-white/30 focus:outline-none resize-none text-sm px-4 py-3.5"
                     placeholder={placeholder}
-                    style={{ fontFamily: "'Syne', sans-serif" }}
+                    style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                 />
             ) : (
                 <input
@@ -29,7 +29,7 @@ const InputField = ({ label, name, type = 'text', placeholder, value, onChange, 
                     onBlur={() => setFocusedField(null)}
                     className="w-full bg-transparent border-none text-white placeholder-white/30 focus:outline-none text-sm px-4 py-3.5"
                     placeholder={placeholder}
-                    style={{ fontFamily: "'Syne', sans-serif" }}
+                    style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                 />
             )}
 
@@ -171,12 +171,12 @@ const ContactPage: React.FC = () => {
             </div>
 
             {/* Main Content Hub - Shifted slightly down */}
-            <div ref={containerRef} className="max-w-6xl w-full px-6 relative z-10 grid lg:grid-cols-2 gap-12 lg:gap-24 items-center mt-20 md:mt-20">
+            <div ref={containerRef} className="max-w-6xl w-full px-6 relative z-10 grid lg:grid-cols-2 gap-12 lg:gap-24 items-center mt-8 md:mt-10">
 
                 {/* Left Node: Transmission Form */}
                 <div ref={leftNodeRef} className="relative">
                     <div className="absolute -top-20 -left-20 pointer-events-none">
-                        <h1 className="text-8xl lg:text-9xl font-bold text-white/[0.03] select-none" style={{ fontFamily: "'Syne', sans-serif" }}>
+                        <h1 className="text-8xl lg:text-9xl font-bold text-white/[0.03] select-none" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                             TOUCH
                         </h1>
                     </div>
@@ -189,7 +189,7 @@ const ContactPage: React.FC = () => {
                         </div>
 
                         <div className="mb-8">
-                            <h2 className="text-3xl font-bold text-white mb-2" style={{ fontFamily: "'Syne', sans-serif" }}>
+                            <h2 className="text-3xl font-bold text-white mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                                 Transmission Node
                             </h2>
                             <p className="text-gray-400 text-sm font-mono">
@@ -295,7 +295,7 @@ const ContactPage: React.FC = () => {
                 <div ref={rightNodeRef} className="relative space-y-8">
                     {/* Massive Header "GET IN" positioned behind */}
                     <div className="absolute -top-32 -right-10 pointer-events-none z-0 mix-blend-overlay">
-                        <h1 className="text-9xl font-black text-white/[0.05] leading-none" style={{ fontFamily: "'Syne', sans-serif" }}>
+                        <h1 className="text-9xl font-black text-white/[0.05] leading-none" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                             GET<br />IN
                         </h1>
                     </div>
@@ -304,7 +304,7 @@ const ContactPage: React.FC = () => {
                     <div className="relative z-10 bg-black/40 backdrop-blur-md border border-white/10 rounded-xl p-8 hover:border-[#00ff00]/20 transition-colors duration-500 group shadow-[0_10px_40px_rgba(0,0,0,0.5)]">
                         <div className="flex items-start justify-between mb-6">
                             <div>
-                                <h3 className="text-white font-bold text-lg mb-1" style={{ fontFamily: "'Syne', sans-serif" }}>Digital Coordinates</h3>
+                                <h3 className="text-white font-bold text-lg mb-1" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Digital Coordinates</h3>
                                 <p className="text-gray-500 text-xs font-mono">Location & Direct Line</p>
                             </div>
                             <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-[#00ff00]/10 transition-colors">

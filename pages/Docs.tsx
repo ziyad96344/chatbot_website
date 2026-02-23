@@ -62,7 +62,7 @@ const DocsPage: React.FC = () => {
             />
 
             {/* Hero */}
-            <section className="relative pt-32 pb-16 px-6 md:px-12">
+            <section className="relative pt-20 pb-16 px-6 md:px-12">
                 <div className="max-w-4xl mx-auto text-center">
                     <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}
                         className="text-[10px] uppercase tracking-[0.5em] text-emerald-400/60 mb-6 font-mono">
@@ -70,7 +70,7 @@ const DocsPage: React.FC = () => {
                     </motion.p>
                     <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
                         className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight"
-                        style={{ fontFamily: "'Syne', sans-serif" }}>
+                        style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                         Learn, Build,{' '}
                         <span className="bg-gradient-to-r from-emerald-400 to-teal-300 bg-clip-text text-transparent">Deploy</span>
                         <span className="text-emerald-400">.</span>
@@ -110,7 +110,7 @@ const DocsPage: React.FC = () => {
                                 <div className="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center">
                                     <section.icon size={14} className="text-emerald-400" />
                                 </div>
-                                <h2 className="text-xl font-bold text-white tracking-tight" style={{ fontFamily: "'Syne', sans-serif" }}>
+                                <h2 className="text-xl font-bold text-white tracking-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                                     {section.title}
                                 </h2>
                             </motion.div>

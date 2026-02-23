@@ -160,7 +160,7 @@ const PricingPage: React.FC = () => {
                 <div className="absolute bottom-[-20%] right-[20%] w-[400px] h-[400px] bg-[#00ff00]/5 rounded-full blur-[100px]" />
             </div>
 
-            <div className="w-full max-w-[1400px] mx-auto px-6 relative z-10 flex flex-col pt-24 md:pt-36 pb-20">
+            <div className="w-full max-w-[1400px] mx-auto px-6 relative z-10 flex flex-col pt-20 md:pt-24 pb-20">
                 {/* Header - Very Compact */}
                 <div className="flex flex-col items-center mb-8 md:mb-12">
                     <motion.div
@@ -178,7 +178,7 @@ const PricingPage: React.FC = () => {
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
                         className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tighter text-center leading-none"
-                        style={{ fontFamily: "'Syne', sans-serif" }}
+                        style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                     >
                         Transparent{' '}
                         <span className="bg-gradient-to-r from-white via-gray-400 to-gray-600 bg-clip-text text-transparent">
@@ -278,7 +278,7 @@ const PricingPage: React.FC = () => {
                                             )}
 
                                             <div className="mb-4">
-                                                <h3 className="text-lg font-bold text-white mb-1 font-syne">{plan.name}</h3>
+                                                <h3 className="text-lg font-bold text-white mb-1 font-display">{plan.name}</h3>
                                                 <p className="text-gray-400 text-xs font-light leading-tight min-h-[32px]">{plan.description}</p>
                                             </div>
 
@@ -375,8 +375,8 @@ const PricingPage: React.FC = () => {
                 .animate-shine-slow {
                     animation: shine 3s ease-in-out infinite;
                 }
-                .font-syne {
-                    font-family: 'Syne', sans-serif;
+                .font-display {
+                    font-family: 'Space Grotesk', sans-serif;
                 }
             `}
             </style>

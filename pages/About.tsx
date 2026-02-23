@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { motion } from 'framer-motion';
+import Lenis from 'lenis';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -125,8 +126,33 @@ const AboutPage: React.FC = () => {
     const neuralLineRef = useRef<HTMLDivElement>(null);
     const neuralGlowRef = useRef<HTMLDivElement>(null);
 
-    // GSAP ScrollTrigger animations
+    // Lenis smooth scroll + GSAP ScrollTrigger animations
     useEffect(() => {
+        // Initialize Lenis smooth scroll
+        const lenis = new Lenis({
+            duration: 1.4,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            orientation: 'vertical',
+            gestureOrientation: 'vertical',
+            smoothWheel: true,
+            touchMultiplier: 1.5,
+            infinite: false,
+            autoResize: true,
+        });
+
+        // Connect Lenis → GSAP ScrollTrigger
+        lenis.on('scroll', ScrollTrigger.update);
+
+        let rafId: number;
+        const raf = (time: number) => {
+            lenis.raf(time);
+            rafId = requestAnimationFrame(raf);
+        };
+        rafId = requestAnimationFrame(raf);
+
+        // Tell ScrollTrigger to use the default body scroller
+        ScrollTrigger.defaults({ scroller: document.body });
+
         const ctx = gsap.context(() => {
             // Hero neural line glow pulse
             gsap.to(neuralGlowRef.current, {
@@ -189,48 +215,22 @@ const AboutPage: React.FC = () => {
                     scrub: true,
                 },
             });
-
-            // Section snap — snap to the TOP of each section
-            const sections = gsap.utils.toArray<HTMLElement>('.snap-section');
-            if (sections.length > 1) {
-                const getSnapPositions = () => {
-                    const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
-                    return sections.map((s) => s.offsetTop / totalScroll);
-                };
-
-                ScrollTrigger.create({
-                    snap: {
-                        snapTo: (progress) => {
-                            const positions = getSnapPositions();
-                            let closest = positions[0];
-                            let minDist = Math.abs(progress - closest);
-                            for (const pos of positions) {
-                                const dist = Math.abs(progress - pos);
-                                if (dist < minDist) {
-                                    minDist = dist;
-                                    closest = pos;
-                                }
-                            }
-                            return closest;
-                        },
-                        duration: { min: 0.25, max: 0.8 },
-                        delay: 0.1,
-                        ease: 'power2.inOut',
-                        directional: true,
-                    },
-                });
-            }
         });
 
         setTimeout(() => {
             ScrollTrigger.refresh();
         }, 100);
 
-        return () => ctx.revert();
+        return () => {
+            cancelAnimationFrame(rafId);
+            lenis.destroy();
+            ctx.revert();
+            ScrollTrigger.killAll();
+        };
     }, []);
 
     return (
-        <div className="relative bg-[#0a0a0c] min-h-screen overflow-hidden">
+        <div className="relative bg-[#0a0a0c] min-h-screen overflow-x-hidden">
             {/* Background Pattern */}
             <div
                 className="fixed inset-0 pointer-events-none opacity-[0.03]"
@@ -285,7 +285,7 @@ const AboutPage: React.FC = () => {
                     <motion.h1
                         variants={fadeUpVariant}
                         className="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6 tracking-tight"
-                        style={{ fontFamily: "'Syne', sans-serif" }}
+                        style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                     >
                         The Genesis of
                         <br />
@@ -350,7 +350,7 @@ const AboutPage: React.FC = () => {
                         <motion.h2
                             variants={fadeUpVariant}
                             className="text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center mb-8"
-                            style={{ fontFamily: "'Syne', sans-serif" }}
+                            style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                         >
                             Static Websites Are{' '}
                             <span className="line-through text-white/30">Obsolete</span>
@@ -418,7 +418,7 @@ const AboutPage: React.FC = () => {
                         <motion.h2
                             variants={fadeUpVariant}
                             className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
-                            style={{ fontFamily: "'Syne', sans-serif" }}
+                            style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                         >
                             The Neural{' '}
                             <span className="bg-gradient-to-r from-emerald-300 via-emerald-400 to-teal-400 bg-clip-text text-transparent">
@@ -488,7 +488,7 @@ const AboutPage: React.FC = () => {
                                                     </span>
                                                 </div>
 
-                                                <h3 className="text-lg md:text-xl font-bold text-white mb-0.5 tracking-wide" style={{ fontFamily: "'Syne', sans-serif" }}>
+                                                <h3 className="text-lg md:text-xl font-bold text-white mb-0.5 tracking-wide" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                                                     {step.title}
                                                 </h3>
                                                 <p className="text-[10px] md:text-xs text-emerald-400/50 font-mono mb-1.5 tracking-wider">{step.subtitle}</p>
@@ -666,7 +666,7 @@ const AboutPage: React.FC = () => {
                         <motion.h2
                             variants={fadeUpVariant}
                             className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
-                            style={{ fontFamily: "'Syne', sans-serif" }}
+                            style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                         >
                             The Core Principles of<br />
                             <span className="text-gray-500">Neural Architecture</span><span className="text-emerald-400">.</span>

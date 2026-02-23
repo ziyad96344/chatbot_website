@@ -124,7 +124,7 @@ const OnboardingFlow: React.FC = () => {
                 {/* Heading */}
                 <div className="text-center mb-10">
                     <p className="text-[9px] uppercase tracking-[0.4em] text-emerald-400/50 mb-3">Initialize Your Intelligence</p>
-                    <h2 className="text-2xl md:text-3xl font-bold text-white" style={{ fontFamily: "'Syne', sans-serif" }}>
+                    <h2 className="text-2xl md:text-3xl font-bold text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                         Deploy Your AI Assistant<span className="text-emerald-400">.</span>
                     </h2>
                 </div>

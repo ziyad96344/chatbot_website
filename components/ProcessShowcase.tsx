@@ -76,7 +76,7 @@ const ProcessShowcase: React.FC = () => {
                 {/* Header */}
                 <div className="text-center mb-16">
                     <p className="text-[10px] uppercase tracking-[0.4em] text-emerald-400/50 mb-4">The Process</p>
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4" style={{ fontFamily: "'Syne', sans-serif" }}>
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                         Three Steps to Intelligence<span className="text-emerald-400">.</span>
                     </h2>
                     <p className="text-white/40 text-sm md:text-base max-w-lg mx-auto">

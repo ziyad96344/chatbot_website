@@ -31,7 +31,7 @@ const WhyChooseUs = () => {
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
                         className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight"
-                        style={{ fontFamily: "'Syne', sans-serif" }}
+                        style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                     >
                         Hire Your Best Employee <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-200">
@@ -197,7 +197,7 @@ const WhyChooseUs = () => {
                     viewport={{ once: true }}
                     className="text-center"
                 >
-                    <h2 className="text-3xl font-bold text-white mb-8 tracking-tight" style={{ fontFamily: "'Syne', sans-serif" }}>
+                    <h2 className="text-3xl font-bold text-white mb-8 tracking-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                         Ready to automate your growth?
                     </h2>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

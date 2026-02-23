@@ -264,7 +264,7 @@ const Hero: React.FC = () => {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,#050505_70%)] pointer-events-none z-10" />
 
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
-          <h1 ref={textRef} className="text-[28vw] md:text-[24vw] lg:text-[20vw] font-black leading-none tracking-[-0.04em] text-white/[0.03] select-none whitespace-nowrap uppercase" style={{ fontFamily: "'Syne', sans-serif", willChange: 'transform' }}>XOTBOT</h1>
+          <h1 ref={textRef} className="text-[28vw] md:text-[24vw] lg:text-[20vw] font-black leading-none tracking-[-0.04em] text-white/[0.03] select-none whitespace-nowrap uppercase" style={{ fontFamily: "'Space Grotesk', sans-serif", willChange: 'transform' }}>XOTBOT</h1>
         </div>
 
         <div ref={botCardRef} className="absolute left-[3%] md:left-[6%] lg:left-[8%] top-[22%] md:top-[26%] z-30" style={{ willChange: 'transform', boxShadow: isAudioPlaying ? '0 0 60px rgba(16,185,129,0.35), 0 0 120px rgba(16,185,129,0.15)' : '0 0 30px rgba(16,185,129,0.15), 0 0 60px rgba(16,185,129,0.08)' }}>

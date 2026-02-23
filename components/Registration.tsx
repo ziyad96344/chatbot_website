@@ -102,7 +102,7 @@ const Registration: React.FC = () => {
                 style={{ background: 'rgba(10,10,10,0.9)', boxShadow: '0 0 80px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.02)' }}>
 
                 {/* Heading */}
-                <h2 ref={headingRef} className="text-2xl md:text-3xl font-bold text-white text-center mb-8" style={{ fontFamily: "'Syne', sans-serif" }}>
+                <h2 ref={headingRef} className="text-2xl md:text-3xl font-bold text-white text-center mb-8" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                     Deploy Your Intelligence<span className="text-emerald-400">.</span>
                 </h2>
 

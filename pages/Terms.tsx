@@ -89,7 +89,7 @@ By using Xotbot, you agree to these Terms of Service. If you do not agree, pleas
 const TermsPage: React.FC = () => {
     return (
         <div className="min-h-screen bg-[#0a0a0c] overflow-x-hidden">
-            <section className="relative pt-32 pb-16 px-6 md:px-12">
+            <section className="relative pt-20 pb-16 px-6 md:px-12">
                 <div className="max-w-3xl mx-auto">
                     <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}
                         className="text-[10px] uppercase tracking-[0.5em] text-emerald-400/60 mb-6 font-mono">
@@ -97,7 +97,7 @@ const TermsPage: React.FC = () => {
                     </motion.p>
                     <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
                         className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight"
-                        style={{ fontFamily: "'Syne', sans-serif" }}>
+                        style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                         Terms of Service
                     </motion.h1>
                     <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}

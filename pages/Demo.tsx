@@ -57,7 +57,7 @@ const DemoPage: React.FC = () => {
             />
 
             {/* Hero */}
-            <section className="relative pt-32 pb-16 px-6 md:px-12">
+            <section className="relative pt-20 pb-16 px-6 md:px-12">
                 <div className="max-w-5xl mx-auto text-center">
                     <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-[10px] uppercase tracking-[0.5em] text-emerald-400/60 mb-6 font-mono">
                         See It In Action
@@ -65,7 +65,7 @@ const DemoPage: React.FC = () => {
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
                         className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight"
-                        style={{ fontFamily: "'Syne', sans-serif" }}
+                        style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                     >
                         Experience the{' '}
                         <span className="bg-gradient-to-r from-emerald-400 to-teal-300 bg-clip-text text-transparent">Power</span>

@@ -48,10 +48,14 @@ html.lenis body {
 
 /* Responsive heading sizes */
 h1,
-h2,
-h3 {
-    font-family: 'Syne', sans-serif;
+h2 {
+    font-family: 'Space Grotesk', sans-serif;
     text-transform: uppercase;
+}
+
+/* Display font utility — use on h3s or spans that need the heading font */
+.font-display {
+    font-family: 'Space Grotesk', sans-serif;
 }
 
 /* Global gap and padding adjustments */

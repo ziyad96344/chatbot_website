@@ -39,7 +39,7 @@ const ComingSoonModal: React.FC<ComingSoonModalProps> = ({ isOpen, onClose }) =>
                                     </svg>
                                 </div>
 
-                                <h3 className="text-2xl font-bold text-white mb-2 font-syne">Coming Soon</h3>
+                                <h3 className="text-2xl font-bold text-white mb-2 font-display">Coming Soon</h3>
                                 <p className="text-gray-400 text-sm mb-8 leading-relaxed">
                                     We're currently fine-tuning this feature for launch. Stay tuned for updates as we roll out new capabilities.
                                 </p>

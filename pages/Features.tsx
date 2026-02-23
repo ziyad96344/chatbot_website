@@ -64,7 +64,7 @@ const FeaturesPage: React.FC = () => {
             />
 
             {/* Hero Section */}
-            <section className="relative pt-32 pb-20 px-6 md:px-12">
+            <section className="relative pt-20 pb-20 px-6 md:px-12">
                 <div className="max-w-5xl mx-auto text-center">
                     <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-[10px] uppercase tracking-[0.5em] text-emerald-400/60 mb-6 font-mono">
                         Platform Capabilities
@@ -73,7 +73,7 @@ const FeaturesPage: React.FC = () => {
                         initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.1 }}
                         className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight"
-                        style={{ fontFamily: "'Syne', sans-serif" }}
+                        style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                     >
                         Everything You Need to Build{' '}
                         <span className="bg-gradient-to-r from-emerald-400 via-teal-300 to-emerald-500 bg-clip-text text-transparent">
@@ -135,7 +135,7 @@ const FeaturesPage: React.FC = () => {
                                     </div>
                                     <span className="text-[9px] uppercase tracking-[0.3em] text-emerald-400/60 font-mono">{item.tag}</span>
                                 </div>
-                                <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 tracking-tight" style={{ fontFamily: "'Syne', sans-serif" }}>
+                                <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 tracking-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                                     {item.title}
                                 </h3>
                                 <p className="text-white/40 text-sm leading-relaxed mb-6 font-light">{item.desc}</p>
@@ -180,7 +180,7 @@ const FeaturesPage: React.FC = () => {
                     viewport={{ once: true }}
                     className="max-w-3xl mx-auto text-center"
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight" style={{ fontFamily: "'Syne', sans-serif" }}>
+                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                         Ready to Build Your <span className="text-emerald-400">AI Assistant</span>?
                     </h2>
                     <p className="text-white/40 text-sm mb-8 font-light">Start for free. No credit card required.</p>
