@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import SEO from '../components/SEO';
 import { motion, AnimatePresence } from 'framer-motion';
 import gsap from 'gsap';
 import config from '../config/api';
@@ -153,6 +154,12 @@ const ContactPage: React.FC = () => {
 
     return (
         <div className="h-screen bg-[#050505] relative overflow-hidden flex flex-col items-center justify-center">
+            <SEO
+                title="Contact XotBot — Get Support & Partnership Inquiries"
+                description="Reach out to the XotBot team for support, demos, partnership inquiries, or custom enterprise solutions. We usually respond within 2 hours."
+                keywords="contact XotBot, AI chatbot support, chatbot partnership, enterprise AI chatbot inquiry"
+                canonicalUrl="https://xotbot.com/contact"
+            />
             {/* Ambient Background */}
             <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-900/10 rounded-full blur-[120px] animate-pulse" />

@@ -1,4 +1,5 @@
 import React from 'react';
+import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 import Footer from '../components/Footer';
 
@@ -85,6 +86,11 @@ To exercise any of these rights, contact us at privacy@xotbot.com.`,
 const PrivacyPage: React.FC = () => {
     return (
         <div className="min-h-screen bg-[#0a0a0c] overflow-x-hidden">
+            <SEO
+                title="Privacy Policy — XotBot AI Chatbot Platform"
+                description="Read XotBot's privacy policy. Learn how we handle your data, chatbot content, conversation logs, and personal information with enterprise-grade security."
+                canonicalUrl="https://xotbot.com/privacy"
+            />
             <section className="relative pt-20 pb-16 px-6 md:px-12">
                 <div className="max-w-3xl mx-auto">
                     <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}

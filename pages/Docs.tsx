@@ -1,4 +1,5 @@
 import React from 'react';
+import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 import { BookOpen, Code, Plug, HelpCircle, Terminal, Globe, MessageSquare, FileText, ArrowRight } from 'lucide-react';
 import Footer from '../components/Footer';
@@ -55,6 +56,12 @@ const sections = [
 const DocsPage: React.FC = () => {
     return (
         <div className="min-h-screen bg-[#0a0a0c] overflow-x-hidden">
+            <SEO
+                title="XotBot Documentation — Setup & Integration Guide"
+                description="Step-by-step documentation to set up, customize, and integrate XotBot AI chatbot. Quick start guides, API reference, WhatsApp setup, WordPress plugin, and troubleshooting."
+                keywords="XotBot documentation, AI chatbot setup guide, chatbot API docs, WhatsApp chatbot integration guide, embed chatbot website"
+                canonicalUrl="https://xotbot.com/docs"
+            />
             <div className="fixed inset-0 pointer-events-none opacity-[0.03]"
                 style={{
                     backgroundImage: `radial-gradient(circle at 20% 30%, rgba(16,185,129,0.12) 0%, transparent 50%)`,

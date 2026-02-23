@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import SEO from '../components/SEO';
 import { useNavigate } from 'react-router-dom';
 
 const GetAccessPage: React.FC = () => {
@@ -23,6 +24,12 @@ const GetAccessPage: React.FC = () => {
 
     return (
         <div className="pt-20 pb-20 px-6 md:px-12 max-w-2xl mx-auto relative">
+            <SEO
+                title="Get Early Access — XotBot AI Chatbot"
+                description="Join the XotBot waitlist for early access to India's most powerful AI chatbot platform."
+                canonicalUrl="https://xotbot.com/get-access"
+                noindex={true}
+            />
             {/* Background Effects */}
             <div className="fixed inset-0 pointer-events-none">
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-emerald-500/5 rounded-full blur-[150px]" />

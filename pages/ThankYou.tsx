@@ -1,9 +1,15 @@
 import React from 'react';
+import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
 
 const ThankYouPage: React.FC = () => {
     return (
         <div className="min-h-screen flex items-center justify-center px-6 relative overflow-hidden">
+            <SEO
+                title="Thank You — XotBot"
+                description="Your request has been received. We will connect with you shortly."
+                noindex={true}
+            />
             {/* Background Effects */}
             <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-500/10 rounded-full blur-[150px]" />
