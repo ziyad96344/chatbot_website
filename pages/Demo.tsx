@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 import { Play, Calendar, MessageSquare, Zap, Shield, Globe } from 'lucide-react';
 import Footer from '../components/Footer';
@@ -49,6 +50,12 @@ const DemoPage: React.FC = () => {
 
     return (
         <div className="min-h-screen bg-[#0a0a0c] overflow-x-hidden">
+            <SEO
+                title="Try XotBot Demo — See AI Chatbot in Action"
+                description="Book a personalized demo and see how XotBot's AI chatbot can transform your customer engagement. Live setup in 5 minutes, multi-channel preview, no commitment."
+                keywords="AI chatbot demo, try AI chatbot, chatbot live demo, XotBot demo, book AI chatbot demo"
+                canonicalUrl="https://xotbot.com/demo"
+            />
             <div className="fixed inset-0 pointer-events-none opacity-[0.03]"
                 style={{
                     backgroundImage: `radial-gradient(circle at 40% 30%, rgba(16,185,129,0.15) 0%, transparent 50%),

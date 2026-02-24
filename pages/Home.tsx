@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import SEO from '../components/SEO';
 import { useNavigate } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -65,8 +66,30 @@ const HomePage: React.FC = () => {
         };
     }, []);
 
+    const organizationSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'Organization',
+        name: 'XotBot',
+        url: 'https://xotbot.com',
+        description: 'AI-powered chatbot platform for businesses worldwide',
+        sameAs: [],
+        offers: {
+            '@type': 'AggregateOffer',
+            priceCurrency: 'INR',
+            lowPrice: '0',
+            highPrice: '4999',
+        },
+    };
+
     return (
         <>
+            <SEO
+                title="XotBot — AI Chatbot Platform for Business"
+                description="Build & deploy AI chatbots with voice calls, WhatsApp integration, and intelligent lead generation. Custom knowledge bases, multilingual support, and real-time analytics for businesses worldwide."
+                keywords="AI chatbot platform, AI chatbot for business, voice AI chatbot, WhatsApp chatbot, lead generation chatbot, customer support AI, best chatbot builder, multilingual chatbot, no-code chatbot"
+                canonicalUrl="https://xotbot.com/"
+                structuredData={organizationSchema}
+            />
             <section id="hero" className="snap-section w-full">
                 <Hero />
             </section>

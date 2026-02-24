@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import SEO from '../components/SEO';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import gsap from 'gsap';
@@ -154,6 +155,12 @@ const PricingPage: React.FC = () => {
 
     return (
         <div className="min-h-screen bg-[#050505] overflow-x-hidden overflow-y-auto flex flex-col relative font-sans">
+            <SEO
+                title="XotBot Pricing — Affordable AI Chatbot Plans"
+                description="Choose from Free, Pro, Ultra & Enterprise AI chatbot plans. Voice AI calls, WhatsApp integration, unlimited messages, and more. Start free — no credit card required."
+                keywords="AI chatbot pricing, chatbot plans, affordable AI chatbot, free AI chatbot trial, enterprise chatbot pricing, XotBot pricing, best chatbot pricing"
+                canonicalUrl="https://xotbot.com/pricing"
+            />
             {/* Ambient Background Glows */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
                 <div className="absolute top-[-20%] left-[20%] w-[400px] h-[400px] bg-purple-900/10 rounded-full blur-[100px]" />

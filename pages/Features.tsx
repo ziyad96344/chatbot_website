@@ -1,4 +1,5 @@
 import React from 'react';
+import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 import { Bot, Globe, FileText, Users, MessageCircle, Mic, Code, Palette, Languages, BarChart3, Zap, Shield, BrainCircuit, Webhook } from 'lucide-react';
 import Footer from '../components/Footer';
@@ -55,6 +56,12 @@ const deepDives = [
 const FeaturesPage: React.FC = () => {
     return (
         <div className="min-h-screen bg-[#0a0a0c] overflow-x-hidden">
+            <SEO
+                title="AI Chatbot Features — Voice AI, WhatsApp, Multilingual"
+                description="Explore XotBot's powerful AI chatbot features: voice AI calls, WhatsApp integration, multilingual support, lead capture, custom knowledge bases, analytics dashboard, and instant deployment."
+                keywords="AI chatbot features, voice AI chatbot, WhatsApp chatbot integration, multilingual chatbot, lead capture chatbot, chatbot analytics, knowledge base AI, custom branding chatbot, no-code chatbot builder"
+                canonicalUrl="https://xotbot.com/features"
+            />
             {/* Background */}
             <div className="fixed inset-0 pointer-events-none opacity-[0.03]"
                 style={{

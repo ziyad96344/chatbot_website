@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+Disallow: /get-access
+Disallow: /thank-you
+
+# AI Crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+Sitemap: https://xotbot.com/sitemap.xml

@@ -1,0 +1,55 @@
+# XotBot — AI Chatbot Platform for Business
+
+> Build, deploy, and scale AI-powered chatbots with voice calls, WhatsApp integration, and intelligent lead generation.
+
+## What is XotBot?
+
+XotBot is an AI chatbot SaaS platform that helps businesses automate customer support, generate leads, and handle voice calls using cutting-edge AI models like Google Gemini and Groq Llama. It provides embeddable chatbot widgets that can be added to any website in under 5 minutes.
+
+## Key Features
+
+- **AI Chatbot Widget** — Embed on any website with custom branding, colors, and personality
+- **Voice AI Calls** — Real-time AI voice calls powered by Twilio + Google Gemini Live API
+- **WhatsApp Business Integration** — Connect chatbot to WhatsApp Business API
+- **Custom Knowledge Base** — Train chatbots on your website content, PDFs, and documents
+- **Lead Capture & CRM Export** — Automatically capture visitor information during chats
+- **Multilingual Support** — Hindi, English, Spanish, French, Arabic, and 20+ languages
+- **Analytics Dashboard** — Track chat sessions, response quality, and customer insights
+- **Multiple AI Models** — Choose between Gemini 2.0, Groq Llama 70B, and more
+
+## Use Cases
+
+- Customer support automation for e-commerce
+- Lead generation bots for real estate & education
+- Appointment booking for healthcare & clinics
+- FAQ automation for SaaS companies
+- Sales assistant for D2C brands
+- Support agent for banks & fintech
+
+## Pricing (Monthly)
+
+- **Free Trial**: ₹0 — 50 messages, 1 chatbot
+- **Pro**: ₹999 — 2,000 messages, 3 chatbots, voice calls
+- **Ultra**: ₹2,499 — 10,000 messages, 10 chatbots, 100 voice calls
+- **Enterprise**: ₹4,999 — Unlimited messages, unlimited chatbots, unlimited voice calls
+
+## Target Audience
+
+Small and medium businesses, startups, e-commerce companies, SaaS companies, healthcare providers, educational institutions, real estate agencies, and enterprise organizations looking for AI-powered customer engagement solutions.
+
+## Technology Stack
+
+- Frontend: React, TypeScript, Tailwind CSS
+- Backend: Laravel (PHP), Python (AI Service)
+- AI Models: Google Gemini 2.0 Flash, Groq Llama 70B
+- Voice: Twilio + Gemini Live API
+- Messaging: WhatsApp Business API
+
+## Links
+
+- Website: https://xotbot.com
+- Features: https://xotbot.com/features
+- Pricing: https://xotbot.com/pricing
+- Demo: https://xotbot.com/demo
+- Documentation: https://xotbot.com/docs
+- Contact: https://xotbot.com/contact

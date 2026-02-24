@@ -1,4 +1,5 @@
 import React from 'react';
+import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 import Footer from '../components/Footer';
 
@@ -89,6 +90,11 @@ By using Xotbot, you agree to these Terms of Service. If you do not agree, pleas
 const TermsPage: React.FC = () => {
     return (
         <div className="min-h-screen bg-[#0a0a0c] overflow-x-hidden">
+            <SEO
+                title="Terms of Service — XotBot AI Chatbot Platform"
+                description="Read XotBot's terms of service. Understand subscription policies, acceptable use, data ownership, and intellectual property rights."
+                canonicalUrl="https://xotbot.com/terms"
+            />
             <section className="relative pt-20 pb-16 px-6 md:px-12">
                 <div className="max-w-3xl mx-auto">
                     <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}

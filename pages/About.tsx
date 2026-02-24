@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import SEO from '../components/SEO';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { motion } from 'framer-motion';
@@ -231,6 +232,12 @@ const AboutPage: React.FC = () => {
 
     return (
         <div className="relative bg-[#0a0a0c] min-h-screen overflow-x-hidden">
+            <SEO
+                title="About XotBot — AI Chatbot Platform"
+                description="XotBot transforms raw website data into intelligent AI chatbot assistants. From knowledge extraction to cognitive AI deployment in under 5 minutes — for businesses worldwide."
+                keywords="about XotBot, AI chatbot company, chatbot platform, intelligent conversation AI, cognitive AI assistant"
+                canonicalUrl="https://xotbot.com/about"
+            />
             {/* Background Pattern */}
             <div
                 className="fixed inset-0 pointer-events-none opacity-[0.03]"
