@@ -127,14 +127,14 @@ const Navbar: React.FC = () => {
           ))}
 
           <a
-            href="https://app.xotbot.com/login"
+            href="https://app.xotbot.com/"
             className="text-lg uppercase tracking-[0.2em] font-light text-white/60 hover:text-white transition-colors duration-300 mt-4"
           >
             Login
           </a>
 
           <a
-            href="https://app.xotbot.com/register"
+            href="https://app.xotbot.com/"
             className="px-8 py-3 rounded-full border border-white/20 text-white text-xs uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-all duration-300"
           >
             Get Access
