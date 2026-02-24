@@ -34,6 +34,8 @@ const PricingPage: React.FC = () => {
     const [plans, setPlans] = useState<SubscriptionPlan[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
+    const [currencySymbol, setCurrencySymbol] = useState('₹');
+    const [currencyLocale, setCurrencyLocale] = useState('en-IN');
 
 
 
@@ -49,12 +51,16 @@ const PricingPage: React.FC = () => {
                 const data = await response.json();
 
                 if (data.success && data.data) {
+                    // Set currency from geo-detection
+                    if (data.symbol) setCurrencySymbol(data.symbol);
+                    if (data.locale) setCurrencyLocale(data.locale);
+
                     // Parse features if they come as JSON string
                     const parsedPlans = data.data.map((plan: any) => ({
                         ...plan,
                         features: typeof plan.features === 'string' ? JSON.parse(plan.features) : (plan.features || []),
-                        price_monthly: plan.price_monthly ? parseFloat(plan.price_monthly) : null,
-                        price_yearly: plan.price_yearly ? parseFloat(plan.price_yearly) : null,
+                        price_monthly: plan.display_price_monthly ?? (plan.price_monthly ? parseFloat(plan.price_monthly) : null),
+                        price_yearly: plan.display_price_yearly ?? (plan.price_yearly ? parseFloat(plan.price_yearly) : null),
                     }));
                     setPlans(parsedPlans);
                 } else {
@@ -293,7 +299,7 @@ const PricingPage: React.FC = () => {
                                                 {displayPrice !== null ? (
                                                     <div className="flex items-baseline gap-1">
                                                         <span className="text-4xl lg:text-5xl font-bold text-white tracking-tighter leading-none">
-                                                            ₹
+                                                            {currencySymbol}
                                                             <AnimatePresence mode='wait'>
                                                                 <motion.span
                                                                     key={billingCycle}
@@ -303,7 +309,7 @@ const PricingPage: React.FC = () => {
                                                                     transition={{ duration: 0.2 }}
                                                                     className="inline-block"
                                                                 >
-                                                                    {Number(displayPrice).toLocaleString('en-IN')}
+                                                                    {Number(displayPrice).toLocaleString(currencyLocale)}
                                                                 </motion.span>
                                                             </AnimatePresence>
                                                         </span>
