@@ -5,17 +5,17 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Lenis from 'lenis';
 import Hero from '../components/Hero';
+import PainSection from '../components/PainSection';
+import SolutionGrowth from '../components/SolutionGrowth';
+import UseCasesValidation from '../components/UseCasesValidation';
+import OmnichannelHub from '../components/OmnichannelHub';
 import HowItWorksRedesign from '../components/HowItWorksRedesign';
-import FeaturesGrid from '../components/FeaturesGrid';
-import ScraperVoid from '../components/ScraperVoid';
-import InteractionHub from '../components/InteractionHub';
-import UseCases from '../components/UseCases';
-import SocialProof from '../components/SocialProof';
-import WhyChooseUs from '../components/WhyChooseUs';
+
+import Testimonials from '../components/Testimonials';
+import SecurityTrust from '../components/SecurityTrust';
 import HomePricing from '../components/HomePricing';
-import FloatingMatrix from '../components/FloatingMatrix';
 import FAQ from '../components/FAQ';
-import CTABanner from '../components/CTABanner';
+import FinalCTA from '../components/FinalCTA';
 import Footer from '../components/Footer';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -90,52 +90,61 @@ const HomePage: React.FC = () => {
                 canonicalUrl="https://xotbot.com/"
                 structuredData={organizationSchema}
             />
+            {/* 1. Hero */}
             <section id="hero" className="snap-section w-full">
                 <Hero />
             </section>
 
+            {/* 2. Pain / Problem Awareness */}
+            <section id="pain" className="w-full">
+                <PainSection />
+            </section>
+
+            {/* 3. Solution & Growth Angle */}
+            <section id="solution" className="w-full">
+                <SolutionGrowth />
+            </section>
+
+            {/* 4. Social Validation (Use Cases) */}
+            <section id="use-cases" className="w-full">
+                <UseCasesValidation />
+            </section>
+
+            {/* 5. Omnichannel Trust */}
+            <section id="omnichannel" className="w-full">
+                <OmnichannelHub />
+            </section>
+
+            {/* 6. How It Works (Simple 4 Steps) */}
             <section id="how-it-works" className="w-full">
                 <HowItWorksRedesign />
             </section>
 
-            <section id="features" className="w-full">
-                <FeaturesGrid />
-            </section>
-
-            <section id="scraper" className="w-full">
-                <ScraperVoid />
-            </section>
-
-            <section id="hub" className="w-full">
-                <InteractionHub />
-            </section>
-
-            <section id="use-cases" className="w-full">
-                <UseCases />
-            </section>
-
-            <section id="social-proof" className="w-full">
-                <SocialProof />
-            </section>
-
-            <section id="why-choose-us" className="w-full">
-                <WhyChooseUs />
-            </section>
-
+            {/* 11. Pricing */}
             <section id="pricing" className="w-full">
                 <HomePricing />
             </section>
 
-            <section id="matrix" className="w-full">
-                <FloatingMatrix />
+            {/* 8. Testimonials & ROI */}
+            <section id="testimonials" className="w-full">
+                <Testimonials />
             </section>
 
+            {/* 10. Security & Enterprise Trust */}
+            <section id="security" className="w-full">
+                <SecurityTrust />
+            </section>
+
+
+
+            {/* 12. FAQ (Objection Handling) */}
             <section id="faq" className="w-full">
                 <FAQ />
             </section>
 
+            {/* 13. Final Call To Action */}
             <section id="cta" className="w-full">
-                <CTABanner />
+                <FinalCTA />
             </section>
 
             <Footer />

@@ -99,12 +99,15 @@ const FAQ: React.FC = () => {
 
             <div className="relative z-10 max-w-4xl mx-auto">
                 {/* Heading */}
-                <div className={`text-center mb-14 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-                    <span className="text-[10px] tracking-[0.4em] uppercase text-emerald-400/70 mb-3 block font-mono">FAQ</span>
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tighter uppercase mb-4">
-                        Got <span className="text-emerald-400">Questions?</span>
+                <div className={`text-center mb-16 mx-auto px-4 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+                    <span className="text-red-500/90 font-mono text-[11px] md:text-sm tracking-[0.3em] uppercase mb-4 block font-bold">FAQ</span>
+                    <h2 
+                        className="text-4xl md:text-5xl lg:text-5xl font-black uppercase tracking-tighter mb-4 leading-[1.1]"
+                        style={{ fontFamily: "'Hanken Grotesk', sans-serif" }}
+                    >
+                        Got <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-400">Questions?</span>
                     </h2>
-                    <p className="text-white/40 text-sm md:text-base max-w-md mx-auto font-light">
+                    <p className="text-white/70 max-w-[800px] mx-auto text-base md:text-lg font-light leading-relaxed">
                         Everything you need to know about Xotbot, answered.
                     </p>
                 </div>
