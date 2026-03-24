@@ -44,14 +44,14 @@ const platforms = [
     name: 'Slack', 
     desc: 'Workplace bot integration.',
     icon: <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.528 2.528 0 0 1 2.522-2.523h2.52v2.523zm1.261 0a2.528 2.528 0 0 1 2.52-2.523 2.528 2.528 0 0 1 2.522 2.523v6.313A2.528 2.528 0 0 1 8.822 24 2.528 2.528 0 0 1 6.303 21.478v-6.313zM8.822 5.042a2.528 2.528 0 0 1-2.52-2.52A2.528 2.528 0 0 1 8.822 0a2.528 2.528 0 0 1 2.522 2.522v2.52h-2.522zm0 1.261a2.528 2.528 0 0 1 2.522 2.52a2.528 2.528 0 0 1-2.522 2.523H2.522A2.528 2.528 0 0 1 0 8.822 2.528 2.528 0 0 1 2.522 6.303h6.3zm10.136 3.781a2.528 2.528 0 0 1 2.522-2.523 2.528 2.528 0 0 1 2.52 2.523 2.528 2.528 0 0 1-2.52 2.522h-2.522v-2.522zm-1.261 0a2.528 2.528 0 0 1-2.522 2.522 2.528 2.528 0 0 1-2.52-2.522V3.781A2.528 2.528 0 0 1 15.178 1.26 2.528 2.528 0 0 1 17.697 3.78v6.304zm-2.52 10.136a2.528 2.528 0 0 1 2.52-2.522 2.528 2.528 0 0 1 2.522 2.522 2.528 2.528 0 0 1-2.522 2.52h-2.52v-2.52zm0-1.261a2.528 2.528 0 0 1-2.52-2.522 2.528 2.528 0 0 1 2.52-2.52h6.307A2.528 2.528 0 0 1 24 15.178a2.528 2.528 0 0 1-2.523 2.522h-6.304v-6.304z"/></svg>, 
-    color: 'from-orange-500/20 to-red-500/5', 
+    color: 'from-orange-500/20 to-orange-500/5', 
     borderColor: 'border-orange-500/20', 
     text: 'text-orange-500' 
   },
   { 
     name: 'WordPress', 
     desc: 'One-click plugin solution.',
-    icon: <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12.158 12.786l-2.698 7.84c.806.236 1.657.365 2.54.365 1.047 0 2.051-.181 2.986-.51-.102-.164-.204-.338-.285-.512l-2.543-7.183zm6.124-6.223c.311.515.549 1.162.549 1.954 0 .806-.149 1.698-.598 2.766L15.36 19.337c2.618-1.464 4.4-4.265 4.4-7.487 0-1.921-.632-3.69-1.693-5.116-.062-.158-.124-.316-.185-.471zM12 0C5.373 0 0 5.373 0 12c0 3.197 1.253 6.1 3.295 8.244L8.747 5.093c.189-.502.189-1.121-.088-1.554-.236-.316-.549-.365-.776-.402C8.381 2.915 10.098 2.66 12 2.66c1.657 0 3.228.192 4.63.535-.1-.01-.205-.01-.307-.01-.84 0-1.439.511-1.439 1.229 0 .584.361 1.096.793 1.838.384.664.793 1.551.793 2.721 0 .977-.442 2.151-1.046 3.612l-2.887 8.019c-1.393.438-2.871.678-4.407.678-1.614 0-3.167-.265-4.606-.75L9.61 6.892l2.548 5.894z"/></svg>, 
+    icon: <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M21.469 6.825c.84 1.537 1.318 3.3 1.318 5.175 0 3.979-2.156 7.456-5.363 9.325l3.295-9.527c.615-1.539.82-2.771.82-3.864 0-.397-.026-.765-.07-1.109m-7.981.105c.647-.034 1.23-.1 1.23-.1.579-.068.51-.92-.069-.886 0 0-1.742.137-2.865.137-1.056 0-2.83-.137-2.83-.137-.579-.034-.647.852-.068.886 0 0 .549.063 1.128.1l1.676 4.594-2.354 7.06-3.92-11.654c.649-.034 1.233-.1 1.233-.1.579-.068.51-.92-.069-.886 0 0-1.742.137-2.865.137-.201 0-.44-.005-.697-.015C4.085 3.607 7.783 1.573 12 1.573c3.14 0 6.001 1.2 8.143 3.166-.052-.003-.103-.01-.156-.01-1.056 0-1.803.918-1.803 1.907 0 .886.51 1.635 1.056 2.521.408.71.886 1.621.886 2.938 0 .912-.35 1.971-.813 3.446l-1.064 3.558-3.862-11.48M12 22.427c-1.269 0-2.49-.217-3.623-.616l3.848-11.177 3.943 10.799c.026.063.057.122.088.178a10.389 10.389 0 01-4.256.816m-9.577-4.52a10.39 10.39 0 01-1.21-4.907c0-2.55.924-4.887 2.451-6.693l4.015 11.003-5.256.597M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0"/></svg>,
     color: 'from-blue-500/20 to-blue-500/5', 
     borderColor: 'border-blue-500/20', 
     text: 'text-blue-500' 
@@ -59,7 +59,7 @@ const platforms = [
   { 
     name: 'Shopify', 
     desc: 'Native theme integration.',
-    icon: <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M4.195 21.012l.605-11.458-3.033-1.026-.068.73s-.632 7.009-.691 10.966c-.059 3.961.325 3.7.837 3.662.51-.036 1.834-.029 1.834-.029l.516-2.845zm15.115-11.336L14.71 1.472C14.39.873 13.843.518 13.18.513c-.027-.001-.054 0-.081 0-.66.002-1.223.36-1.545.962L6.963 9.421c-.052.096-.063.208-.03.31l.033.097 10.16 3.444.137-.179c1.077-1.407 2.046-2.67 2.046-2.67.147-.21.218-.465.21-.718a1.278 1.278 0 00-.209-.729zm-1.097 5.766l-.119.155s-3.037 3.996-3.791 4.965c-.754.969-.884 2.872.261 3.5.347.191.956.347 1.815.347.387 0 .809-.033 1.255-.1.867-.129.589-3.9 1.056-10.45l-2.477 1.583z"/></svg>, 
+    icon: <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M15.337 23.979l7.216-1.561s-2.604-17.613-2.625-17.73c-.018-.116-.125-.192-.209-.192s-1.783-.072-1.783-.072-1.166-1.152-1.309-1.283c-.04-.037-.073-.058-.109-.074l-.846 19.075.665 1.837zm-2.635-18.143s-.565-.299-1.255-.299c-1.019 0-1.07.64-1.07.801 0 .878 2.294 1.216 2.294 3.274 0 1.619-1.027 2.662-2.414 2.662-1.664 0-2.513-1.035-2.513-1.035l.445-1.471s.874.749 1.613.749c.482 0 .678-.38.678-.657 0-1.147-1.883-1.199-1.883-3.084 0-1.586 1.139-3.122 3.435-3.122.884 0 1.321.253 1.321.253l-.651 1.929zm2.185-3.352c.147.173.294.44.389.794l-1.605.489c.157-.596.462-1.134.839-1.444.078.034.225.082.377.161zm-.964-.478c.129 0 .264.018.399.059-.468.429-.967 1.201-1.169 2.342l-1.226.375c.339-1.489 1.182-2.776 1.996-2.776zm-.594 7.564l-.467 1.418s-.655-.348-1.452-.348c-1.172 0-1.23.734-1.23.919 0 1.009 2.634 1.396 2.634 3.759 0 1.859-1.18 3.056-2.771 3.056-1.909 0-2.886-1.188-2.886-1.188l.511-1.688s1.003.861 1.851.861c.554 0 .778-.436.778-.755 0-1.318-2.162-1.376-2.162-3.543 0-1.822 1.307-3.583 3.946-3.583 1.013 0 1.515.291 1.515.291l.733.601z"/></svg>,
     color: 'from-emerald-500/20 to-emerald-500/5', 
     borderColor: 'border-emerald-500/20', 
     text: 'text-emerald-500' 
@@ -112,21 +112,21 @@ const OmnichannelHub: React.FC = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-20 px-6 md:px-12 bg-[#030303] relative overflow-hidden flex flex-col items-center justify-center border-b border-white/[0.05]">
+    <section ref={sectionRef} className="py-20 px-6 md:px-12 bg-[#060806] relative overflow-hidden flex flex-col items-center justify-center border-b border-white/[0.05]">
       {/* Background Ambience */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[800px] h-[500px] bg-red-900/10 blur-[150px] rounded-[100%] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[800px] h-[500px] bg-emerald-900/15 blur-[150px] rounded-[100%] pointer-events-none" />
 
       <div className="max-w-4xl w-full relative z-10 text-center mb-16 mx-auto">
-        <span className="text-red-500/90 font-mono text-[11px] md:text-sm tracking-[0.3em] uppercase mb-4 block font-bold">
+        <span className="text-emerald-500/90 font-mono text-[11px] md:text-sm tracking-[0.3em] uppercase mb-4 block font-bold">
           Omnichannel Deployment
         </span>
         <h2 
           className="text-4xl md:text-5xl lg:text-5xl font-black uppercase tracking-tighter mb-4 leading-[1.1]"
           style={{ fontFamily: "'Hanken Grotesk', sans-serif" }}
         >
-          Meet Your Customers <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-400">Everywhere</span>
+          Meet Your Customers <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">Everywhere</span>
         </h2>
-        <p className="text-white/70 max-w-[900px] lg:max-w-none mx-auto text-base md:text-lg font-light leading-relaxed lg:whitespace-nowrap">
+        <p className="text-white/80 max-w-[900px] lg:max-w-none mx-auto text-base md:text-lg font-light leading-relaxed lg:whitespace-nowrap">
           One intelligence, multiple bodies. Deploy your trained chatbot across all major platforms effortlessly.
         </p>
       </div>
@@ -149,24 +149,24 @@ const OmnichannelHub: React.FC = () => {
                 <div className="hidden md:block absolute inset-0 -inset-x-44 -z-0 pointer-events-none opacity-20">
                     <svg className="w-full h-full overflow-visible" viewBox="0 0 400 300" fill="none">
                         <circle cx="200" cy="150" r="160" stroke="white" strokeWidth="0.5" strokeDasharray="4 4" />
-                        <circle cx="200" cy="150" r="100" stroke="red" strokeWidth="0.5" opacity="0.3" />
+                        <circle cx="200" cy="150" r="100" stroke="#10b981" strokeWidth="0.5" opacity="0.3" />
                     </svg>
                 </div>
 
-                <div ref={centralBrainRef} className="relative w-32 h-32 md:w-44 md:h-44 rounded-full bg-[#0a0505] border border-red-500/30 flex items-center justify-center z-20 shadow-[0_0_100px_rgba(239,68,68,0.2)] group transition-all duration-500 hover:border-red-500/50">
-                    <div className="absolute inset-2 rounded-full border border-dashed border-red-500/20 animate-[spin_30s_linear_infinite]" />
-                    <div className="absolute inset-5 rounded-full border border-orange-500/20 bg-gradient-to-b from-orange-500/10 to-transparent backdrop-blur-xl flex items-center justify-center">
-                        <svg className="w-12 h-12 md:w-16 md:h-16 text-red-500 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <div ref={centralBrainRef} className="relative w-32 h-32 md:w-44 md:h-44 rounded-full bg-[#050a07] border border-emerald-500/30 flex items-center justify-center z-20 shadow-[0_0_100px_rgba(16,185,129,0.2)] group transition-all duration-500 hover:border-emerald-500/50">
+                    <div className="absolute inset-2 rounded-full border border-dashed border-emerald-500/20 animate-[spin_30s_linear_infinite]" />
+                    <div className="absolute inset-5 rounded-full border border-teal-500/20 bg-gradient-to-b from-teal-500/10 to-transparent backdrop-blur-xl flex items-center justify-center">
+                        <svg className="w-12 h-12 md:w-16 md:h-16 text-emerald-500 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                         </svg>
                     </div>
                     
                     <div className="absolute -bottom-16 whitespace-nowrap flex flex-col items-center">
                         <div className="flex items-center gap-2 mb-1">
-                            <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-ping" />
+                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping" />
                             <span className="text-[10px] font-mono text-white/50 uppercase tracking-widest">Active Hub</span>
                         </div>
-                        <div className="text-sm font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-400 uppercase tracking-widest" style={{ fontFamily: "'Hanken Grotesk', sans-serif" }}>
+                        <div className="text-sm font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300 uppercase tracking-widest" style={{ fontFamily: "'Hanken Grotesk', sans-serif" }}>
                             Xotbot Engine
                         </div>
                     </div>
@@ -187,7 +187,7 @@ const OmnichannelHub: React.FC = () => {
             box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.03), 0 10px 30px -10px rgba(0, 0, 0, 0.5);
         }
         .platform-hub-card:hover {
-            box-shadow: 0 0 0 1px rgba(239, 68, 68, 0.2), 0 15px 40px -10px rgba(239, 68, 68, 0.1);
+            box-shadow: 0 0 0 1px rgba(16, 185, 129, 0.2), 0 15px 40px -10px rgba(16, 185, 129, 0.1);
             transform: translateY(-2px);
         }
       `}</style>
@@ -200,7 +200,7 @@ interface PlatformCardProps {
 }
 
 const PlatformCard: React.FC<PlatformCardProps> = ({ platform }) => (
-    <div className="platform-hub-card group relative flex items-center gap-3 md:gap-4 p-3 md:p-4 rounded-xl bg-[#0a0a0a] border border-white/5 transition-all duration-300 hover:border-red-500/20 w-full max-w-[280px]">
+    <div className="platform-hub-card group relative flex items-center gap-3 md:gap-4 p-3 md:p-4 rounded-xl bg-[#0a0a0a] border border-white/5 transition-all duration-300 hover:border-emerald-500/20 w-full max-w-[280px]">
         <div className={`absolute inset-0 bg-gradient-to-br ${platform.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500 pointer-events-none rounded-xl`} />
         
         <div className={`w-9 h-9 md:w-10 md:h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center ${platform.text} group-hover:scale-110 group-hover:bg-white/10 transition-all duration-500 shrink-0`}>

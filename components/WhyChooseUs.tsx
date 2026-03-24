@@ -5,11 +5,11 @@ import { Link } from 'react-router-dom';
 
 const WhyChooseUs = () => {
     return (
-        <section className="relative py-24 px-6 md:px-12 overflow-hidden bg-[#0a0a0c]">
+        <section className="relative py-24 px-6 md:px-12 overflow-hidden bg-[#0c0c0e]">
             {/* Background Gradients */}
             <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-emerald-500/5 rounded-full blur-[120px]" />
-                <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-purple-500/5 rounded-full blur-[120px]" />
+                <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-emerald-500/8 rounded-full blur-[120px]" />
+                <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-purple-500/8 rounded-full blur-[120px]" />
             </div>
 
             <div className="max-w-7xl mx-auto relative z-10">
@@ -44,7 +44,7 @@ const WhyChooseUs = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="text-lg text-white/40 max-w-2xl mx-auto font-light leading-relaxed"
+                        className="text-lg text-white/50 max-w-2xl mx-auto font-light leading-relaxed"
                     >
                         Automate your support, cut costs by 90%, and never miss a lead again.
                         No hiring. No training. No overhead. Just results.

@@ -92,7 +92,7 @@ const FAQ: React.FC = () => {
     const visible = useScrollReveal(sectionRef);
 
     return (
-        <section ref={sectionRef} className="relative py-16 px-6 md:px-12 bg-[#080811] overflow-hidden">
+        <section ref={sectionRef} className="relative py-16 px-6 md:px-12 bg-[#0a0c0e] overflow-hidden">
             <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-emerald-500/[0.03] blur-[100px]" />
             </div>
@@ -100,12 +100,12 @@ const FAQ: React.FC = () => {
             <div className="relative z-10 max-w-4xl mx-auto">
                 {/* Heading */}
                 <div className={`text-center mb-16 mx-auto px-4 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-                    <span className="text-red-500/90 font-mono text-[11px] md:text-sm tracking-[0.3em] uppercase mb-4 block font-bold">FAQ</span>
+                    <span className="text-emerald-500/90 font-mono text-[11px] md:text-sm tracking-[0.3em] uppercase mb-4 block font-bold">FAQ</span>
                     <h2 
                         className="text-4xl md:text-5xl lg:text-5xl font-black uppercase tracking-tighter mb-4 leading-[1.1]"
                         style={{ fontFamily: "'Hanken Grotesk', sans-serif" }}
                     >
-                        Got <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-400">Questions?</span>
+                        Got <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">Questions?</span>
                     </h2>
                     <p className="text-white/70 max-w-[800px] mx-auto text-base md:text-lg font-light leading-relaxed">
                         Everything you need to know about Xotbot, answered.

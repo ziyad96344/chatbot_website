@@ -13,7 +13,7 @@ const testimonials = [
         stats: {
             title: "Leads Increased By",
             value: "240%",
-            color: "text-red-500"
+            color: "text-emerald-500"
         }
     },
     {
@@ -23,7 +23,7 @@ const testimonials = [
         stats: {
             title: "Admin Hours Saved",
             value: "60 hrs/mo",
-            color: "text-orange-400"
+            color: "text-teal-400"
         }
     },
     {
@@ -33,7 +33,7 @@ const testimonials = [
         stats: {
             title: "Ticket Resolution",
             value: "Instant",
-            color: "text-red-500"
+            color: "text-emerald-500"
         }
     },
     {
@@ -43,7 +43,7 @@ const testimonials = [
         stats: {
             title: "Support CSAT",
             value: "+45%",
-            color: "text-red-400"
+            color: "text-emerald-400"
         }
     },
     {
@@ -53,7 +53,7 @@ const testimonials = [
         stats: {
             title: "Conversion Rate",
             value: "+20%",
-            color: "text-orange-500"
+            color: "text-teal-500"
         }
     }
 ];
@@ -122,24 +122,24 @@ const Testimonials: React.FC = () => {
     };
 
     return (
-        <section ref={sectionRef} className="py-16 px-6 md:px-12 bg-[#030303] relative overflow-hidden flex flex-col items-center justify-center border-b border-white/[0.05]">
+        <section ref={sectionRef} className="py-16 px-6 md:px-12 bg-[#060806] relative overflow-hidden flex flex-col items-center justify-center border-b border-white/[0.05]">
             {/* Ambient Lighting */}
             <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute top-0 right-[-10%] w-[40%] h-[40%] bg-red-600/10 blur-[150px] rounded-full" />
-                <div className="absolute bottom-0 left-[-10%] w-[40%] h-[40%] bg-orange-600/10 blur-[150px] rounded-full" />
+                <div className="absolute top-0 right-[-10%] w-[40%] h-[40%] bg-emerald-600/15 blur-[150px] rounded-full" />
+                <div className="absolute bottom-0 left-[-10%] w-[40%] h-[40%] bg-teal-600/15 blur-[150px] rounded-full" />
             </div>
 
             <div className="max-w-4xl w-full relative z-10 text-center mb-16 mx-auto px-4">
-                <span className="text-red-500/90 font-mono text-[11px] md:text-sm tracking-[0.3em] uppercase mb-4 block font-bold">
+                <span className="text-emerald-500/90 font-mono text-[11px] md:text-sm tracking-[0.3em] uppercase mb-4 block font-bold">
                     Proven Results
                 </span>
                 <h2 
                     className="text-4xl md:text-5xl lg:text-5xl font-black uppercase tracking-tighter mb-4 leading-[1.1]"
                     style={{ fontFamily: "'Hanken Grotesk', sans-serif" }}
                 >
-                    What Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-400">Customers Say</span>
+                    What Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">Customers Say</span>
                 </h2>
-                <p className="text-white/70 max-w-[800px] mx-auto text-base md:text-lg font-light leading-relaxed md:whitespace-nowrap">
+                <p className="text-white/80 max-w-[800px] mx-auto text-base md:text-lg font-light leading-relaxed md:whitespace-nowrap">
                     Real businesses seeing real ROI. Here's how XotBot is transforming customer engagement.
                 </p>
             </div>
@@ -155,22 +155,22 @@ const Testimonials: React.FC = () => {
                         
                         {testimonials.map((test, idx) => (
                             <div key={idx} className="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
-                                <div className="bg-[#0a0a0a] border border-white/5 rounded-2xl p-6 flex flex-col transition-all duration-500 hover:border-red-500/30 hover:shadow-[0_0_30px_rgba(239,68,68,0.1)] relative group cursor-default h-full min-h-[280px]">
+                                <div className="bg-[#0c0c0c] border border-white/8 rounded-2xl p-6 flex flex-col transition-all duration-500 hover:border-emerald-500/30 hover:shadow-[0_0_30px_rgba(16,185,129,0.1)] relative group cursor-default h-full min-h-[280px]">
                                     
                                     {/* Hover Gradient Effect */}
-                                    <div className="absolute inset-0 bg-gradient-to-br from-red-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-2xl" />
+                                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-2xl" />
 
                                     {/* Quote Mark Icon */}
-                                    <div className="absolute top-6 right-6 opacity-10 group-hover:opacity-30 group-hover:text-red-500 transition-all duration-500">
+                                    <div className="absolute top-6 right-6 opacity-10 group-hover:opacity-30 group-hover:text-emerald-500 transition-all duration-500">
                                         <Quote size={32} />
                                     </div>
 
                                     {/* Stats Banner */}
-                                    <div className="mb-4 pb-4 border-b border-white/10 group-hover:border-red-500/20 transition-colors duration-500 relative z-10">
-                                        <p className="text-[10px] text-white/50 uppercase tracking-[0.2em] mb-1 font-bold font-mono group-hover:text-red-400 transition-colors duration-500">
+                                    <div className="mb-4 pb-4 border-b border-white/10 group-hover:border-emerald-500/20 transition-colors duration-500 relative z-10">
+                                        <p className="text-[10px] text-white/50 uppercase tracking-[0.2em] mb-1 font-bold font-mono group-hover:text-emerald-400 transition-colors duration-500">
                                             {test.stats.title}
                                         </p>
-                                        <p className={`text-3xl md:text-4xl font-black tracking-tighter ${test.stats.color} drop-shadow-[0_0_15px_rgba(239,68,68,0.3)]`} style={{ fontFamily: "'Hanken Grotesk', sans-serif" }}>
+                                        <p className={`text-3xl md:text-4xl font-black tracking-tighter ${test.stats.color} drop-shadow-[0_0_15px_rgba(16,185,129,0.3)]`} style={{ fontFamily: "'Hanken Grotesk', sans-serif" }}>
                                             {test.stats.value}
                                         </p>
                                     </div>
@@ -182,7 +182,7 @@ const Testimonials: React.FC = () => {
 
                                     {/* Author Info */}
                                     <div className="flex items-center gap-3 mt-auto relative z-10">
-                                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-red-500/20 to-orange-500/20 border border-red-500/30 flex items-center justify-center text-white font-bold text-base overflow-hidden group-hover:scale-110 group-hover:border-red-500/50 transition-all duration-500 shadow-[0_0_15px_rgba(239,68,68,0.2)]">
+                                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-500/20 to-teal-500/20 border border-emerald-500/30 flex items-center justify-center text-white font-bold text-base overflow-hidden group-hover:scale-110 group-hover:border-emerald-500/50 transition-all duration-500 shadow-[0_0_15px_rgba(16,185,129,0.2)]">
                                             {test.name.charAt(0)}
                                         </div>
                                         <div>
@@ -206,7 +206,7 @@ const Testimonials: React.FC = () => {
                                 onClick={() => handleDotClick(idx)}
                                 className={`h-1.5 rounded-full transition-all duration-500 ${
                                     activeIndex === idx 
-                                    ? 'w-8 bg-gradient-to-r from-red-500 to-orange-400 shadow-[0_0_10px_rgba(239,68,68,0.5)]' 
+                                    ? 'w-8 bg-gradient-to-r from-emerald-500 to-teal-400 shadow-[0_0_10px_rgba(16,185,129,0.5)]' 
                                     : 'w-1.5 bg-white/20 hover:bg-white/40'
                                 }`}
                                 aria-label={`Go to slide ${idx + 1}`}
@@ -218,14 +218,14 @@ const Testimonials: React.FC = () => {
                     <div className="flex gap-3 order-1 sm:order-2">
                         <button 
                             onClick={handlePrev}
-                            className="w-9 h-9 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-white/70 hover:text-white hover:bg-white/10 hover:border-red-500/20 hover:scale-105 transition-all duration-300"
+                            className="w-9 h-9 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-white/70 hover:text-white hover:bg-white/10 hover:border-emerald-500/20 hover:scale-105 transition-all duration-300"
                             aria-label="Previous testimonial"
                         >
                             <ChevronLeft size={18} />
                         </button>
                         <button 
                             onClick={handleNext}
-                            className="w-9 h-9 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-white/70 hover:text-white hover:bg-white/10 hover:border-red-500/20 hover:scale-105 transition-all duration-300"
+                            className="w-9 h-9 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-white/70 hover:text-white hover:bg-white/10 hover:border-emerald-500/20 hover:scale-105 transition-all duration-300"
                             aria-label="Next testimonial"
                         >
                             <ChevronRight size={18} />

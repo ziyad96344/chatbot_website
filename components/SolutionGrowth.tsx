@@ -158,10 +158,10 @@ const SolutionGrowth: React.FC = () => {
     }, []);
 
     return (
-        <section ref={sectionRef} className="min-h-screen py-20 px-6 md:px-12 bg-[#050505] relative overflow-hidden flex flex-col items-center justify-center">
+        <section ref={sectionRef} className="min-h-screen py-20 px-6 md:px-12 bg-[#080808] relative overflow-hidden flex flex-col items-center justify-center">
             {/* Ambient Growth Glow */}
-            <div className="absolute top-0 right-0 w-[50%] h-[50%] bg-emerald-500/10 blur-[150px] rounded-full pointer-events-none" />
-            <div className="absolute bottom-0 left-0 w-[40%] h-[40%] bg-blue-500/10 blur-[150px] rounded-full pointer-events-none" />
+            <div className="absolute top-0 right-0 w-[50%] h-[50%] bg-emerald-500/15 blur-[150px] rounded-full pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-[40%] h-[40%] bg-blue-500/12 blur-[150px] rounded-full pointer-events-none" />
 
             <div className="max-w-4xl w-full relative z-10 text-center mb-16 mx-auto px-4">
                 <span className="text-emerald-500/90 font-mono text-[11px] md:text-sm tracking-[0.3em] uppercase mb-4 block font-bold">
@@ -173,7 +173,7 @@ const SolutionGrowth: React.FC = () => {
                 >
                     Turn Visitors Into Customers<br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">— Automatically</span>
                 </h2>
-                <p className="text-white/70 max-w-[800px] mx-auto text-base md:text-lg font-light leading-relaxed">
+                <p className="text-white/80 max-w-[800px] mx-auto text-base md:text-lg font-light leading-relaxed">
                     Stop losing money on missed opportunities. Deploy an AI agent that works 24/7, captures leads, and drives exponential revenue growth.
                 </p>
             </div>
@@ -182,7 +182,7 @@ const SolutionGrowth: React.FC = () => {
                 {solutions.map((item, idx) => (
                     <div 
                         key={idx}
-                        className={`group relative bg-[#070b09] border ${item.border} rounded-2xl p-5 lg:p-6 shadow-[0_0_30px_rgba(16,185,129,0.03)] overflow-hidden hover:border-emerald-500/40 hover:shadow-[0_0_50px_rgba(16,185,129,0.1)] transition-all duration-500 ${item.colSpan} flex flex-col h-full`}
+                        className={`group relative bg-[#0a0f0c] border ${item.border} rounded-2xl p-5 lg:p-6 shadow-[0_0_30px_rgba(16,185,129,0.03)] overflow-hidden hover:border-emerald-500/40 hover:shadow-[0_0_50px_rgba(16,185,129,0.1)] transition-all duration-500 ${item.colSpan} flex flex-col h-full`}
                     >
                         {/* Hover Gradient */}
                         <div className={`absolute inset-0 bg-gradient-to-br ${item.bg} opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none`} />

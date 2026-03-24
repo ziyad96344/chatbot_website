@@ -106,19 +106,19 @@ const HomePricing: React.FC = () => {
     if (loading && plans.length === 0) return null;
 
     return (
-        <section ref={sectionRef} className="relative py-24 px-6 md:px-12 bg-[#030303] overflow-hidden border-b border-white/[0.05]">
+        <section ref={sectionRef} className="relative py-24 px-6 md:px-12 bg-[#060806] overflow-hidden border-b border-white/[0.05]">
             <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[800px] h-[500px] rounded-full bg-red-900/10 blur-[150px]" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[800px] h-[500px] rounded-full bg-emerald-900/15 blur-[150px]" />
             </div>
 
             <div className="relative z-10 max-w-7xl mx-auto w-full px-4">
                 {/* Header */}
                 <div className="text-center mb-16 max-w-4xl mx-auto">
-                    <span className="text-red-500/90 font-mono text-[11px] md:text-sm tracking-[0.3em] uppercase mb-4 block font-bold">Pricing</span>
+                    <span className="text-emerald-500/90 font-mono text-[11px] md:text-sm tracking-[0.3em] uppercase mb-4 block font-bold">Pricing</span>
                     <h2 className="text-4xl md:text-5xl lg:text-5xl font-black uppercase tracking-tighter mb-4 leading-[1.1]" style={{ fontFamily: "'Hanken Grotesk', sans-serif" }}>
-                        Simple <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-400">Pricing</span>
+                        Simple <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">Pricing</span>
                     </h2>
-                    <p className="text-white/70 max-w-[800px] mx-auto text-base md:text-lg font-light leading-relaxed">
+                    <p className="text-white/80 max-w-[800px] mx-auto text-base md:text-lg font-light leading-relaxed">
                         Start free, scale as you grow. No hidden fees.
                     </p>
                 </div>
@@ -133,13 +133,13 @@ const HomePricing: React.FC = () => {
                         return (
                             <div key={plan.id}
                                 className={`pricing-card group relative rounded-2xl p-6 md:p-8 border transition-all duration-500 ${isPopular
-                                    ? 'bg-[#0a0505] border-red-500/30 hover:border-red-500/50 shadow-[0_0_30px_rgba(239,68,68,0.1)] hover:shadow-[0_0_40px_rgba(239,68,68,0.2)] hover:-translate-y-2'
+                                    ? 'bg-[#050a07] border-emerald-500/30 hover:border-emerald-500/50 shadow-[0_0_30px_rgba(16,185,129,0.1)] hover:shadow-[0_0_40px_rgba(16,185,129,0.2)] hover:-translate-y-2'
                                     : 'bg-[#0a0a0a] border-white/5 hover:border-white/10 hover:-translate-y-2'
                                     }`}
                             >
                                 {isPopular && (
-                                    <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                                        <span className="text-[10px] uppercase tracking-widest bg-gradient-to-r from-red-500 to-orange-400 text-white font-bold px-4 py-1 rounded-full shadow-[0_0_10px_rgba(239,68,68,0.5)]">
+                                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-max">
+                                        <span className="inline-block whitespace-nowrap text-[10px] uppercase tracking-widest bg-gradient-to-r from-emerald-500 to-teal-400 text-white font-bold px-4 py-1.5 rounded-full shadow-[0_0_10px_rgba(16,185,129,0.5)]">
                                             Most Popular
                                         </span>
                                     </div>
@@ -159,12 +159,12 @@ const HomePricing: React.FC = () => {
                                     )}
                                 </div>
 
-                                <div className={`h-[1px] mb-6 ${isPopular ? 'bg-gradient-to-r from-red-500/50 to-orange-400/50' : 'bg-white/10'}`} />
+                                <div className={`h-[1px] mb-6 ${isPopular ? 'bg-gradient-to-r from-emerald-500/50 to-teal-400/50' : 'bg-white/10'}`} />
 
                                 <ul className="space-y-3 mb-8">
                                     {features.map((f, j) => (
                                         <li key={j} className="flex items-center gap-3 text-[13px] text-white/70 font-light">
-                                            <svg className={`w-4 h-4 ${isPopular ? 'text-red-500' : 'text-white/30'}`} viewBox="0 0 20 20" fill="currentColor">
+                                            <svg className={`w-4 h-4 ${isPopular ? 'text-emerald-500' : 'text-white/30'}`} viewBox="0 0 20 20" fill="currentColor">
                                                 <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                                             </svg>
                                             {f}
@@ -172,7 +172,7 @@ const HomePricing: React.FC = () => {
                                     ))}
                                 </ul>
                                 
-                                <button className={`w-full py-3 rounded-xl text-sm font-bold uppercase tracking-wider transition-all duration-300 ${isPopular ? 'bg-white text-black hover:bg-red-50 hover:text-red-600' : 'bg-white/5 text-white hover:bg-white/10'}`}>
+                                <button className={`w-full py-3 rounded-xl text-sm font-bold uppercase tracking-wider transition-all duration-300 ${isPopular ? 'bg-white text-black hover:bg-emerald-50 hover:text-emerald-600' : 'bg-white/5 text-white hover:bg-white/10'}`}>
                                     {plan.slug === 'enterprise' ? 'Contact Us' : 'Get Started'}
                                 </button>
                             </div>
@@ -183,7 +183,7 @@ const HomePricing: React.FC = () => {
                 {/* View All CTA */}
                 <div className="text-center mt-12">
                     <Link to="/pricing"
-                        className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-red-500/70 hover:text-red-500 transition-colors font-mono group font-bold">
+                        className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-emerald-500/70 hover:text-emerald-500 transition-colors font-mono group font-bold">
                         Compare All Features
                         <span className="group-hover:translate-x-1 transition-transform">→</span>
                     </Link>
