@@ -1,3 +1,5 @@
+﻿'use client';
+
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -206,7 +208,7 @@ const CommandCenter: React.FC<CommandCenterProps> = ({ onInitialize }) => {
                                         <span className="absolute right-0 top-1/2 -translate-y-1/2 text-emerald-400 animate-pulse text-xl">_</span>
                                     )}
                                 </div>
-                                {nameLocked && <span className="text-emerald-400 text-xs">●</span>}
+                                {nameLocked && <span className="text-emerald-400 text-xs">â—</span>}
                             </div>
                         </div>
 
@@ -231,7 +233,7 @@ const CommandCenter: React.FC<CommandCenterProps> = ({ onInitialize }) => {
                                         <span className="absolute right-0 top-1/2 -translate-y-1/2 text-emerald-400 animate-pulse text-xl">_</span>
                                     )}
                                 </div>
-                                {emailLocked && <span className="text-emerald-400 text-xs">●</span>}
+                                {emailLocked && <span className="text-emerald-400 text-xs">â—</span>}
                             </div>
                         </div>
                     </div>
@@ -263,7 +265,7 @@ const CommandCenter: React.FC<CommandCenterProps> = ({ onInitialize }) => {
                                     <span className="absolute right-0 top-1/2 -translate-y-1/2 text-emerald-400 animate-pulse text-xl">_</span>
                                 )}
                             </div>
-                            {urlLocked && <span className="text-emerald-400 text-xs">●</span>}
+                            {urlLocked && <span className="text-emerald-400 text-xs">â—</span>}
                         </div>
                     </div>
                 )}
@@ -371,7 +373,7 @@ const CommandCenter: React.FC<CommandCenterProps> = ({ onInitialize }) => {
 
                         {selectedVoice && (
                             <p className="text-center text-emerald-400 text-sm mt-6 font-medium">
-                                ✓ {voiceOptions.find(v => v.id === selectedVoice)?.name} Selected
+                                âœ“ {voiceOptions.find(v => v.id === selectedVoice)?.name} Selected
                             </p>
                         )}
                     </div>
@@ -414,3 +416,4 @@ const CommandCenter: React.FC<CommandCenterProps> = ({ onInitialize }) => {
 };
 
 export default CommandCenter;
+

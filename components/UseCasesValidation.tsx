@@ -1,192 +1,238 @@
+'use client';
+
 import React, { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Building2, Scale, Home, Cloud, ShoppingBag, ShoppingCart, ShieldCheck, Users, MessageSquare, TrendingUp, Clock, Shield, Globe, Lock, Loader } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const clients = [
-    {
-        name: 'Shopify Store A',
-        industry: 'E-commerce',
-        logo: (
-            <svg className="w-8 h-8 md:w-10 md:h-10 text-emerald-400 group-hover:text-emerald-500 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-            </svg>
-        )
-    },
-    {
-        name: 'CarePlus Dental',
-        industry: 'Clinics & Healthcare',
-        logo: (
-            <svg className="w-8 h-8 md:w-10 md:h-10 text-emerald-400 group-hover:text-emerald-500 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-            </svg>
-        )
-    },
-    {
-        name: 'Apex Academy',
-        industry: 'Coaching Institutes',
-        logo: (
-            <svg className="w-8 h-8 md:w-10 md:h-10 text-emerald-400 group-hover:text-emerald-500 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 14v7m0-7l9-5-9-5-9 5 9 5z" />
-            </svg>
-        )
-    },
-    {
-        name: 'GrowthGen.io',
-        industry: 'Marketing Agencies',
-        logo: (
-            <svg className="w-8 h-8 md:w-10 md:h-10 text-emerald-400 group-hover:text-emerald-500 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-            </svg>
-        )
-    },
+const industries = [
     {
         name: 'Luxe Resorts',
-        industry: 'Hotels & Resorts',
-        logo: (
-            <svg className="w-8 h-8 md:w-10 md:h-10 text-emerald-400 group-hover:text-emerald-500 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-            </svg>
-        )
+        desc: 'Personalized guest support and booking assistance.',
+        icon: Building2,
+        borderClass: 'border-cyan-500/40',
+        glowClass: 'shadow-[0_0_40px_rgba(6,182,212,0.15)] group-hover:shadow-[0_0_60px_rgba(6,182,212,0.25)]',
+        textClass: 'text-cyan-400',
+        bgClass: 'bg-cyan-500/10',
+        tags: ['Bookings', 'Amenities', 'Offers']
     },
     {
         name: 'Elite Legal',
-        industry: 'Law Firms',
-        logo: (
-            <svg className="w-8 h-8 md:w-10 md:h-10 text-emerald-400 group-hover:text-emerald-500 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
-            </svg>
-        )
+        desc: 'Instant client support and case-related queries.',
+        icon: Scale,
+        borderClass: 'border-emerald-500/40',
+        glowClass: 'shadow-[0_0_40px_rgba(16,185,129,0.15)] group-hover:shadow-[0_0_60px_rgba(16,185,129,0.25)]',
+        textClass: 'text-emerald-400',
+        bgClass: 'bg-emerald-500/10',
+        tags: ['Consultation', 'Case Status', 'Documents']
     },
     {
         name: 'Urban Estates',
-        industry: 'Real Estate',
-        logo: (
-            <svg className="w-8 h-8 md:w-10 md:h-10 text-emerald-400 group-hover:text-emerald-500 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-            </svg>
-        )
+        desc: 'Lead capture and property inquiry management.',
+        icon: Home,
+        borderClass: 'border-blue-500/40',
+        glowClass: 'shadow-[0_0_40px_rgba(59,130,246,0.15)] group-hover:shadow-[0_0_60px_rgba(59,130,246,0.25)]',
+        textClass: 'text-blue-400',
+        bgClass: 'bg-blue-500/10',
+        tags: ['Property Info', 'Site Visit', 'Payments']
     },
     {
         name: 'SyncSaaS Inc.',
-        industry: 'Technology',
-        logo: (
-            <svg className="w-8 h-8 md:w-10 md:h-10 text-emerald-400 group-hover:text-emerald-500 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
-            </svg>
-        )
+        desc: 'Automate customer support and feature guidance.',
+        icon: Cloud,
+        borderClass: 'border-purple-500/40',
+        glowClass: 'shadow-[0_0_40px_rgba(168,85,247,0.15)] group-hover:shadow-[0_0_60px_rgba(168,85,247,0.25)]',
+        textClass: 'text-purple-400',
+        bgClass: 'bg-purple-500/10',
+        tags: ['Integrations', 'Billing', 'Support']
+    },
+    {
+        name: 'Shopify Store Apps',
+        desc: 'Boost sales with AI shopping assistants.',
+        icon: ShoppingBag,
+        borderClass: 'border-amber-500/40',
+        glowClass: 'shadow-[0_0_40px_rgba(245,158,11,0.15)] group-hover:shadow-[0_0_60px_rgba(245,158,11,0.25)]',
+        textClass: 'text-amber-400',
+        bgClass: 'bg-amber-500/10',
+        tags: ['Product Help', 'Orders', 'Returns']
+    },
+    {
+        name: 'Global E-Commerce',
+        desc: 'Recover abandoned carts and handle global support.',
+        icon: ShoppingCart,
+        borderClass: 'border-rose-500/40',
+        glowClass: 'shadow-[0_0_40px_rgba(244,63,94,0.15)] group-hover:shadow-[0_0_60px_rgba(244,63,94,0.25)]',
+        textClass: 'text-rose-400',
+        bgClass: 'bg-rose-500/10',
+        tags: ['Cart Recovery', 'Recommendations', 'Shipping']
     }
+];
+
+const stats = [
+    { value: '500+', label: 'Businesses', sub: 'Trust XotBot', icon: Users },
+    { value: '2M+', label: 'Conversions', sub: 'Handled Every Month', icon: MessageSquare }, // Note: Using Conversations to match text, even though label says Conversions in plan, screenshot says 'Conversations'
+    { value: '98%', label: 'Customer Satisfaction', sub: 'Across Industries', icon: TrendingUp },
+    { value: '24/7', label: 'Support & Automation', sub: 'No Business Hours', icon: Clock }
 ];
 
 const UseCasesValidation: React.FC = () => {
     const sectionRef = useRef<HTMLDivElement>(null);
-    const marqueeRef1 = useRef<HTMLDivElement>(null);
-    const marqueeRef2 = useRef<HTMLDivElement>(null);
+    const contentRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const ctx = gsap.context(() => {
-            gsap.fromTo(sectionRef.current,
+            gsap.fromTo(contentRef.current?.children || [],
                 { opacity: 0, y: 30 },
                 {
                     opacity: 1,
                     y: 0,
                     duration: 1,
+                    stagger: 0.15,
+                    ease: "power3.out",
                     scrollTrigger: {
                         trigger: sectionRef.current,
-                        start: "top 80%",
+                        start: "top 75%",
                     }
                 }
             );
-
-            // Container fade animation
-            if (marqueeRef1.current) {
-                gsap.fromTo(marqueeRef1.current,
-                    { opacity: 0, y: 30 },
-                    {
-                        opacity: 1,
-                        y: 0,
-                        duration: 1.2,
-                        ease: "power3.out",
-                        scrollTrigger: {
-                            trigger: marqueeRef1.current,
-                            start: "top 85%",
-                        }
-                    }
-                );
-            }
         }, sectionRef);
 
         return () => ctx.revert();
     }, []);
 
-    // Removed marquee arrays as we will render a static grid
-
     return (
-        <section ref={sectionRef} className="py-12 bg-gradient-to-br from-[#080f0b] via-[#060806] to-[#060806] relative overflow-hidden flex flex-col items-center justify-center border-y border-white/[0.05]">
+        <section ref={sectionRef} className="py-24 bg-[#020509] relative overflow-hidden flex flex-col items-center justify-center font-sans border-y border-white/[0.05]">
+            {/* Ambient Background */}
             <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl h-[500px] bg-emerald-900/15 blur-[150px] rounded-[100%] pointer-events-none" />
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-[600px] bg-emerald-900/10 blur-[150px] rounded-full pointer-events-none" />
             </div>
 
-            <div className="max-w-4xl w-full relative z-10 text-center mb-16 mx-auto px-4">
-                <span className="text-emerald-500/90 font-mono text-[11px] md:text-sm tracking-[0.3em] uppercase mb-4 block font-bold">
-                    Social Validation
-                </span>
-                <h2 
-                    className="text-4xl md:text-5xl lg:text-5xl font-black uppercase tracking-tighter mb-4 leading-[1.1]"
-                    style={{ fontFamily: "'Hanken Grotesk', sans-serif" }}
-                >
-                    Trusted By <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">Modern Businesses</span>
-                </h2>
-                <p className="text-white/80 max-w-[800px] mx-auto text-base md:text-lg font-light leading-relaxed">
-                    From local clinics to enterprise e-commerce, XotBot adapts to your industry's specific needs instantly.
-                </p>
-            </div>
+            <div ref={contentRef} className="max-w-[1400px] w-full relative z-10 px-4 md:px-8 flex flex-col items-center">
+                
+                {/* Header Section */}
+                <div className="text-center flex flex-col items-center mb-16">
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-widest mb-6">
+                        <ShieldCheck className="w-4 h-4" />
+                        Trusted Industries
+                    </div>
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight mb-4 leading-[1.1] text-white">
+                        TRUSTED BY <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-300">MODERN BUSINESSES</span>
+                    </h2>
+                    <p className="text-slate-300 max-w-2xl mx-auto text-base md:text-lg font-light leading-relaxed">
+                        From local clinics to enterprise e-commerce, XotBot adapts to your industry's specific needs instantly.
+                    </p>
+                </div>
 
-            <div ref={marqueeRef1} className="w-full relative z-10 overflow-hidden mx-auto py-4">
-                <div className="flex w-max gap-4 marquee-container px-4">
-                {[...clients, ...clients].map((client, idx) => (
-                    <div 
-                        key={idx} 
-                        className="w-[280px] md:w-[320px] shrink-0 group relative bg-[#060806] border border-emerald-500/20 rounded-[20px] p-6 lg:p-7 min-h-[140px] md:min-h-[160px] shadow-[0_4px_30px_rgba(16,185,129,0.05)] hover:border-emerald-500/50 hover:shadow-[0_0_40px_rgba(16,185,129,0.1)] transition-all duration-500 flex flex-col items-start text-left overflow-hidden justify-center hover:-translate-y-1"
-                    >
-                        {/* Soft Top Glow that sweeps on hover */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
-                        
-                        <div className="flex items-center gap-4 relative z-10 w-full">
-                            <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-[#0a0a0a] border border-white/10 flex items-center justify-center group-hover:bg-emerald-500/10 group-hover:border-emerald-500/20 transition-all duration-300 relative shrink-0">
-                                <span className="relative z-10">{client.logo}</span>
+                {/* Stats Row */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-5xl mb-24">
+                    {stats.map((stat, idx) => (
+                        <div key={idx} className="flex items-center gap-4">
+                            <div className="w-14 h-14 rounded-full bg-[#081216] border border-emerald-900/40 flex items-center justify-center shrink-0 shadow-[0_0_20px_rgba(16,185,129,0.05)]">
+                                <stat.icon className="w-6 h-6 text-emerald-400" />
                             </div>
-                            <div className="flex-1">
-                                <h3 
-                                    className="text-lg md:text-xl font-bold text-white/90 tracking-tight leading-tight mb-1"
-                                    style={{ fontFamily: "'Hanken Grotesk', sans-serif" }}
-                                >
-                                    {client.name}
-                                </h3>
-                                {/* Small subtle industry badge */}
-                                <div className="flex items-center gap-1.5">
-                                    <span className="text-[10px] uppercase tracking-wider text-white/40 font-mono bg-white/5 py-0.5 px-2 rounded-full border border-white/10">{client.industry}</span>
-                                </div>
+                            <div className="flex flex-col">
+                                <span className="text-3xl font-black text-emerald-400 tracking-tight leading-none mb-1">{stat.value}</span>
+                                <span className="text-sm font-bold text-white leading-tight">{stat.label === 'Conversions' ? 'Conversations' : stat.label}</span>
+                                <span className="text-[10px] text-slate-400 mt-0.5">{stat.sub}</span>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
+                {/* Divider */}
+                <div className="flex items-center gap-4 w-full max-w-2xl mb-12">
+                    <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent via-emerald-500/20 to-emerald-500/50" />
+                    <span className="text-emerald-400 text-xs font-bold tracking-[0.3em] uppercase">Industries We Serve</span>
+                    <div className="h-[1px] flex-1 bg-gradient-to-l from-transparent via-emerald-500/20 to-emerald-500/50" />
+                </div>
+
+                {/* Industries Grid */}
+                <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-24">
+                    {industries.map((item, idx) => (
+                        <div 
+                            key={idx} 
+                            className={`group relative bg-[#060A0E] border border-white/5 rounded-3xl p-6 flex flex-col items-center text-center transition-all duration-500 ${item.glowClass} hover:-translate-y-1`}
+                        >
+                            {/* Accent Top Border Glow */}
+                            <div className={`absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-current to-transparent opacity-50 ${item.textClass}`} />
+                            
+                            <div className={`w-16 h-16 rounded-2xl ${item.bgClass} border ${item.borderClass} flex items-center justify-center mb-5 relative`}>
+                                <item.icon className={`w-8 h-8 ${item.textClass} relative z-10`} />
+                                <div className={`absolute inset-0 blur-xl opacity-40 ${item.bgClass}`} />
+                            </div>
+                            
+                            <h3 className="text-xl font-bold text-white mb-3 tracking-tight">{item.name}</h3>
+                            <p className="text-slate-400 text-sm leading-relaxed mb-6 flex-1">
+                                {item.desc}
+                            </p>
+
+                            <div className="w-full flex items-center gap-2 mb-4">
+                                <div className="h-[1px] flex-1 bg-slate-800" />
+                                <span className="text-[9px] uppercase tracking-widest text-slate-500 font-bold">Popular Use Cases</span>
+                                <div className="h-[1px] flex-1 bg-slate-800" />
+                            </div>
+
+                            <div className="flex flex-wrap justify-center gap-2">
+                                {item.tags.map((tag, tIdx) => (
+                                    <span 
+                                        key={tIdx} 
+                                        className={`text-[9px] uppercase tracking-wider font-semibold py-1 px-2.5 rounded-full bg-[#0B1118] border border-white/5 ${item.textClass}`}
+                                    >
+                                        {tag}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
+                {/* Bottom Security Banner */}
+                <div className="w-full max-w-6xl bg-[#06090E] border border-white/10 rounded-2xl p-8 flex flex-col lg:flex-row items-center justify-between gap-10 shadow-2xl">
+                    <div className="flex items-center gap-6">
+                        <div className="w-16 h-16 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center shrink-0">
+                            <ShieldCheck className="w-8 h-8 text-emerald-400" />
+                        </div>
+                        <div>
+                            <h3 className="text-xl font-bold text-white mb-1 tracking-tight">Enterprise Grade Security & Compliance</h3>
+                            <p className="text-sm text-slate-400">Your data is secure with industry-standard encryption and compliance.</p>
+                        </div>
+                    </div>
+
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                        <div className="flex items-center gap-3">
+                            <Loader className="w-6 h-6 text-slate-400" />
+                            <div className="flex flex-col">
+                                <span className="text-sm font-bold text-white leading-tight">GDPR</span>
+                                <span className="text-[10px] text-slate-400 uppercase tracking-wider">Compliant</span>
+                            </div>
+                        </div>
+                        <div className="flex items-center gap-3">
+                            <Shield className="w-6 h-6 text-emerald-400" />
+                            <div className="flex flex-col">
+                                <span className="text-sm font-bold text-white leading-tight">SOC 2</span>
+                                <span className="text-[10px] text-slate-400 uppercase tracking-wider">Type II Certified</span>
+                            </div>
+                        </div>
+                        <div className="flex items-center gap-3">
+                            <Globe className="w-6 h-6 text-slate-400" />
+                            <div className="flex flex-col">
+                                <span className="text-sm font-bold text-white leading-tight">ISO 27001</span>
+                                <span className="text-[10px] text-slate-400 uppercase tracking-wider">Certified</span>
+                            </div>
+                        </div>
+                        <div className="flex items-center gap-3">
+                            <Lock className="w-6 h-6 text-slate-400" />
+                            <div className="flex flex-col">
+                                <span className="text-sm font-bold text-white leading-tight">SSL</span>
+                                <span className="text-[10px] text-slate-400 uppercase tracking-wider">Encrypted</span>
                             </div>
                         </div>
                     </div>
-                ))}
                 </div>
-            </div>
 
-            <style>{`
-                @keyframes marquee-scroll {
-                    0% { transform: translateX(0); }
-                    100% { transform: translateX(calc(-50% - 0.5rem)); }
-                }
-                .marquee-container {
-                    animation: marquee-scroll 45s linear infinite;
-                }
-                .marquee-container:hover {
-                    animation-play-state: paused;
-                }
-            `}</style>
+            </div>
         </section>
     );
 };

@@ -1,7 +1,9 @@
+'use client';
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { BrainCircuit, Globe, BarChart3, Palette, Check, X, Clock, DollarSign, Zap } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 const WhyChooseUs = () => {
     return (
@@ -202,20 +204,20 @@ const WhyChooseUs = () => {
                     </h2>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                         <Link
-                            to="/pricing"
+                            href="/pricing"
                             className="px-8 py-4 bg-emerald-500 text-black font-bold text-sm uppercase tracking-widest rounded-full hover:bg-emerald-400 transition-all shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_30px_rgba(16,185,129,0.5)] transform hover:-translate-y-1"
                         >
                             Start for $20/Month
                         </Link>
                         <Link
-                            to="/pricing"
+                            href="/pricing"
                             className="px-8 py-4 bg-transparent border border-white/10 text-white font-bold text-sm uppercase tracking-widest rounded-full hover:bg-white/5 transition-all"
                         >
                             Try Free
                         </Link>
                     </div>
                     <p className="mt-6 text-white/30 text-xs">
-                        14-day free trial • No credit card required • Cancel anytime
+                        14-day free trial â€¢ No credit card required â€¢ Cancel anytime
                     </p>
                 </motion.div>
             </div>
@@ -224,3 +226,4 @@ const WhyChooseUs = () => {
 };
 
 export default WhyChooseUs;
+

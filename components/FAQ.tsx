@@ -1,13 +1,15 @@
+﻿'use client';
+
 import React, { useState, useEffect, useRef } from 'react';
 
 const faqs = [
     {
         question: 'What is Xotbot?',
-        answer: 'Xotbot is an AI-powered chatbot and voice agent platform. It learns from your website data and provides instant, accurate answers to your customers — 24/7. No coding knowledge required.',
+        answer: 'Xotbot is an AI-powered chatbot and voice agent platform. It learns from your website data and provides instant, accurate answers to your customers â€” 24/7. No coding knowledge required.',
     },
     {
         question: 'How does the AI learn from my website?',
-        answer: 'Simply paste your website URL. Our AI crawler scans every page — products, pricing, FAQs, policies — and builds a knowledge base. It continuously updates as your site changes.',
+        answer: 'Simply paste your website URL. Our AI crawler scans every page â€” products, pricing, FAQs, policies â€” and builds a knowledge base. It continuously updates as your site changes.',
     },
     {
         question: 'Do I need technical knowledge to set it up?',
@@ -27,7 +29,7 @@ const faqs = [
     },
     {
         question: 'What platforms does Xotbot integrate with?',
-        answer: 'Xotbot works on any website — Shopify, WordPress, Wix, Webflow, Squarespace, Framer, and custom sites. Just paste one line of code. We also offer WhatsApp integration and a REST API.',
+        answer: 'Xotbot works on any website â€” Shopify, WordPress, Wix, Webflow, Squarespace, Framer, and custom sites. Just paste one line of code. We also offer WhatsApp integration and a REST API.',
     },
     {
         question: 'Is my data secure?',
@@ -129,3 +131,4 @@ const FAQ: React.FC = () => {
 };
 
 export default FAQ;
+

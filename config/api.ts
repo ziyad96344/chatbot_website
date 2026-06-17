@@ -1,14 +1,14 @@
 // =============================================================
 // 🔄 CENTRALIZED API CONFIG — LOCAL vs PRODUCTION
 // =============================================================
-// Change `isLocal` detection here once, all API calls follow.
+// Set NEXT_PUBLIC_USE_LOCAL_API=true in .env.local to use local backend.
+// Otherwise, always uses the deployed production server.
 // LOCAL  → http://127.0.0.1:8000/api
 // PROD   → https://server.xotbot.com/api
 // =============================================================
 
 const isLocal =
-    typeof window !== 'undefined' &&
-    (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
+    process.env.NEXT_PUBLIC_USE_LOCAL_API === 'true';
 
 const config = {
     // Base API URL (no trailing slash)

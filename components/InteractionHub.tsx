@@ -1,3 +1,5 @@
+﻿'use client';
+
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -58,7 +60,7 @@ const InteractionHub: React.FC = () => {
               Instant AI<br />Chat Support
             </h2>
             <p className="text-white/50 text-base leading-relaxed max-w-md font-light">
-              Your customers get accurate answers 24/7, trained on YOUR website data. No more generic FAQ pages — every response is specific to your business.
+              Your customers get accurate answers 24/7, trained on YOUR website data. No more generic FAQ pages â€” every response is specific to your business.
             </p>
           </div>
 
@@ -148,3 +150,4 @@ const InteractionHub: React.FC = () => {
 };
 
 export default InteractionHub;
+

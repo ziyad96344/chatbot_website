@@ -1,3 +1,5 @@
+﻿'use client';
+
 
 import React from 'react';
 
@@ -71,4 +73,5 @@ const FloatingMatrix: React.FC = () => {
 };
 
 export default FloatingMatrix;
+
 

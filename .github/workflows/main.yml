@@ -35,7 +35,7 @@ jobs:
           host: ${{ secrets.SERVER_IP }}
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_SSH_KEY }}
-          source: "dist/*"
+          source: "out/*"
           target: "/home/xotbot/tmp-deploy/"
 
       # 6️⃣ Move files to subdomain public_html
@@ -49,7 +49,7 @@ jobs:
             set -e
 
             TARGET="/home/xotbot/web/xotbot.com/public_html"
-            TEMP="/home/xotbot/tmp-deploy/dist"
+            TEMP="/home/xotbot/tmp-deploy/out"
 
             echo "Cleaning old build..."
             rm -rf $TARGET/*

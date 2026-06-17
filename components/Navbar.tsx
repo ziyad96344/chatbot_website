@@ -1,5 +1,8 @@
+'use client';
+
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const MenuIcon = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -16,7 +19,7 @@ const XIcon = () => (
 );
 
 const Navbar: React.FC = () => {
-  const location = useLocation();
+  const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Lock body scroll when mobile menu is open — prevents background GPU work
@@ -41,7 +44,7 @@ const Navbar: React.FC = () => {
     { label: 'Contact', to: '/contact' },
   ];
 
-  const isActive = (path: string) => location.pathname === path;
+  const isActive = (path: string) => pathname === path;
 
   return (
     <>
@@ -57,7 +60,7 @@ const Navbar: React.FC = () => {
 
         <div className="flex items-center justify-between max-w-[1800px] mx-auto relative z-50">
           {/* Logo */}
-          <Link to="/" className="group flex items-center gap-3">
+          <Link href="/" className="group flex items-center gap-3">
             <img src="/logo/logo1.png" alt="Xotbot" className="h-8 md:h-10 w-auto object-contain group-hover:brightness-110 transition-all duration-300" />
           </Link>
 
@@ -66,7 +69,7 @@ const Navbar: React.FC = () => {
             {navLinks.map((link) => (
               <Link
                 key={link.label}
-                to={link.to}
+                href={link.to}
                 className={`text-[9px] uppercase tracking-[0.35em] font-medium transition-all duration-300 relative group ${isActive(link.to) ? 'text-white' : 'text-white/40 hover:text-white'
                   }`}
               >
@@ -117,7 +120,7 @@ const Navbar: React.FC = () => {
           {navLinks.map((link) => (
             <Link
               key={link.label}
-              to={link.to}
+              href={link.to}
               onClick={() => setIsMobileMenuOpen(false)}
               className={`text-2xl uppercase tracking-[0.2em] font-light transition-colors duration-300 ${isActive(link.to) ? 'text-emerald-400' : 'text-white/60 hover:text-white'
                 }`}

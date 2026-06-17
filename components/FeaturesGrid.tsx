@@ -1,3 +1,5 @@
+﻿'use client';
+
 import React, { useEffect, useRef, useState } from 'react';
 
 const features = [
@@ -8,7 +10,7 @@ const features = [
             </svg>
         ),
         title: 'AI Chatbot Builder',
-        description: 'Build a custom AI chatbot trained on your website data — no coding required. Live in minutes.',
+        description: 'Build a custom AI chatbot trained on your website data â€” no coding required. Live in minutes.',
         accent: 'emerald',
     },
     {
@@ -28,7 +30,7 @@ const features = [
             </svg>
         ),
         title: 'Live Handoff',
-        description: 'Seamlessly transfer complex queries from AI to a human agent — no conversation context lost.',
+        description: 'Seamlessly transfer complex queries from AI to a human agent â€” no conversation context lost.',
         accent: 'amber',
     },
     {
@@ -128,7 +130,7 @@ const FeaturesGrid: React.FC = () => {
                         Everything You Need<br />to <span className="text-emerald-400">Automate</span> Support
                     </h2>
                     <p className="text-white/40 text-sm md:text-base max-w-lg mx-auto font-light leading-relaxed">
-                        One platform. AI chat, voice, analytics, lead capture, and integrations — all out of the box.
+                        One platform. AI chat, voice, analytics, lead capture, and integrations â€” all out of the box.
                     </p>
                 </div>
 
@@ -162,3 +164,4 @@ const FeaturesGrid: React.FC = () => {
 };
 
 export default FeaturesGrid;
+

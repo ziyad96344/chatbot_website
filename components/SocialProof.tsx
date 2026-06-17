@@ -1,3 +1,5 @@
+﻿'use client';
+
 import React, { useEffect, useRef, useState } from 'react';
 import { ShieldCheck, Globe, Lock, Activity } from 'lucide-react';
 
@@ -118,3 +120,4 @@ const SocialProof: React.FC = () => {
 };
 
 export default SocialProof;
+

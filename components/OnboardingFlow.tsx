@@ -1,3 +1,5 @@
+﻿'use client';
+
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -310,7 +312,7 @@ const OnboardingFlow: React.FC = () => {
                 </button>
 
                 <p className="text-center text-white/20 text-[10px] mt-4 tracking-wide">
-                    Secure encryption • Setup in under 5 minutes
+                    Secure encryption â€¢ Setup in under 5 minutes
                 </p>
             </div>
         </section>
@@ -318,3 +320,4 @@ const OnboardingFlow: React.FC = () => {
 };
 
 export default OnboardingFlow;
+

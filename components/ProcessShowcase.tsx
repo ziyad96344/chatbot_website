@@ -1,3 +1,5 @@
+﻿'use client';
+
 import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -218,7 +220,7 @@ const ProcessShowcase: React.FC = () => {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                         </svg>
                     </a>
-                    <p className="text-white/25 text-[11px] mt-4">No credit card required • Setup in 5 minutes</p>
+                    <p className="text-white/25 text-[11px] mt-4">No credit card required â€¢ Setup in 5 minutes</p>
                 </div>
             </div>
         </section>
@@ -226,3 +228,4 @@ const ProcessShowcase: React.FC = () => {
 };
 
 export default ProcessShowcase;
+

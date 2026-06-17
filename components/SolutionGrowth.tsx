@@ -1,134 +1,29 @@
+'use client';
+
 import React, { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { TrendingUp, Zap, Bot, PieChart, Shield, Clock, DollarSign, Users, BarChart2, CheckCircle2, Star } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
-
-const solutions = [
-    {
-        title: '3x More Lead Capture',
-        description: 'Instantly collect names, emails, and numbers 24/7 without forms.',
-        bg: 'from-emerald-500/20 to-teal-500/5',
-        border: 'border-emerald-500/20',
-        hoverBorder: 'hover:border-emerald-500/40',
-        iconColor: 'bg-emerald-500/10 text-emerald-400',
-        icon: (
-            <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-            </svg>
-        ),
-        colSpan: 'md:col-span-2',
-        visual: (
-            <div className="mt-3 lg:mt-4 bg-black/40 border border-white/5 rounded-xl p-3 lg:p-4 w-full relative overflow-hidden backdrop-blur-sm">
-                <div className="flex justify-between items-end">
-                    <div className="flex gap-1.5 items-end h-12 lg:h-14">
-                        {[0.3, 0.4, 0.35, 0.5, 0.6, 0.8, 1].map((h, i) => (
-                            <div key={i} className="w-3 md:w-5 bg-emerald-500 rounded-t-sm animate-pulse" style={{ height: `${h * 100}%`, animationDelay: `${i * 0.15}s` }} />
-                        ))}
-                    </div>
-                    <div className="text-right">
-                        <p className="text-[9px] text-white/50 uppercase tracking-[0.2em] leading-tight mb-1">New Leads</p>
-                        <p className="text-2xl lg:text-3xl font-black text-emerald-400">426</p>
-                    </div>
-                </div>
-            </div>
-        )
-    },
-    {
-        title: 'Instant 24/7 Replies',
-        description: 'Customers get answers in milliseconds. Zero wait time.',
-        bg: 'from-green-500/20 to-emerald-500/5',
-        border: 'border-green-500/20',
-        hoverBorder: 'hover:border-green-500/40',
-        iconColor: 'bg-green-500/10 text-green-400',
-        icon: (
-            <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
-            </svg>
-        ),
-        colSpan: 'md:col-span-1',
-        visual: (
-            <div className="mt-3 lg:mt-4 bg-black/40 border border-white/5 rounded-xl p-3 w-full h-full min-h-[100px] lg:min-h-[120px] flex items-center justify-center relative overflow-hidden backdrop-blur-sm">
-                <div className="absolute inset-0 bg-green-500/5 pulse-bg" />
-                <div className="text-center relative z-10">
-                    <p className="text-4xl lg:text-5xl font-black text-white/90 font-mono tracking-tighter">0.3<span className="text-xl text-green-400">s</span></p>
-                    <p className="text-[9px] uppercase tracking-[0.2em] text-white/50 mt-1">Avg Resp Time</p>
-                </div>
-            </div>
-        )
-    },
-    {
-        title: 'Total Automation',
-        description: 'Resolves 80% of support tickets automatically.',
-        bg: 'from-cyan-500/20 to-teal-500/5',
-        border: 'border-cyan-500/20',
-        hoverBorder: 'hover:border-cyan-500/40',
-        iconColor: 'bg-cyan-500/10 text-cyan-400',
-        icon: (
-            <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-            </svg>
-        ),
-        colSpan: 'md:col-span-1',
-        visual: (
-           <div className="mt-3 lg:mt-4 flex flex-col gap-2 h-full justify-end">
-               <div className="bg-white/[0.03] border border-white/5 rounded-lg p-2.5 w-[85%] backdrop-blur-sm">
-                   <div className="w-3/4 h-1.5 bg-white/10 rounded mb-2" />
-                   <div className="w-1/2 h-1.5 bg-white/10 rounded" />
-               </div>
-               <div className="bg-cyan-500/10 border border-cyan-500/20 rounded-lg p-2.5 w-[90%] self-end backdrop-blur-sm">
-                   <div className="flex items-center gap-2 mb-2">
-                       <div className="w-3.5 h-3.5 rounded-full bg-cyan-400 flex items-center justify-center">
-                           <span className="text-[#0a0a0a] text-[7px] font-bold">AI</span>
-                       </div>
-                       <div className="w-1/2 h-1.5 bg-cyan-400/50 rounded" />
-                   </div>
-                   <div className="w-full h-1.5 bg-cyan-400/30 rounded" />
-               </div>
-           </div>
-        )
-    },
-    {
-        title: 'Full Business Analytics',
-        description: 'Track CSAT, interactions, and conversion rates effortlessly.',
-        bg: 'from-blue-500/20 to-indigo-500/5',
-        border: 'border-blue-500/20',
-        hoverBorder: 'hover:border-blue-500/40',
-        iconColor: 'bg-blue-500/10 text-blue-400',
-        icon: (
-            <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
-            </svg>
-        ),
-        colSpan: 'md:col-span-2',
-        visual: (
-            <div className="mt-3 lg:mt-4 grid grid-cols-2 gap-2 lg:gap-3 h-full">
-               <div className="bg-black/40 border border-white/5 rounded-xl p-3 flex flex-col justify-center items-center backdrop-blur-sm">
-                   <p className="text-xl lg:text-2xl font-black text-white">4.9/5</p>
-                   <p className="text-[9px] uppercase tracking-[0.2em] text-white/50 text-center mt-1">CSAT Score</p>
-               </div>
-               <div className="bg-black/40 border border-white/5 rounded-xl p-3 flex flex-col justify-center items-center backdrop-blur-sm">
-                   <p className="text-xl lg:text-2xl font-black text-blue-400">+148%</p>
-                   <p className="text-[9px] uppercase tracking-[0.2em] text-white/50 text-center mt-1">Conversions</p>
-               </div>
-            </div>
-        )
-    }
-];
 
 const SolutionGrowth: React.FC = () => {
     const sectionRef = useRef<HTMLDivElement>(null);
     const gridRef = useRef<HTMLDivElement>(null);
+    const barsRef = useRef<HTMLDivElement>(null);
+    const chatRef = useRef<HTMLDivElement>(null);
+    const linePathRef = useRef<SVGPathElement>(null);
 
     useEffect(() => {
         const ctx = gsap.context(() => {
+            // Main section fade up
             gsap.fromTo(sectionRef.current,
                 { opacity: 0, y: 50 },
                 {
                     opacity: 1,
                     y: 0,
                     duration: 1,
+                    ease: "power3.out",
                     scrollTrigger: {
                         trigger: sectionRef.current,
                         start: "top 75%",
@@ -136,6 +31,7 @@ const SolutionGrowth: React.FC = () => {
                 }
             );
 
+            // Grid cards stagger
             if (gridRef.current) {
                 gsap.fromTo(gridRef.current.children,
                     { opacity: 0, y: 30 },
@@ -152,75 +48,290 @@ const SolutionGrowth: React.FC = () => {
                     }
                 );
             }
+
+            // Animate bar chart
+            if (barsRef.current) {
+                gsap.fromTo(barsRef.current.children,
+                    { height: '10%', opacity: 0.5 },
+                    {
+                        height: (index, target) => target.getAttribute('data-height') || '100%',
+                        opacity: 1,
+                        duration: 1.5,
+                        stagger: 0.1,
+                        ease: "power2.inOut",
+                        repeat: -1,
+                        yoyo: true,
+                        scrollTrigger: {
+                            trigger: barsRef.current,
+                            start: "top 85%",
+                        }
+                    }
+                );
+            }
+
+            // Animate chat bubbles
+            if (chatRef.current) {
+                const bubbles = chatRef.current.querySelectorAll('.chat-bubble');
+                gsap.set(bubbles, { opacity: 0, y: 20, scale: 0.95 });
+                
+                const tl = gsap.timeline({
+                    repeat: -1,
+                    scrollTrigger: {
+                        trigger: chatRef.current,
+                        start: "top 85%",
+                    }
+                });
+
+                tl.to(bubbles[0], { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: "back.out(1.5)" })
+                  .to(bubbles[1], { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: "back.out(1.5)", delay: 0.6 })
+                  .to(bubbles, { opacity: 0, y: 10, scale: 0.95, duration: 0.3, delay: 2 });
+            }
+
+            // Animate Line Graph
+            if (linePathRef.current) {
+                const length = linePathRef.current.getTotalLength();
+                gsap.set(linePathRef.current, { strokeDasharray: length, strokeDashoffset: length });
+                
+                gsap.to(linePathRef.current, {
+                    strokeDashoffset: 0,
+                    duration: 2.5,
+                    ease: "power2.inOut",
+                    repeat: -1,
+                    yoyo: true,
+                    repeatDelay: 0.5,
+                    scrollTrigger: {
+                        trigger: linePathRef.current,
+                        start: "top 90%",
+                    }
+                });
+            }
+
         }, sectionRef);
 
         return () => ctx.revert();
     }, []);
 
     return (
-        <section ref={sectionRef} className="min-h-screen py-20 px-6 md:px-12 bg-[#080808] relative overflow-hidden flex flex-col items-center justify-center">
-            {/* Ambient Growth Glow */}
-            <div className="absolute top-0 right-0 w-[50%] h-[50%] bg-emerald-500/15 blur-[150px] rounded-full pointer-events-none" />
-            <div className="absolute bottom-0 left-0 w-[40%] h-[40%] bg-blue-500/12 blur-[150px] rounded-full pointer-events-none" />
+        <section ref={sectionRef} className="py-24 px-6 md:px-12 bg-[#02050A] relative overflow-hidden flex flex-col items-center justify-center font-sans">
+            {/* Ambient Background Glows */}
+            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-cyan-900/10 blur-[150px] rounded-full pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-emerald-900/10 blur-[120px] rounded-full pointer-events-none" />
 
-            <div className="max-w-4xl w-full relative z-10 text-center mb-16 mx-auto px-4">
-                <span className="text-emerald-500/90 font-mono text-[11px] md:text-sm tracking-[0.3em] uppercase mb-4 block font-bold">
-                    The Solution
-                </span>
-                <h2 
-                    className="text-4xl md:text-5xl lg:text-5xl font-black uppercase tracking-tighter mb-4 leading-[1.1]"
-                    style={{ fontFamily: "'Hanken Grotesk', sans-serif" }}
-                >
-                    Turn Visitors Into Customers<br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">— Automatically</span>
+            {/* Header Section */}
+            <div className="max-w-6xl w-full relative z-10 text-center mb-14 mx-auto px-4">
+                <div className="flex items-center justify-center gap-4 mb-4 text-emerald-500/80 tracking-[0.3em] text-[10px] md:text-xs font-mono uppercase font-bold">
+                    <span className="w-10 h-[1px] bg-emerald-500/30" />
+                    <span>THE SOLUTION</span>
+                    <span className="w-10 h-[1px] bg-emerald-500/30" />
+                </div>
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight mb-6 leading-[1.1] text-white">
+                    TURN VISITORS INTO CUSTOMERS<br />
+                    <span className="inline-flex items-center gap-3 md:gap-4 mt-2">
+                        <span className="inline-flex items-center justify-center px-4 py-1 rounded-xl border-2 border-emerald-500/40 bg-emerald-500/10 text-emerald-400 text-3xl md:text-5xl tracking-widest shadow-[0_0_30px_rgba(16,185,129,0.2)]">
+                            AI
+                        </span>
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-300">
+                            AUTOMATICALLY
+                        </span>
+                    </span>
                 </h2>
-                <p className="text-white/80 max-w-[800px] mx-auto text-base md:text-lg font-light leading-relaxed">
-                    Stop losing money on missed opportunities. Deploy an AI agent that works 24/7, captures leads, and drives exponential revenue growth.
+                <p className="text-slate-300 max-w-3xl mx-auto text-base md:text-lg font-light leading-relaxed">
+                    Stop losing money on missed opportunities. XotBot chats with your visitors 24/7,<br />collects their info, and answers questions instantly — so you <span className="text-emerald-400 font-semibold">close more deals</span> without extra effort.
                 </p>
             </div>
 
-            <div ref={gridRef} className="max-w-5xl w-full relative z-10 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5 mx-auto px-4">
-                {solutions.map((item, idx) => (
-                    <div 
-                        key={idx}
-                        className={`group relative bg-[#0a0f0c] border ${item.border} rounded-2xl p-5 lg:p-6 shadow-[0_0_30px_rgba(16,185,129,0.03)] overflow-hidden hover:border-emerald-500/40 hover:shadow-[0_0_50px_rgba(16,185,129,0.1)] transition-all duration-500 ${item.colSpan} flex flex-col h-full`}
-                    >
-                        {/* Hover Gradient */}
-                        <div className={`absolute inset-0 bg-gradient-to-br ${item.bg} opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none`} />
-
-                        <div className="relative z-10 flex flex-col md:flex-row items-start gap-4 mb-2">
-                            <div className={`w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center shrink-0 border border-white/10 ${item.iconColor} group-hover:scale-110 transition-transform duration-300`}>
-                                {item.icon}
-                            </div>
-                            <div className="mt-1 md:mt-0">
-                                <h3 
-                                    className="text-lg md:text-xl font-bold text-white mb-1.5 tracking-tight leading-tight"
-                                    style={{ fontFamily: "'Hanken Grotesk', sans-serif" }}
-                                >
-                                    {item.title}
-                                </h3>
-                                <p className="text-white/70 text-xs md:text-sm font-light leading-relaxed">
-                                    {item.description}
-                                </p>
-                            </div>
+            {/* Main 2x2 Grid */}
+            <div ref={gridRef} className="max-w-6xl w-full relative z-10 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mx-auto px-4 mb-8">
+                
+                {/* Card 1: 3x More Lead Capture */}
+                <div className="group relative bg-[#040914]/80 backdrop-blur-xl border border-slate-800/80 rounded-3xl p-6 lg:p-8 overflow-hidden hover:border-emerald-500/30 transition-all duration-500 flex flex-col justify-between shadow-2xl h-[280px]">
+                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+                    
+                    <div className="flex gap-4 relative z-10">
+                        <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center shrink-0 shadow-[0_0_15px_rgba(16,185,129,0.1)]">
+                            <TrendingUp className="w-6 h-6 text-emerald-400" />
                         </div>
-
-                        {/* Visual block attached to bottom */}
-                        <div className="relative z-10 mt-auto flex-1 flex flex-col">
-                            {item.visual}
+                        <div>
+                            <h3 className="text-lg font-bold text-white mb-1">3x More Lead Capture</h3>
+                            <p className="text-slate-400 text-sm leading-relaxed max-w-[280px]">
+                                XotBot captures more emails and numbers 24/7 across all pages.
+                            </p>
                         </div>
                     </div>
-                ))}
+
+                    <div className="relative z-10 flex justify-between items-end mt-6">
+                        {/* Animated Bar Chart */}
+                        <div ref={barsRef} className="flex gap-1.5 items-end h-20">
+                            {[15, 25, 20, 35, 45, 60, 80, 100].map((h, i) => (
+                                <div 
+                                    key={i} 
+                                    className="w-4 bg-gradient-to-t from-emerald-600/40 to-emerald-400 rounded-t-sm shadow-[0_0_10px_rgba(52,211,153,0.3)]" 
+                                    data-height={`${h}%`}
+                                />
+                            ))}
+                        </div>
+                        <div className="text-right flex flex-col items-end">
+                            <span className="text-[10px] text-slate-400 uppercase tracking-widest font-bold mb-1">New Leads</span>
+                            <div className="flex items-center gap-1 mb-2">
+                                <span className="text-4xl font-black text-emerald-400 tracking-tighter">426</span>
+                                <TrendingUp className="w-6 h-6 text-emerald-400" />
+                            </div>
+                            <div className="px-3 py-1 bg-emerald-500/10 border border-emerald-500/20 rounded-full text-emerald-400 text-[10px] font-bold flex items-center gap-1 shadow-[0_0_10px_rgba(16,185,129,0.1)]">
+                                &uarr; 300% vs. Manual
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Card 2: Instant 24/7 Replies */}
+                <div className="group relative bg-[#040914]/80 backdrop-blur-xl border border-slate-800/80 rounded-3xl p-6 lg:p-8 overflow-hidden hover:border-cyan-500/30 transition-all duration-500 flex flex-col shadow-2xl h-[280px]">
+                    <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+                    
+                    <div className="flex gap-4 relative z-10">
+                        <div className="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center shrink-0 shadow-[0_0_15px_rgba(6,182,212,0.1)]">
+                            <Zap className="w-6 h-6 text-cyan-400" />
+                        </div>
+                        <div>
+                            <h3 className="text-lg font-bold text-white mb-1">Instant 24/7 Replies</h3>
+                            <p className="text-slate-400 text-sm leading-relaxed max-w-[280px]">
+                                Customers get answers in milliseconds. Zero wait time.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div className="relative z-10 flex-1 flex items-center justify-center mt-6">
+                        <div className="bg-[#02050A] border border-cyan-500/20 rounded-2xl p-6 w-full flex items-center justify-between shadow-[inset_0_0_20px_rgba(6,182,212,0.05)]">
+                            <div className="flex flex-col">
+                                <span className="text-5xl font-black text-white font-mono tracking-tighter drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">0.3<span className="text-3xl text-cyan-400">s</span></span>
+                                <span className="text-[10px] text-slate-400 uppercase tracking-[0.2em] font-bold mt-1">Avg Reply Time</span>
+                            </div>
+                            <div className="w-16 h-16 rounded-full border-2 border-cyan-900/50 flex items-center justify-center relative">
+                                <Clock className="w-8 h-8 text-cyan-400 animate-[spin_4s_linear_infinite]" />
+                                <div className="absolute inset-0 bg-cyan-500/10 rounded-full blur-md" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Card 3: Total Automation */}
+                <div className="group relative bg-[#040914]/80 backdrop-blur-xl border border-slate-800/80 rounded-3xl p-6 lg:p-8 overflow-hidden hover:border-teal-500/30 transition-all duration-500 flex flex-col shadow-2xl h-[280px]">
+                    <div className="absolute inset-0 bg-gradient-to-br from-teal-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+                    
+                    <div className="flex gap-4 relative z-10 mb-6">
+                        <div className="w-12 h-12 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center shrink-0 shadow-[0_0_15px_rgba(20,184,166,0.1)]">
+                            <Bot className="w-6 h-6 text-teal-400" />
+                        </div>
+                        <div>
+                            <h3 className="text-lg font-bold text-white mb-1">Total Automation</h3>
+                            <p className="text-slate-400 text-sm leading-relaxed">
+                                Handles chats, lead capture, FAQs, and follow-ups automatically.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div ref={chatRef} className="relative z-10 flex flex-col gap-3 flex-1 justify-end pb-2">
+                        <div className="chat-bubble bg-[#111827] border border-slate-800 rounded-2xl rounded-tl-sm px-4 py-3 text-sm text-slate-300 w-[80%] shadow-lg">
+                            Where is my order?
+                        </div>
+                        <div className="chat-bubble flex gap-2 w-[90%] self-end">
+                            <div className="w-8 h-8 rounded-full bg-teal-500/20 border border-teal-500/30 flex items-center justify-center shrink-0 mt-auto shadow-[0_0_10px_rgba(20,184,166,0.2)]">
+                                <Bot className="w-4 h-4 text-teal-400" />
+                            </div>
+                            <div className="bg-teal-950/40 border border-teal-900/50 rounded-2xl rounded-br-sm px-4 py-3 text-sm text-teal-50 shadow-lg relative">
+                                Your order #1234 is out for delivery and will arrive tomorrow.
+                                <CheckCircle2 className="w-4 h-4 text-teal-400 absolute bottom-2 right-2 opacity-50" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Card 4: Full Business Analytics */}
+                <div className="group relative bg-[#040914]/80 backdrop-blur-xl border border-slate-800/80 rounded-3xl p-6 lg:p-8 overflow-hidden hover:border-blue-500/30 transition-all duration-500 flex flex-col shadow-2xl h-[280px]">
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+                    
+                    <div className="flex gap-4 relative z-10 mb-6">
+                        <div className="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center shrink-0 shadow-[0_0_15px_rgba(59,130,246,0.1)]">
+                            <PieChart className="w-6 h-6 text-blue-400" />
+                        </div>
+                        <div>
+                            <h3 className="text-lg font-bold text-white mb-1">Full Business Analytics</h3>
+                            <p className="text-slate-400 text-sm leading-relaxed">
+                                Track chats, interactions, and conversions in real-time.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div className="relative z-10 grid grid-cols-2 gap-4 flex-1">
+                        {/* CSAT Score */}
+                        <div className="bg-[#02050A] border border-blue-900/30 rounded-2xl p-4 flex flex-col items-center justify-center shadow-inner">
+                            <span className="text-3xl font-black text-white font-mono tracking-tight mb-2">4.9<span className="text-xl text-slate-500">/5</span></span>
+                            <div className="flex gap-1 mb-2">
+                                {[1,2,3,4,5].map(i => <Star key={i} className="w-4 h-4 text-amber-400 fill-amber-400" />)}
+                            </div>
+                            <span className="text-[9px] text-slate-400 uppercase tracking-widest font-bold">CSAT Score</span>
+                        </div>
+                        
+                        {/* Conversions Line Chart */}
+                        <div className="bg-[#02050A] border border-blue-900/30 rounded-2xl p-4 flex flex-col justify-between shadow-inner relative overflow-hidden">
+                            <div className="text-center mt-2 relative z-10">
+                                <span className="text-2xl font-black text-cyan-400 tracking-tight">+148%</span>
+                            </div>
+                            <div className="absolute bottom-0 left-0 w-full h-1/2">
+                                <div className="absolute inset-0 bg-gradient-to-t from-cyan-500/20 to-transparent" />
+                                <svg viewBox="0 0 100 50" preserveAspectRatio="none" className="w-full h-full drop-shadow-[0_0_5px_rgba(6,182,212,0.5)]">
+                                    <path 
+                                        ref={linePathRef}
+                                        d="M0,40 Q10,35 20,30 T40,25 T60,20 T80,10 T100,5" 
+                                        fill="none" 
+                                        stroke="#22d3ee" 
+                                        strokeWidth="3" 
+                                        strokeLinecap="round" 
+                                    />
+                                </svg>
+                            </div>
+                            <span className="text-[9px] text-slate-400 uppercase tracking-widest font-bold text-center mt-auto relative z-10 mb-1">Conversions</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-            
-            <style>{`
-                @keyframes slowPulse {
-                    0%, 100% { opacity: 0.3; }
-                    50% { opacity: 0.6; }
-                }
-                .pulse-bg {
-                    animation: slowPulse 3s ease-in-out infinite;
-                }
-            `}</style>
+
+            {/* Bottom Value Banner */}
+            <div className="max-w-6xl w-full relative z-10 mx-auto px-4">
+                <div className="bg-gradient-to-r from-[#0A1A24] via-[#050A0F] to-[#0A1A24] border border-cyan-900/40 rounded-2xl p-6 md:p-8 flex flex-col lg:flex-row items-center justify-between gap-8 shadow-[0_0_40px_rgba(6,182,212,0.1)]">
+                    
+                    <div className="flex items-center gap-5">
+                        <div className="w-14 h-14 rounded-full bg-cyan-500/10 border-2 border-cyan-500/30 flex items-center justify-center shrink-0 shadow-[0_0_20px_rgba(6,182,212,0.2)]">
+                            <Shield className="w-7 h-7 text-cyan-400" />
+                        </div>
+                        <div className="text-lg md:text-xl text-slate-300 font-medium leading-tight">
+                            More Conversations.<br />
+                            <span className="text-cyan-400 font-bold">More Customers.</span> More Revenue.
+                        </div>
+                    </div>
+
+                    <div className="flex flex-wrap md:flex-nowrap items-center gap-6 lg:gap-10">
+                        <div className="flex flex-col items-center gap-2 text-center">
+                            <Clock className="w-6 h-6 text-slate-400" />
+                            <span className="text-[11px] text-slate-300 font-medium">Save 100+<br/>Team Hours</span>
+                        </div>
+                        <div className="flex flex-col items-center gap-2 text-center">
+                            <DollarSign className="w-6 h-6 text-emerald-400" />
+                            <span className="text-[11px] text-slate-300 font-medium">Increase<br/>Sales</span>
+                        </div>
+                        <div className="flex flex-col items-center gap-2 text-center">
+                            <Users className="w-6 h-6 text-cyan-400" />
+                            <span className="text-[11px] text-slate-300 font-medium">Better Customer<br/>Experience</span>
+                        </div>
+                        <div className="flex flex-col items-center gap-2 text-center">
+                            <BarChart2 className="w-6 h-6 text-blue-400" />
+                            <span className="text-[11px] text-slate-300 font-medium">Scalable<br/>Growth</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
         </section>
     );
 };

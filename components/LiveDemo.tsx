@@ -1,3 +1,5 @@
+﻿'use client';
+
 import React, { useRef, useEffect, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -121,7 +123,7 @@ const LiveDemo: React.FC = () => {
                                 className="text-left px-5 py-3 bg-white/[0.03] border border-white/10 rounded-xl hover:bg-red-500/10 hover:border-red-500/30 text-sm text-white/80 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed group flex justify-between items-center"
                             >
                                 {q}
-                                <span className="opacity-0 group-hover:opacity-100 text-red-500 transition-opacity">→</span>
+                                <span className="opacity-0 group-hover:opacity-100 text-red-500 transition-opacity">â†’</span>
                             </button>
                         ))}
                     </div>
@@ -225,3 +227,4 @@ const LiveDemo: React.FC = () => {
 };
 
 export default LiveDemo;
+

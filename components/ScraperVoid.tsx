@@ -1,3 +1,5 @@
+﻿'use client';
+
 import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -240,7 +242,7 @@ const ScraperVoid: React.FC = () => {
               Your Website<br />Becomes the Brain
             </h2>
             <p className="animate-in text-white/40 text-sm max-w-sm leading-relaxed font-light mx-auto">
-              Xotbot reads every page of your site — products, pricing, policies — and turns it into an AI knowledge base. Always up-to-date, always accurate.
+              Xotbot reads every page of your site â€” products, pricing, policies â€” and turns it into an AI knowledge base. Always up-to-date, always accurate.
             </p>
           </div>
         </div>
@@ -250,3 +252,4 @@ const ScraperVoid: React.FC = () => {
 };
 
 export default ScraperVoid;
+

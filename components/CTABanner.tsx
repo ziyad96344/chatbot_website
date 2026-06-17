@@ -1,5 +1,7 @@
+'use client';
+
 import React, { useEffect, useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/navigation';
 
 function useScrollReveal(ref: React.RefObject<HTMLElement | null>, threshold = 0.1) {
     const [visible, setVisible] = useState(false);
@@ -17,7 +19,7 @@ function useScrollReveal(ref: React.RefObject<HTMLElement | null>, threshold = 0
 
 const CTABanner: React.FC = () => {
     const sectionRef = useRef<HTMLDivElement>(null);
-    const navigate = useNavigate();
+    const router = useRouter();
     const visible = useScrollReveal(sectionRef);
 
     return (
@@ -47,7 +49,7 @@ const CTABanner: React.FC = () => {
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                     {/* Primary CTA */}
                     <button
-                        onClick={() => navigate('/get-access')}
+                        onClick={() => router.push('/get-access')}
                         className="group relative px-10 py-4 bg-emerald-500 rounded-full text-black font-bold uppercase tracking-[0.15em] text-sm overflow-hidden hover:shadow-[0_0_40px_rgba(16,185,129,0.4)] transition-all duration-500 hover:-translate-y-0.5 cursor-pointer"
                     >
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
@@ -59,7 +61,7 @@ const CTABanner: React.FC = () => {
 
                     {/* Secondary CTA */}
                     <button
-                        onClick={() => navigate('/contact')}
+                        onClick={() => router.push('/contact')}
                         className="px-10 py-4 bg-transparent border border-white/15 rounded-full text-white/70 font-bold uppercase tracking-[0.15em] text-sm hover:border-white/30 hover:text-white transition-all duration-300 cursor-pointer"
                     >
                         Book a Demo

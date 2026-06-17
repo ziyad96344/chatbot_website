@@ -1,6 +1,8 @@
+'use client';
+
 import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
-import config from '../config/api';
+import Link from 'next/link';
+import config from '@/config/api';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -149,7 +151,7 @@ const HomePricing: React.FC = () => {
                                 <p className="text-white/40 text-[12px] mb-6 font-light min-h-[36px]">{plan.description}</p>
 
                                 <div className="mb-6">
-                                    {price && price > 0 ? (
+                                    {price && Number(price) > 0 ? (
                                         <div className="flex items-baseline gap-1">
                                             <span className="text-3xl lg:text-4xl font-black text-white">₹{Number(price).toLocaleString('en-IN')}</span>
                                             <span className="text-white/40 text-[12px] font-mono">/mo</span>
@@ -182,7 +184,7 @@ const HomePricing: React.FC = () => {
 
                 {/* View All CTA */}
                 <div className="text-center mt-12">
-                    <Link to="/pricing"
+                    <Link href="/pricing"
                         className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-emerald-500/70 hover:text-emerald-500 transition-colors font-mono group font-bold">
                         Compare All Features
                         <span className="group-hover:translate-x-1 transition-transform">→</span>

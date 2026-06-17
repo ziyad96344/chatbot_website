@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useEffect, useRef, useState, useCallback, useMemo } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -264,7 +266,7 @@ const Hero: React.FC = () => {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,#080808_75%)] pointer-events-none z-10" />
 
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
-          <h1 ref={textRef} className="text-[28vw] md:text-[24vw] lg:text-[20vw] font-black leading-none tracking-[-0.04em] text-white/[0.03] select-none whitespace-nowrap uppercase" style={{ fontFamily: "'Space Grotesk', sans-serif", willChange: 'transform' }}>XOTBOT</h1>
+          <div ref={textRef} className="text-[28vw] md:text-[24vw] lg:text-[20vw] font-black leading-none tracking-[-0.04em] text-white/[0.03] select-none whitespace-nowrap uppercase" aria-hidden="true" style={{ fontFamily: "'Space Grotesk', sans-serif", willChange: 'transform' }}>XOTBOT</div>
         </div>
 
         <div ref={botCardRef} className="absolute left-[3%] md:left-[6%] lg:left-[8%] top-[22%] md:top-[26%] z-30" style={{ willChange: 'transform', boxShadow: isAudioPlaying ? '0 0 60px rgba(16,185,129,0.35), 0 0 120px rgba(16,185,129,0.15)' : '0 0 30px rgba(16,185,129,0.15), 0 0 60px rgba(16,185,129,0.08)' }}>
@@ -324,7 +326,7 @@ const Hero: React.FC = () => {
         </div>
 
         <div ref={subtitleRef} className="absolute inset-x-0 bottom-0 flex flex-col items-center pb-[10vh] pointer-events-none z-30">
-          <p className="hero-subtitle text-[10px] md:text-[11px] uppercase tracking-[0.5em] text-white/60 font-bold mb-3">AI-Powered Chatbot & Voice Agent</p>
+          <h1 className="hero-subtitle text-[10px] md:text-[11px] uppercase tracking-[0.5em] text-white/60 font-bold mb-3">AI-Powered Chatbot & Voice Agent Platform for Business</h1>
           <p className="hero-subtitle text-[10px] md:text-[11px] tracking-[0.15em] text-white/40 font-light mb-3 normal-case">Turn your website into an intelligent assistant — in minutes, not months</p>
           <div className="hero-subtitle flex items-center gap-2">
             <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" style={{ boxShadow: '0 0 10px rgba(16,185,129,0.7)' }} />
@@ -351,3 +353,4 @@ const Hero: React.FC = () => {
 };
 
 export default Hero;
+

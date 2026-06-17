@@ -1,3 +1,5 @@
+﻿'use client';
+
 import React, { useEffect, useRef, useState } from 'react';
 
 const useCases = [
@@ -102,7 +104,7 @@ const UseCases: React.FC = () => {
                         Built for <span className="text-emerald-400">Every</span> Industry
                     </h2>
                     <p className="text-white/40 text-sm md:text-base max-w-lg mx-auto font-light leading-relaxed">
-                        From startups to enterprises, Xotbot adapts to your business — no matter the industry.
+                        From startups to enterprises, Xotbot adapts to your business â€” no matter the industry.
                     </p>
                 </div>
 
@@ -141,3 +143,4 @@ const UseCases: React.FC = () => {
 };
 
 export default UseCases;
+

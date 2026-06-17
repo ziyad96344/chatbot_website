@@ -1,3 +1,5 @@
+﻿'use client';
+
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -108,14 +110,14 @@ const Registration: React.FC = () => {
 
                 {/* Step 1 */}
                 <div ref={step1Ref} className="mb-6">
-                    <label className="text-[9px] uppercase tracking-[0.25em] text-white/30 mb-2 block">Step 1 — Website URL</label>
+                    <label className="text-[9px] uppercase tracking-[0.25em] text-white/30 mb-2 block">Step 1 â€” Website URL</label>
                     <div className="relative">
                         <input type="url" value={websiteUrl} onChange={(e) => setWebsiteUrl(e.target.value)} placeholder="https://yourwebsite.com"
                             className="w-full h-11 bg-white/[0.02] border border-white/[0.08] rounded-lg px-4 pr-24 text-white placeholder-white/20 text-sm focus:outline-none focus:border-emerald-500/40 transition-colors" />
                         <button onClick={handleScanSite} disabled={!websiteUrl || isScanning}
                             className={`absolute right-1.5 top-1/2 -translate-y-1/2 px-3 py-1.5 rounded-md text-[10px] uppercase tracking-wider font-medium transition-all ${websiteUrl && !isScanning ? 'bg-emerald-500/15 text-emerald-400 hover:bg-emerald-500/25 border border-emerald-500/30' : 'bg-white/[0.03] text-white/20 cursor-not-allowed border border-white/[0.05]'
                                 }`}>
-                            {isScanning ? '...' : scanComplete ? '✓' : 'Scan'}
+                            {isScanning ? '...' : scanComplete ? 'âœ“' : 'Scan'}
                         </button>
                         <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-white/[0.03] overflow-hidden">
                             <div ref={scanBarRef} className="h-full bg-gradient-to-r from-emerald-500 to-cyan-400" style={{ transform: 'scaleX(0)', transformOrigin: 'left' }} />
@@ -125,7 +127,7 @@ const Registration: React.FC = () => {
 
                 {/* Step 2 - Compact Cards */}
                 <div ref={step2Ref} className="mb-6">
-                    <label className="text-[9px] uppercase tracking-[0.25em] text-white/30 mb-3 block">Step 2 — Choose Integration</label>
+                    <label className="text-[9px] uppercase tracking-[0.25em] text-white/30 mb-3 block">Step 2 â€” Choose Integration</label>
                     <div className="grid grid-cols-2 gap-3">
                         {/* Chatbot */}
                         <button onClick={() => toggleOption('chatbot')}
@@ -167,7 +169,7 @@ const Registration: React.FC = () => {
 
                 {/* Step 3 - Compact Inputs */}
                 <div ref={step3Ref} className="mb-6">
-                    <label className="text-[9px] uppercase tracking-[0.25em] text-white/30 mb-3 block">Step 3 — Your Details</label>
+                    <label className="text-[9px] uppercase tracking-[0.25em] text-white/30 mb-3 block">Step 3 â€” Your Details</label>
                     <div className="grid grid-cols-2 gap-3">
                         <div className="relative">
                             <input type="text" value={name} onChange={(e) => setName(e.target.value)} onFocus={() => setNameFocused(true)} onBlur={() => setNameFocused(false)}
@@ -197,3 +199,4 @@ const Registration: React.FC = () => {
 };
 
 export default Registration;
+

@@ -1,3 +1,5 @@
+﻿'use client';
+
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -60,3 +62,4 @@ const ComingSoonModal: React.FC<ComingSoonModalProps> = ({ isOpen, onClose }) =>
 };
 
 export default ComingSoonModal;
+
